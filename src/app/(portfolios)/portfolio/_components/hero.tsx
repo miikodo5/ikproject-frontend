@@ -8,7 +8,7 @@ const PortfolioHero = () => {
     return (
         <>
             <div className={'min-h-[690px] w-full'}>
-                <Image src={heroImg} alt={'heroImg'} className={'w-full h-[768px] object-cover absolute top-0 -z-50 bg-black max-phone:h-[805px]'}/>
+                <Image src={heroImg} priority alt={'heroImg'} className={'w-full h-[768px] object-cover absolute top-0 -z-50 bg-black max-phone:h-[805px]'}/>
 
                 <Wrapper>
                     <div className={'w-full flex flex-col items-center gap-6 pt-[137px] max-laptop:pt-[71px] max-phone:pt-[47px]'}>

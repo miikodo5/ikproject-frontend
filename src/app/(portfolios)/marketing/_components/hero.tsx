@@ -8,7 +8,7 @@ const MarketingHero = ({header, paragraph}: {header: string, paragraph: string})
     return (
         <>
             <div className={'w-full h-[632px]'}>
-                <Image src={heroImg} alt={'heroImg'} className={'absolute top-0 right-0 -z-50 max-w-[720px] max-h-[820px] object-cover max-laptop:left-0 max-laptop:right-auto max-laptop:max-h-[419px] max-laptop:max-w-full max-phone:max-h-[305px]'}/>
+                <Image src={heroImg} priority alt={'heroImg'} className={'absolute top-0 right-0 -z-50 max-w-[720px] max-h-[820px] object-cover max-laptop:left-0 max-laptop:right-auto max-laptop:max-h-[419px] max-laptop:max-w-full max-phone:max-h-[305px]'}/>
                 <Wrapper>
                     <div className={'h-[330px] mt-[110px] w-full flex flex-row justify-center max-laptop:h-[243px] max-phone:flex-col max-phone:h-[191px] max-phone:mt-[128px]'}>
                         <span className={'self-start text-h80 max-laptop:text-h1 max-phone:text-1xl'}>{header.split(' ')[0]}</span>

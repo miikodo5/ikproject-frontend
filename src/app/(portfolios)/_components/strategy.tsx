@@ -29,7 +29,8 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                                             viewport={{
                                                 once: true,
                                             }}
-                                            whileInView={{
+                                            
+                                            animate={{
                                                 width: 'auto',
                                                 transition: {
                                                     delay: index * duration
@@ -43,7 +44,7 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                                             viewport={{
                                                 once: true,
                                             }}
-                                            whileInView={{
+                                            animate={{
                                                 height: 'auto',
                                                 transition: {
                                                     delay: index * duration
@@ -66,7 +67,7 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                                                 height: width < SCREENS.LAPTOP ? 0 : 2,
                                                 width: width < SCREENS.LAPTOP ? 2 : 0,
                                             }}
-                                            whileInView={{
+                                            animate={{
                                                 height: width < SCREENS.LAPTOP ? 100 : 2,
                                                 width: width < SCREENS.LAPTOP ? 2 : 160,
                                                 transition: {
@@ -83,7 +84,7 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                                         initial={{
                                             opacity: 0
                                         }}
-                                        whileInView={{
+                                        animate={{
                                             opacity: 1,
                                             transition: {
                                                 delay: index * duration
@@ -108,7 +109,7 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                                         viewport={{
                                             once: true,
                                         }}
-                                        whileInView={{
+                                        animate={{
                                             width: 'auto',
                                             transition: {
                                                 delay: index * duration
@@ -122,7 +123,7 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                                         viewport={{
                                             once: true,
                                         }}
-                                        whileInView={{
+                                        animate={{
                                             height: 'auto',
                                             transition: {
                                                 delay: index * duration
@@ -146,7 +147,7 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                                             viewport={{
                                                 once: true,
                                             }}
-                                            whileInView={{
+                                            animate={{
                                                 width: 'auto',
                                                 transition: {
                                                     delay: index * duration
@@ -160,7 +161,7 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                                             viewport={{
                                                 once: true,
                                             }}
-                                            whileInView={{
+                                            animate={{
                                                 height: 'auto',
                                                 transition: {
                                                     delay: index * duration
