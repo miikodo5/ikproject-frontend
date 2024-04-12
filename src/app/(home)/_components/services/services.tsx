@@ -15,7 +15,7 @@ const Services = () => {
     const [initialWidth, setInitialWidth] = useState<number>(0);
     const [isPhone, setIsPhone] = useState<boolean>(isMobile);
     const [circleWidth, setCircleWidth] = useState<number>(isMobile ? 160 : 280);
-    const [spaceBetween, setSpaceBetween] = useState<number>((initialWidth <= SCREENS.LAPTOP? (initialWidth - 2*circleWidth)/6 : (initialWidth - 4*circleWidth)/13));
+    const [spaceBetween, setSpaceBetween] = useState<number>((width <= SCREENS.LAPTOP? (width - 2*circleWidth)/6 : (width - 4*circleWidth)/13));
 
     const SERVICES = [
         {
@@ -263,26 +263,26 @@ const Services = () => {
         console.log(services);
     }
 
-    useEffect(()=>{
-
-        const handleResize =  ()=>{
-            setInitialWidth(window.innerWidth);
-
-            setSpaceBetween((window.innerWidth <= SCREENS.LAPTOP? (window.innerWidth - 2*circleWidth)/6 : (window.innerWidth - 4*circleWidth)/13));
-
-            window.addEventListener('onload', handleResize);
-            window.addEventListener('resize', handleResize);
-        }
-        if(typeof window !== 'undefined'){
-            handleResize()
-        }
-        return () => {
-            if (typeof window !== 'undefined') {
-                window.removeEventListener('onload', handleResize);
-                window.removeEventListener('resize', handleResize);
-            }
-        };
-    })
+    // useEffect(()=>{
+    //
+    //     const handleResize =  ()=>{
+    //         setInitialWidth(window.innerWidth);
+    //
+    //         setSpaceBetween((window.innerWidth <= SCREENS.LAPTOP? (window.innerWidth - 2*circleWidth)/6 : (window.innerWidth - 4*circleWidth)/13));
+    //
+    //         window.addEventListener('onload', handleResize);
+    //         window.addEventListener('resize', handleResize);
+    //     }
+    //     if(typeof window !== 'undefined'){
+    //         handleResize()
+    //     }
+    //     return () => {
+    //         if (typeof window !== 'undefined') {
+    //             window.removeEventListener('onload', handleResize);
+    //             window.removeEventListener('resize', handleResize);
+    //         }
+    //     };
+    // })
 
     // useEffect(() => {
     //     setCircleWidth(width <= SCREENS.PHONE ? 160 : 280)
@@ -328,7 +328,7 @@ const Services = () => {
                     tempInitial.left = index * (circleWidth + spaceBetween)
 
                     let isLaptop = false;
-                    if (initialWidth < SCREENS.LAPTOP) isLaptop = true;
+                    if (width < SCREENS.LAPTOP) isLaptop = true;
                     if ((index === 2 || index === 3) && isLaptop) {
                         tempInitial.y = circleWidth + spaceBetween;
                         tempInitial.left = (index - 2) * (circleWidth + spaceBetween)
