@@ -11,8 +11,6 @@ const PortfolioPage = () => {
         <div>
             <PortfolioHeader color={'white'}/>
             <PortfolioHero/>
-            <PortfolioStrategy/>
-            <PortfolioCards/>
             <HomeContact/>
             <HomeFooter/>
             
