@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Image from "next/image";
 import {motion} from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -33,7 +33,7 @@ const SLIDES = [
     {
         src:slide_img_3,
         text:'IK Project’s efforts have really paid off for us, we’ve been enjoying a nice uptick in website traffic, click-through rates, and conversions. Their team is always on the ball with project management, getting things done fast when needed. Their unique strategies and focus on data are what keep our partnership thriving.',
-        author:'Personal Assistant '
+        author:'Personal Assistant'
     },
     {
         src:slide_img_4,
@@ -43,11 +43,32 @@ const SLIDES = [
     {
         src:slide_img_5,
         text:'IK Project has proven their expertise in Amazon advertising. As our trusted go-to team for all things Amazon advertising, they consistently deliver exceptional results that exceed expectations.',
-        author:'Project Manager '
+        author:'Project Manager'
     },
 ]
 const HomeTestimonials = () => {
     const {width, height} = useWindowDimensions()
+    const [initialWidth, setInitialWidth] = useState<number>(0)
+
+    useEffect(()=>{
+
+        const handleResize =  ()=>{
+            setInitialWidth(window.innerWidth);
+
+            window.addEventListener('onload', handleResize);
+            window.addEventListener('resize', handleResize);
+        }
+        if(typeof window !== 'undefined'){
+            handleResize()
+        }
+        return () => {
+            if (typeof window !== 'undefined') {
+                window.removeEventListener('onload', handleResize);
+                window.removeEventListener('resize', handleResize);
+            }
+        };
+    })
+
     return (
         <section id={'testimonials'} className={'mt-40 pb-[286px] max-laptop:pb-[120px]'}>
             <Wrapper>

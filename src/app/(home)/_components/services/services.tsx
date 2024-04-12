@@ -12,7 +12,7 @@ import Link from "next/link";
 const Services = () => {
 
     const {width, height} = useWindowDimensions();
-    const initialWidth = width;
+    const [initialWidth, setInitialWidth] = useState<number>(0);
     const [isPhone, setIsPhone] = useState<boolean>(isMobile);
     const [circleWidth, setCircleWidth] = useState<number>(isMobile ? 160 : 280);
     const [spaceBetween, setSpaceBetween] = useState<number>((initialWidth <= SCREENS.LAPTOP? (initialWidth - 2*circleWidth)/6 : (initialWidth - 4*circleWidth)/13));
@@ -262,6 +262,28 @@ const Services = () => {
         setServices(nextList);
         console.log(services);
     }
+
+    useEffect(()=>{
+
+        const handleResize =  ()=>{
+            setInitialWidth(window.innerWidth);
+
+            setSpaceBetween((window.innerWidth <= SCREENS.LAPTOP? (window.innerWidth - 2*circleWidth)/6 : (window.innerWidth - 4*circleWidth)/13));
+
+            window.addEventListener('onload', handleResize);
+            window.addEventListener('resize', handleResize);
+        }
+        if(typeof window !== 'undefined'){
+            handleResize()
+        }
+        return () => {
+            if (typeof window !== 'undefined') {
+                window.removeEventListener('onload', handleResize);
+                window.removeEventListener('resize', handleResize);
+            }
+        };
+    })
+
     // useEffect(() => {
     //     setCircleWidth(width <= SCREENS.PHONE ? 160 : 280)
     //     setSpaceBetween((width <= SCREENS.LAPTOP ? (width - 2*circleWidth)/6 : (width - 4*circleWidth)/13))
