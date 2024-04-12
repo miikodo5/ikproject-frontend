@@ -15,6 +15,12 @@ const HomeHero1 = () => {
     const autoPlayRef = useRef()
     const {width, height} = useWindowDimensions();
 
+    const STATS = [
+        {number: '33', text:'Active business partners '},
+        {number: '+37%', text:'Overall performance boost'},
+        {number: '5', text:`Years in the business`}
+    ];
+
     useEffect(() => {
      // @ts-ignore
         autoPlayRef.current = ()=>{
@@ -53,11 +59,7 @@ const HomeHero1 = () => {
                                 <AppButton text={'Contact Us'}/>
                             </div>
                             <div className={'flex flex-row gap-[136.5px] max-laptop:gap-[59.5px] max-phone:gap-[47px]'}>
-                                {[
-                                    {number: '33', text:'Active business partners '},
-                                    {number: '+37%', text:'Overall performance boost'},
-                                    {number: '5', text:`Years in the business`}
-                                ].map((el,index)=>(
+                                {STATS.map((el,index)=>(
                                     <div key={index} className={'flex flex-col gap-2 max-w-[175px] max-laptop:max-w-[112px]'}>
                                         <span className={'text-h1 max-laptop:text-xl font-semibold text-center'}>{el.number}</span>
                                         <span className={'text-base max-laptop:text-sm font-normal text-grey text-center'}>{el.text}</span>
@@ -86,11 +88,7 @@ const HomeHero1 = () => {
                             <AppButton text={'Contact Us'}/>
                         </div>
                         <div className={'flex flex-row gap-[136.5px] max-laptop:gap-[59.5px] max-phone:gap-[47px]'}>
-                            {[
-                                {number: '321', text:'Projects Completed'},
-                                {number: '25', text:'Awards'},
-                                {number: '15', text:`Years Experience`}
-                            ].map((el,index)=>(
+                            {STATS.map((el,index)=>(
                                 <div key={index} className={'flex flex-col gap-2 max-w-[120px]'}>
                                     <span className={'text-h1 max-laptop:text-xl font-semibold text-center'}>{el.number}</span>
                                     <span className={'text-base max-laptop:text-sm font-normal text-grey text-center'}>{el.text}</span>
