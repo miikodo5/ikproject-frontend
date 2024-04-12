@@ -29,27 +29,6 @@ const Services = () => {
         setServices(nextList);
     }
 
-    // useEffect(()=>{
-    //
-    //     const handleResize =  ()=>{
-    //         setInitialWidth(window.innerWidth);
-    //
-    //         setSpaceBetween((window.innerWidth <= SCREENS.LAPTOP? (window.innerWidth - 2*circleWidth)/6 : (window.innerWidth - 4*circleWidth)/13));
-    //
-    //         window.addEventListener('onload', handleResize);
-    //         window.addEventListener('resize', handleResize);
-    //     }
-    //     if(typeof window !== 'undefined'){
-    //         handleResize()
-    //     }
-    //     return () => {
-    //         if (typeof window !== 'undefined') {
-    //             window.removeEventListener('onload', handleResize);
-    //             window.removeEventListener('resize', handleResize);
-    //         }
-    //     };
-    // })
-
     useEffect(()=>{
         if(typeof window !== 'undefined'){
             const tempCircleWidth = window.innerWidth <= SCREENS.LAPTOP ? 160 : 280;
@@ -293,7 +272,6 @@ const Services = () => {
                 },
             ]
 
-            console.log(SERVICES);
 
             setServices(SERVICES);
         }
@@ -301,17 +279,7 @@ const Services = () => {
 
 
         setIsLoading(false);
-    },[])
-    // useEffect(() => {
-    //     setCircleWidth(width <= SCREENS.PHONE ? 160 : 280)
-    //     setSpaceBetween((width <= SCREENS.PHONE ? (width - 2*circleWidth)/6 : (width - 4*circleWidth)/13))
-    //     setIsPhone(width <= SCREENS.PHONE)
-    //
-    // }, [width]);
-    //
-    // useEffect(()=>{
-    //     setServices(SERVICES);
-    // },[circleWidth])
+    },[]);
 
     const transition = {
         type: 'spring',
@@ -354,37 +322,37 @@ const Services = () => {
                             key={index}
                             variants={{
                                 'pos': {...el.whileInView, transition: transition},
+                                'showed':{
+                                    backgroundColor: 'rgb(151 1 1 / 1)',
+                                    borderColor: 'rgb(151 1 1 / 1)',
+                                    transition: {
+                                        type: 'spring',
+                                        duration: 0
+                                    },
+                                    color:'white',
+                                    zIndex: 9999
+                                },
+                                'hide':{
+                                    backgroundColor: 'rgb(151 1 1 / 0)',
+                                    borderColor: '#455065',
+                                    transition: {
+                                        type: 'spring',
+                                        duration: 0
+                                    }
+                                }
                             }}
                             initial={tempInitial}
                             whileInView={'pos'}
                             whileHover={{
                                 scale: 1.05,
-                                transition: {
-                                    duration: 0.2
-                                }
                             }}
-                            animate={el.showed ? {
-                                backgroundColor: 'rgb(151 1 1 / 1)',
-                                borderColor: 'rgb(151 1 1 / 1)',
-                                transition: {
-                                    type: 'spring',
-                                    duration: 1
-                                },
-                                zIndex: 9999
-                            } : {
-                                backgroundColor: 'rgb(151 1 1 / 0)',
-                                borderColor: '#455065',
-                                transition: {
-                                    type: 'spring',
-                                    duration: 1
-                                }
-                            }}
+                            animate={[(el.showed ? 'showed':'hide')]}
                             // transition={transition}
                             onClick={() => {
                                 handleElClick(index);
                             }}
                             viewport={{once: true}}
-                            className={`select-none absolute flex items-center justify-center rounded-full border-[5px] max-laptop:border-[3px] border-grey   
+                            className={`select-none absolute flex items-center justify-center rounded-full border-[5px] max-laptop:border-[3px] border-grey hover:scale-110  
                                 ${width <= SCREENS.LAPTOP ? 'h-[160px] min-w-[160px] max-w-[160px]' : 'h-[280px] min-w-[280px] max-w-[280px]'} ${el.number==='04' ? 'cursor-default' : 'cursor-pointer' }`}
                         >
                             <span className={'text-1xl font-medium max-laptop:text-lg text-center'}>{el.name}</span>

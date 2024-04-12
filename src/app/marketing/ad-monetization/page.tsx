@@ -12,7 +12,7 @@ import portfolioPhoto_4 from "@images/portfolio-4.png";
 import portfolioPhoto_5 from "@images/portfolio-5.png";
 
 const PortfolioPage = () => {
-    const header = 'Monetize Optimize Advertising';
+    const header = 'Optimize Monetize Advertising';
     const paragraph = 'Unlock the power of advertising revenue with IK Project\'s Ad Monetization Service. Elevate your website\'s income with optimized video, website, and app ads. Gain access to Google Ad Exchange and enjoy direct deals with major advertisers. Maximize earnings with real-time bidding and expert policy compliance monitoring. Trust our 15-year expertise for up to 50% more revenue than AdSense. Opt for a reliable partner - choose IK Project today!';
     const strategy = [
         {

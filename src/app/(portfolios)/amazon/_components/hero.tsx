@@ -10,7 +10,7 @@ const AmazonHero = ({header, paragraph, stats, img1, img2}:{header: string, para
             {/*h-[560px] max-laptop:h-[768px]*/}
             <div className={'w-full h-max max-phone:h-max'}>
                 <div
-                    className={'absolute -z-50 top-0 right-0 bg-mainbg w-[603px] h-[calc(100%+46px)] max-h-[878px] max-laptop:hidden'}/>
+                    className={'absolute -z-50 top-0 right-0 bg-mainbg w-[603px] h-[calc(100%+46px)] max-h-[790px] max-laptop:hidden'}/>
                 <div
                     className={'absolute -z-50 left-[156px] top-[422px] w-[230px] h-[41px] bg-mainbg/25 max-laptop:hidden'}/>
                 <div
@@ -28,9 +28,11 @@ const AmazonHero = ({header, paragraph, stats, img1, img2}:{header: string, para
                     className={'max-laptop:flex max-laptop:flex-row max-laptop:gap-9 max-laptop:w-full justify-center max-laptop:mt-6 overflow-hidden max-phone:relative max-phone:h-[302px]'}>
                     <Image src={img1} alt={'heroImg1'}
                            priority
+                           placeholder={'blur'}
                            className={'absolute right-[322px] top-[94px] w-[352px] h-[530px] object-cover max-laptop:w-[333px] max-laptop:h-[302px] max-laptop:static max-phone:w-[207px] max-phone:h-[302px] max-phone:absolute max-phone:right-[137px] max-phone:top-0'}/>
                     <Image src={img2} alt={'heroImg2'}
                            priority
+                           placeholder={'blur'}
                            className={'absolute right-0 top-[94px] h-[530px] w-[280px] object-cover max-laptop:w-[333px] max-laptop:h-[302px] max-laptop:static max-phone:w-[207px] max-phone:h-[302px] max-phone:absolute max-phone:right-[-100px] max-phone:top-0'}/>
 
                 </div>
@@ -55,7 +57,7 @@ const AmazonHero = ({header, paragraph, stats, img1, img2}:{header: string, para
                                 </div>
                             ))}
                         </div>
-                        <AppButton text={'Lorem Ipsum'}/>
+                        <AppButton text={'Contact Us'}/>
                     </div>
                     <div className={'ml-[94px] mt-10 flex flex-row gap-8 max-laptop:hidden'}>
                         {stats.map((el, index) => (

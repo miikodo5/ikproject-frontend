@@ -12,7 +12,7 @@ import portfolioPhoto_4 from "@images/portfolio-4.png";
 import portfolioPhoto_5 from "@images/portfolio-5.png";
 
 const PortfolioPage = () => {
-    const header = 'Search-engine reputation management';
+    const header = 'Search reputation management';
     const paragraph = 'Unleash the potential of SERM with our expert team! We eliminate negative search results, create positive brand content, and boost your online reputation. Let us help you attract top talent, enhance customer loyalty, and dominate search engine rankings with our cutting-edge strategies. Elevate your brand today!';
     const strategy = [
         {
