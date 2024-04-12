@@ -10,8 +10,9 @@ import useWindowDimensions from "@/shared/hooks/useWindowDimensions";
 import Link from "next/link";
 
 const Services = () => {
-    const initialWidth = window && window.innerWidth;
+
     const {width, height} = useWindowDimensions();
+    const initialWidth = width;
     const [isPhone, setIsPhone] = useState<boolean>(isMobile);
     const [circleWidth, setCircleWidth] = useState<number>(isMobile ? 160 : 280);
     const [spaceBetween, setSpaceBetween] = useState<number>((initialWidth <= SCREENS.LAPTOP? (initialWidth - 2*circleWidth)/6 : (initialWidth - 4*circleWidth)/13));
