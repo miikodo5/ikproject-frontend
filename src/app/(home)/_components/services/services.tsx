@@ -184,7 +184,7 @@ const Services = () => {
                     link: 'marketing/link-building',
                     number: '12',
                     title: 'Link Building',
-                    text: 'We will help you increase your website\'s link mass and set up external SEO optimization'
+                    text: 'We will help you increase your website&apos;s link mass and set up external SEO optimization'
                 },
                 {
                     link: 'marketing/lead-generation',
@@ -227,7 +227,7 @@ const Services = () => {
                 link: 'development/mobile',
                 number:'02',
                 title: 'Mobile Development',
-                text:'Step into the realm of mobile app innovation, where creativity knows no bounds. We\'re your partner in turning imaginative concepts into tangible mobile solutions.'
+                text:'Step into the realm of mobile app innovation, where creativity knows no bounds. We&apos;re your partner in turning imaginative concepts into tangible mobile solutions.'
             },
             {
                 link: 'development/e-commerce',
@@ -248,7 +248,6 @@ const Services = () => {
                 y: circleWidth / 2,
                 left: `calc(50%)`
             },
-            text: 'Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.'
         },
     ]
     const [services, setServices] = useState(SERVICES);
@@ -262,12 +261,12 @@ const Services = () => {
         setServices(nextList);
         console.log(services);
     }
-    useEffect(() => {
-        setCircleWidth(width <= SCREENS.PHONE ? 160 : 280)
-        setSpaceBetween((width <= SCREENS.LAPTOP ? (width - 2*circleWidth)/6 : (width - 4*circleWidth)/13))
-        setIsPhone(width <= SCREENS.PHONE)
-
-    }, [width]);
+    // useEffect(() => {
+    //     setCircleWidth(width <= SCREENS.PHONE ? 160 : 280)
+    //     setSpaceBetween((width <= SCREENS.LAPTOP ? (width - 2*circleWidth)/6 : (width - 4*circleWidth)/13))
+    //     setIsPhone(width <= SCREENS.PHONE)
+    //
+    // }, [width]);
 
     // useEffect(()=>{
     //     console.log("circlewidth")

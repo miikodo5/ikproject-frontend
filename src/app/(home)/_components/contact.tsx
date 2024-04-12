@@ -1,7 +1,6 @@
 'use client';
 import React, {useState} from 'react';
 import Wrapper from "@/app/_components/wrapper";
-import {motion} from "framer-motion";
 import Image from "next/image";
 
 import next_1 from '@icons/next-1.svg';
