@@ -269,10 +269,10 @@ const Services = () => {
 
     }, [width]);
 
-    useEffect(()=>{
-        console.log("circlewidth")
-        setServices(SERVICES);
-    },[circleWidth])
+    // useEffect(()=>{
+    //     console.log("circlewidth")
+    //     setServices(SERVICES);
+    // },[circleWidth])
 
     const transition = {
         type: 'spring',

@@ -19,7 +19,7 @@ const HomeContact = () => {
                 <TitleBlock text={'CONTACT US'} type={3}/>
                 <div>
                     <p className={'text-xl text-grey font-semibold max-phone:text-sm'}>
-                        Got questions or ready to get started? Leave a brief message and we'll be happy to assist you!
+                        Got questions or ready to get started? Leave a brief message and we&apos;ll be happy to assist you!
                     </p>
                 </div>
                 <div className={'flex flex-col'}>
