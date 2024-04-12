@@ -1,0 +1,88 @@
+import React from 'react';
+import PortfolioHeader from "@/app/(portfolios)/_components/header";
+import PortfolioStrategy from "@/app/(portfolios)/_components/strategy";
+import PortfolioCards from "@/app/(portfolios)/_components/portfolio";
+import HomeContact from "@/app/(home)/_components/contact";
+import HomeFooter from "@/app/(home)/_components/footer";
+import AmazonHero from "@/app/(portfolios)/amazon/_components/hero";
+
+
+import heroImg1 from '@images/hero-3-1.png';
+import heroImg2 from '@images/hero-3-2.png';
+import portfolioPhoto_1 from "@images/portfolio-1.png";
+import portfolioPhoto_2 from "@images/portfolio-2.png";
+import portfolioPhoto_3 from "@images/portfolio-3.png";
+import portfolioPhoto_4 from "@images/portfolio-4.png";
+import portfolioPhoto_5 from "@images/portfolio-5.png";
+const PortfolioPage = () => {
+    const header = 'Amazon Copywriting Services';
+    const paragraph = 'Elevate your product game with our expert Amazon copywriters. Maximize product visibility, boost traffic, and skyrocket sales with captivating, SEO-optimized listings.';
+    const stats = [
+        {number: '78%', text: 'increase in product placement effectiveness'},
+        {number: '42%', text: 'rise in website traffic conversion rates'},
+        {number: '91%', text: 'growth in buy box percentage'},
+        {number: '65%', text: 'surge in search engine visibility'}
+    ];
+    const strategy = [
+        {
+            title: 'Analyze',
+            text: 'Understand your product & target audience to create a tailored copywriting strategy that converts browsers into buyers.'
+        },
+        {
+            title: 'Research',
+            text: 'Gather insights on your competition, keywords, and market trends to craft compelling and SEO-optimized product listings.'
+        },
+        {
+            title: 'Write & Optimize',
+            text: 'Create engaging copy for titles, bullet points, and descriptions that highlight your product\'s unique selling points and persuade customers to click "Add to Cart".'
+        },
+        {
+            title: 'Enhance with A+ Content',
+            text: 'Elevate your brand story with captivating A+ content below the fold, showcasing the benefits of your products and increasing consumer trust.'
+        },
+        {
+            title: 'Track & Refine',
+            text: 'Monitor performance metrics, adjust copy accordingly, and see improved Amazon rankings to boost traffic, sales, and buy box percentage.'
+        }
+    ];
+    const portfolios = [
+        {
+            title: 'Expert Amazon Copywriters',
+            text: 'Our team of seasoned Amazon copywriting experts is dedicated to crafting engaging and persuasive product descriptions that drive sales on the e-commerce giant. From titles to bullet points, product descriptions, and A+ content, we cover it all with finesse and expertise.',
+            img: portfolioPhoto_1
+        },
+        {
+            title: 'Optimized Product Listings',
+            text:'Elevate your product rankings with our meticulously crafted copy that enhances product visibility and relevance on Amazon. Benefit from higher placement, increased traffic, boosted sales, improved conversion rates, and a higher buy box percentage by leveraging our strategic copywriting services.',
+            img: portfolioPhoto_2
+        },
+        {
+            title: 'Comprehensive Content Strategy',
+            text: 'Utilizing every available space on your Amazon listing, we strategically place compelling content above the fold (B+ content) to showcase your product\'s unique selling points succinctly. Below the fold (A+ content), we delve deeper into product details and brand storytelling to captivate potential buyers.',
+            img: portfolioPhoto_3
+        },
+        {
+            title: 'SEO-Friendly Copy',
+            text: 'Our copy isn\'t just tailored for Amazon; it\'s optimized for search engines too. Maximize your sales potential by reaching customers not only within the Amazon ecosystem but also through popular search engines like Google or Bing. Our SEO-friendly approach ensures enhanced visibility across platforms.',
+            img: portfolioPhoto_4
+        },
+        {
+            title: 'Tailored Amazon Copywriting Solutions',
+            text: 'Discover how our experienced Amazon product listing copywriters can transform your listings into compelling sales tools. Whether you need captivating titles, persuasive bullet points, detailed product descriptions, or engaging A+ content, our team is equipped to meet your specific needs and drive results.',
+            img: portfolioPhoto_5
+        },
+    ]
+    return (
+        <div>
+            <PortfolioHeader color={'black'}/>
+            <AmazonHero header={header} paragraph={paragraph} stats={stats} img1={heroImg1} img2={heroImg2}/>
+            <PortfolioStrategy strategy={strategy}/>
+            <PortfolioCards portfolios={portfolios}/>
+            <HomeContact/>
+            <HomeFooter/>
+
+        </div>
+    );
+};
+
+export default PortfolioPage;
