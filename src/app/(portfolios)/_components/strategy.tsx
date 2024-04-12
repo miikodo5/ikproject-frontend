@@ -9,7 +9,7 @@ import TitleBlock from "@/app/_components/title-block";
 const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]}) => {
     const duration = 2;
 
-    const width = window.innerWidth;
+    const {width, height}= useWindowDimensions();
 
     return (
         <Wrapper>

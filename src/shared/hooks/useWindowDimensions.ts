@@ -10,14 +10,14 @@ export default function useWindowDimensions() {
     });
 
     useEffect(() => {
-        function handleResize() {
+        const handleResize = ()=> {
             setWindowDimensions({
                 width: window.innerWidth,
                 height: window.innerHeight,
             })
         }
 
-        handleResize() // <-- invoke this on component mount
+        // handleResize() // <-- invoke this on component mount
 
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
