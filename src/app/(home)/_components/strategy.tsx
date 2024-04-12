@@ -84,50 +84,6 @@ const HomeStrategy = () => {
     ]
 
 
-    const x =  useMotionValue(0);
-    const y =  useMotionValue(0);
-    const rotateX = useTransform(
-        y,
-        [-0.5, 0.5],
-        ['17.5deg','-17.5deg']
-    );
-
-    const rotateY = useTransform(
-        x,
-        [-0.5, 0.5],
-        ['-27.5deg','27.5deg']
-    );
-    const handleMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>)=>{
-        const rect = event.currentTarget.getBoundingClientRect();
-
-        const width = rect.width;
-        const height = rect.height;
-
-        const mouseX = event.clientX - rect.left;
-        const mouseY = event.clientY - rect.top;
-
-        const xRect = mouseX/width - 0.5;
-        const yRect = mouseY/height - 0.5;
-
-        // if (!ref.current) return;
-        //
-        // const rect = ref.current.getBoundingClientRect();
-        //
-        // const width = rect.width;
-        // const height = rect.height;
-        //
-        // const mouseX = (event.clientX - rect.left) * ROTATION_RANGE * 2;
-        // const mouseY = (event.clientY - rect.top) * ROTATION_RANGE;
-        //
-        // const rY = mouseX / width - HALF_ROTATION_RANGE * 2;
-        // const rX = (mouseY / height - HALF_ROTATION_RANGE) * -1;
-
-        // setRotateX(rX);
-        // setRotateY(rY);
-        x.set(xRect);
-        y.set(yRect);
-
-    }
 
     return (
         <div className={'py-20 bg-mainbg'}>
@@ -209,7 +165,7 @@ const HomeStrategy = () => {
                             </motion.div>
                         </motion.div>
 
-                        <div className={'max-[920px]:flex max-[920px]:flex-col gap-3 items-center'}>
+                        <div className={'max-[920px]:flex max-[920px]:flex-col gap-8 items-center'}>
                             {STRATEGIES.map((el, index) => (
                                 <motion.div
                                     key={index}

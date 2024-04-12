@@ -12,10 +12,7 @@ import Link from "next/link";
 const Services = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const {width, height} = useWindowDimensions();
-    const [initialWidth, setInitialWidth] = useState<number>(0);
-    const [isPhone, setIsPhone] = useState<boolean>(width <= SCREENS.LAPTOP);
     const [circleWidth, setCircleWidth] = useState<number>(width <= SCREENS.LAPTOP ? 160 : 280);
-    const [spaceBetween, setSpaceBetween] = useState<number>((width <= SCREENS.LAPTOP? (width - 2*circleWidth)/6 : (width - 4*circleWidth)/13));
 
 
     const [services, setServices] = useState<Array<{showed: boolean, name: string, number: string, initial: {left: string}, whileInView: {y: number, left: string}, services: {link: string, number: string, title: string, text: string}[]}>>([]);
@@ -271,13 +268,8 @@ const Services = () => {
                     services: []
                 },
             ]
-
-
             setServices(SERVICES);
         }
-
-
-
         setIsLoading(false);
     },[]);
 
