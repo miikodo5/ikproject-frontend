@@ -16,7 +16,7 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
             <div className={'my-20'}>
                 <TitleBlock text={'STRATEGY WORK'} type={2}/>
                 <div className={'flex items-center justify-center max-laptop:items-start'}>
-                    {/*right*/}
+                    {/*left*/}
                     <div className={'pt-12 flex-1 self-start flex-col hidden h-full max-laptop:flex'}>
                         {strategy.map((el, index) => (
                             <div key={index} className={'flex flex-col gap-[2px] items-end min-h-[180px]'}>
@@ -101,7 +101,7 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                         </div>
                         <div className={'flex flex-row max-laptop:hidden'}>
                             {strategy.map((el, index) => (
-                                <div key={index} className={'flex flex-col gap-[2px] items-center px-4 text-center max-laptop:text-right'}>
+                                <div key={index} className={'flex flex-col gap-[2px] items-center px-4 text-center max-laptop:text-left'}>
                                     <motion.span
                                         initial={{
                                             width: 0
@@ -134,7 +134,7 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                             ))}
                         </div>
                     </div>
-                    {/*left*/}
+                    {/*right*/}
                     <div className={'pt-12 flex-1 self-start flex-col hidden h-full max-laptop:flex'}>
                         {strategy.map((el, index) => (
                             <div key={index} className={'flex flex-col gap-[2px] items-start min-h-[180px] w-full'}>
@@ -153,7 +153,7 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                                                     delay: index * duration
                                                 }
                                             }}
-                                            className={'max-w-[208px] text-sm text-grey font-semibold text-clip overflow-hidden w-full text-left text-center max-laptop:text-right'}>{el.title}</motion.span>
+                                            className={'max-w-[208px] text-sm text-grey font-semibold text-clip overflow-hidden w-full text-left text-center max-laptop:text-left'}>{el.title}</motion.span>
                                         <motion.p
                                             initial={{
                                                 height: 0
