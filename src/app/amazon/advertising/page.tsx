@@ -26,23 +26,23 @@ const PortfolioPage = () => {
     const strategy = [
         {
             title: 'Target Keyword Identification',
-            text: 'Uncover the most relevant and high-performing keywords for each campaign to boost visibility and drive traffic to your products'
+            text: 'We identify the most relevant and high-performing keywords for each campaign to boost visibility and drive traffic to your products.'
         },
         {
             title: 'Creative Headline Creation',
-            text: 'Craft compelling and attention-grabbing headlines for your Headline Search ads that captivate potential customers and increase click-through rates.'
+            text: 'We craft compelling and attention-grabbing headlines for your Headline Search ads that captivate potential customers and increase click-through rates.'
         },
         {
             title: 'Budget & Bid Management',
-            text: 'Efficiently manage your advertising budget and bids to optimize spending while maximizing the impact of your ads on the Amazon marketplace.'
+            text: 'We efficiently manage your advertising budget and bids to optimize spending while maximizing the impact of your ads on the Amazon marketplace.'
         },
         {
             title: 'Ongoing Campaign Optimization',
-            text: 'Continuously refine and adjust your advertising campaigns based on performance data to ensure optimal results and minimize wasted ad spend.'
+            text: 'We continuously refine and adjust your advertising campaigns based on performance data to ensure optimal results and minimize wasted ad spend.'
         },
         {
             title: 'Performance Reporting',
-            text: 'Receive regular detailed reports on the effectiveness of your advertising campaigns, allowing you to track ROI and make informed decisions for future strategies.'
+            text: 'We provide you with regular detailed reports on the effectiveness of your advertising campaigns, allowing you to track ROI and make informed decisions for future strategies.'
         }
     ];
     const portfolios = [

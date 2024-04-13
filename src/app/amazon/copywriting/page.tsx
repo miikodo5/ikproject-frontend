@@ -26,23 +26,23 @@ const PortfolioPage = () => {
     const strategy = [
         {
             title: 'Analyze',
-            text: 'Understand your product & target audience to create a tailored copywriting strategy that converts browsers into buyers.'
+            text: 'We analyze your ecommerce market size, segmentation, and key drivers to identify trends. Utilize a two-year forecast for future planning with confidence.'
         },
         {
             title: 'Research',
-            text: 'Gather insights on your competition, keywords, and market trends to craft compelling and SEO-optimized product listings.'
+            text: 'We delve into insights on your competition, keywords, and market trends to craft compelling and SEO-optimized product listings that outshine the rest.'
         },
         {
             title: 'Write & Optimize',
-            text: 'Create engaging copy for titles, bullet points, and descriptions that highlight your product\'s unique selling points and persuade customers to click "Add to Cart".'
+            text: 'We create engaging copy for titles, bullet points, and descriptions that highlight your product\'s unique selling points and persuade customers to click "Add to Cart" effortlessly.'
         },
         {
             title: 'Enhance with A+ Content',
-            text: 'Elevate your brand story with captivating A+ content below the fold, showcasing the benefits of your products and increasing consumer trust.'
+            text: 'We elevate your brand story with captivating A+ content below the fold, showcasing the benefits of your products and boosting consumer trust in your brand identity.'
         },
         {
             title: 'Track & Refine',
-            text: 'Monitor performance metrics, adjust copy accordingly, and see improved Amazon rankings to boost traffic, sales, and buy box percentage.'
+            text: 'We monitor performance metrics, adjust copy accordingly, and witness improved Amazon rankings together to boost traffic, sales, and buy box percentage as partners in success.'
         }
     ];
     const portfolios = [

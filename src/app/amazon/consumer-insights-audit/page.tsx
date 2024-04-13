@@ -26,19 +26,19 @@ const PortfolioPage = () => {
     const strategy = [
         {
             title: 'Market Analysis',
-            text: 'Analyze your ecommerce market size, segmentation, and key drivers to identify trends. Utilize a two-year forecast for future planning with confidence.'
+            text: 'We analyze our ecommerce market size, segmentation, and key drivers to identify trends. Utilize a two-year forecast for future planning with confidence.'
         },
         {
             title: 'Consumer Insights',
-            text: 'Know your customers\' preferences, interests, and purchasing behaviors to stay ahead by keeping track of emerging consumer trends.'
+            text: 'We help you know your customers\' preferences, interests, and purchasing behaviors to stay ahead by keeping track of emerging consumer trends.'
         },
         {
             title: 'Competitive Intelligence',
-            text: 'To gain a competitive edge, analyze competitors\' profiles, market share, and strategies to capitalize on industry trends and outmaneuver them.'
+            text: 'To gain a competitive edge, we analyze competitors\' profiles, market share, and strategies to capitalize on industry trends and outmaneuver them.'
         },
         {
             title: 'Business Case Development',
-            text: 'Assess opportunities versus risks, using data for pricing insights, margin analysis, and forecasting to make informed decisions.'
+            text: 'We assess opportunities versus risks, using data for pricing insights, margin analysis, and forecasting to make informed decisions.'
         },
         {
             title: 'Confident Decision Making',

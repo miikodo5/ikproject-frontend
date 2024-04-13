@@ -36,17 +36,18 @@ const HeroPhoto = ({photoIndex, photoNumber}:{photoIndex: number,photoNumber: nu
         <motion.div
             initial={{
                 opacity:0,
-                width: imageWidth,
-                height: 0
             }}
             animate={{
                 opacity:1,
-                width: imageWidth,
-                height: imageHeight,
                 transition: {
                     delay: .5
                 }
-            }} className={`relative ${styleWidth} h-max`}>
+            }}
+            style={{
+                width: imageWidth,
+                height: imageHeight
+            }}
+            className={`relative ${styleWidth} h-max`}>
             <div
                 className={classNameImg + ` ${photoIndex === 0 ? 'opacity-100 ' : 'opacity-0'}`}>
                 <Image src={PHOTOSBOXES[photoNumber-1][0]} alt={'hero4'}

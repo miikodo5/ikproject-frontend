@@ -82,17 +82,18 @@ const HomeTestimonials = () => {
                 spaceBetween={width < SCREENS.LAPTOP ? width < SCREENS.PHONE ? 10 : -45 : -90}
                 loop={true}
                 autoplay={{
-                    delay: 2500,
+                    delay: 5500,
                     disableOnInteraction: false,
                 }}
-                keyboard={{
-                    enabled: true,
-                }}
+
+                // keyboard={{
+                //     enabled: true,
+                // }}
 
                 // mousewheel={{
                 //     enabled: true,
                 // }}
-                modules={[Mousewheel,Autoplay, Keyboard]}
+                modules={[Autoplay, Keyboard]}
                 className={' !overflow-y-visible !overflow-x-clip mt-12'}
             >
                 {SLIDES.map((el, index)=>(

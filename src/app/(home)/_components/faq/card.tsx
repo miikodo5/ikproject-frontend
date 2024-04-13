@@ -32,13 +32,13 @@ const FAQCard: FC<IFAQCard> = ({index, setOpen, isOpen, open, el}) => {
             <div className={'flex flex-row  justify-between items-center'}>
                 <span className={'text-xl max-phone:text-base max-laptop:text-base font-medium'}>{el.title}</span>
                 <motion.div
-                    className={`w-10 h-10 ${isOpen && 'bg-main'} rounded-[10px] flex justify-center items-center`}>
+                    className={`min-w-10 min-h-10 ${isOpen && 'bg-main'} rounded-[10px] flex justify-center items-center`}>
                     {isOpen ? (
                         <motion.svg
                             animate={{
                                 rotate
                             }}
-                            width="13" height="3" viewBox="0 0 13 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            width="13" height="13" viewBox="0 0 13 3" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <motion.path
                                 d={'M0 2.24995V0.75H13V2.24995H0Z'}
                                 fill={'white'}
@@ -70,7 +70,7 @@ const FAQCard: FC<IFAQCard> = ({index, setOpen, isOpen, open, el}) => {
                             collapsed: {opacity: 0, height: 0, transition: {duration: 0}}
                         }}
 
-                        transition={{duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98], opacity: {duration: 1.6}}}
+                        transition={{duration: 0.5, ease: [0.04, 0.62, 0.23, 0.98], opacity: {duration: 0.5}}}
                     >
                         <p className={'text-wrap h-full w-full text-base max-laptop:text-sm font-normal text-grey '}>
                             {el.text}

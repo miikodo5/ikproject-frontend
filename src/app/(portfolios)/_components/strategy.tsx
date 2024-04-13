@@ -19,19 +19,19 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                     {/*left*/}
                     <div className={'pt-12 flex-1 self-start flex-col hidden h-full max-laptop:flex'}>
                         {strategy.map((el, index) => (
-                            <div key={index} className={'flex flex-col gap-[2px] items-end min-h-[180px]'}>
+                            <div key={index} className={'flex flex-col gap-[2px] items-end min-h-[260px]'}>
                                 {index % 2 !== 0 ?
                                     <>
                                         <motion.span
                                             initial={{
-                                                width: 0
+                                                opacity: 0
                                             }}
                                             viewport={{
                                                 once: true,
                                             }}
                                             
                                             animate={{
-                                                width: 'auto',
+                                                opacity: 1,
                                                 transition: {
                                                     delay: index * duration
                                                 }
@@ -39,18 +39,18 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                                             className={'max-w-[208px] text-sm text-grey font-semibold text-clip overflow-hidden w-full text-center max-laptop:text-right'}>{el.title}</motion.span>
                                         <motion.p
                                             initial={{
-                                                height: 0
+                                                opacity: 0
                                             }}
                                             viewport={{
                                                 once: true,
                                             }}
                                             animate={{
-                                                height: 'auto',
+                                                opacity: 1,
                                                 transition: {
                                                     delay: index * duration
                                                 }
                                             }}
-                                            className={'max-w-[208px] text-xs text-grey-1 font-normal text-clip overflow-hidden  text-right'}>{el.text}</motion.p>
+                                            className={'max-w-[208px] h-auto text-xs text-grey-1 font-normal text-clip overflow-hidden  text-right'}>{el.text}</motion.p>
                                     </> :<></>
                                 }
                             </div>
@@ -68,7 +68,7 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                                                 width: width < SCREENS.LAPTOP ? 2 : 0,
                                             }}
                                             animate={{
-                                                height: width < SCREENS.LAPTOP ? 100 : 2,
+                                                height: width < SCREENS.LAPTOP ? 180 : 2,
                                                 width: width < SCREENS.LAPTOP ? 2 : 160,
                                                 transition: {
                                                     duration: duration,
@@ -137,18 +137,18 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                     {/*right*/}
                     <div className={'pt-12 flex-1 self-start flex-col hidden h-full max-laptop:flex'}>
                         {strategy.map((el, index) => (
-                            <div key={index} className={'flex flex-col gap-[2px] items-start min-h-[180px] w-full'}>
+                            <div key={index} className={'flex flex-col gap-[2px] items-start min-h-[260px] w-full'}>
                                 {index % 2 === 0 ?
                                     <>
                                         <motion.span
                                             initial={{
-                                                width: 0
+                                                opacity:0
                                             }}
                                             viewport={{
                                                 once: true,
                                             }}
                                             animate={{
-                                                width: 'auto',
+                                                opacity: 1,
                                                 transition: {
                                                     delay: index * duration
                                                 }
@@ -156,18 +156,18 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                                             className={'max-w-[208px] text-sm text-grey font-semibold text-clip overflow-hidden w-full text-left text-center max-laptop:text-left'}>{el.title}</motion.span>
                                         <motion.p
                                             initial={{
-                                                height: 0
+                                                opacity:0
                                             }}
                                             viewport={{
                                                 once: true,
                                             }}
                                             animate={{
-                                                height: 'auto',
+                                                opacity: 1,
                                                 transition: {
                                                     delay: index * duration
                                                 }
                                             }}
-                                            className={'max-w-[208px] text-xs text-grey-1 font-normal text-clip overflow-hidden  text-left'}>{el.text}</motion.p>
+                                            className={'max-w-[208px] h-auto text-xs text-grey-1 font-normal text-clip overflow-hidden  text-left'}>{el.text}</motion.p>
                                     </> :<></>
                                 }
                             </div>

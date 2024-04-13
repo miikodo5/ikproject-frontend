@@ -15,7 +15,7 @@ import portfolioPhoto_3 from "@images/portfolio-3.png";
 import portfolioPhoto_4 from "@images/portfolio-4.png";
 import portfolioPhoto_5 from "@images/portfolio-5.png";
 const PortfolioPage = () => {
-    const header = 'demand-side platform';
+    const header = 'Demand-side Platform';
     const paragraph = 'Struggling to stand out in a crowded market? Reach millions of consumers, drive sales, and boost brand safety with Amazon DSP\'s exclusive ad solutions.';
     const stats = [
         {number: '50%', text: 'increase in brand awareness achieved'},
@@ -26,23 +26,23 @@ const PortfolioPage = () => {
     const strategy = [
         {
             title: 'Identify Ideal Audience',
-            text: 'Target millions of consumers using exclusive Amazon audiences, ensuring your ads reach the right people across Amazon sites and beyond.'
+            text: 'We leverage exclusive Amazon audiences to help you target millions of consumers, ensuring your ads reach the right people across Amazon sites and beyond.'
         },
         {
             title: 'Enhance Brand Safety',
-            text: 'Amazon upholds strict brand safety measures to protect your reputation through quality standards and real-time bid evaluation'
+            text: 'We adhere to strict brand safety measures on Amazon, protecting your reputation through quality standards and real-time bid evaluation.'
         },
         {
             title: 'Access High-Quality Inventory',
-            text: 'Expand your reach with exclusive cross-platform inventory, avail of a 1% fee discount, get weekly transparent reports, and tailor spend limits to optimize your budget.'
+            text: 'We provide access to exclusive cross-platform inventory, offering a 1% fee discount, weekly transparent reports, and the ability to tailor spend limits to optimize your budget.'
         },
         {
             title: 'Personalized Customer Approach',
-            text: 'Get agile customer service from an accredited Amazon DSP team and partner manager to boost sales with effective campaigns.'
+            text: 'We offer agile customer service from our accredited Amazon DSP team and partner manager, guiding you towards boosting sales with effective campaigns.'
         },
         {
             title: 'Drive Conversions Strategically',
-            text: 'Guide customers through awareness, consideration, and purchase stages with optimized ad strategies to increase conversions. Maximize interactions to boost sales.'
+            text: 'We help you guide customers through the awareness, consideration, and purchase stages with optimized ad strategies to increase conversions. Maximize interactions to boost sales effectively.'
         }
     ];
     const portfolios = [

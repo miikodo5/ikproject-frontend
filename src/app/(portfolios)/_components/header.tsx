@@ -13,9 +13,9 @@ import PhoneSection from "@/app/(home)/_components/header/phone";
 const PortfolioHeader = ({color, laptopColor, phoneColor}: {color: string, laptopColor?:string,phoneColor?:string}) => {
     return (
         <Wrapper>
-            <div className={'relative w-full'}>
+            <div className={'relative w-full z-50'}>
                 <header className='absolute w-full pt-6 flex justify-between items-center'>
-                    <Link href={'/'} className={'flex flex-row gap-[6px]'}>
+                    <Link href={'/'} className={'flex flex-row gap-[6px] cursor-pointer'}>
                         <Image src={color === 'black' ? projectIcon : projectIconWhite} alt={'ikproject'}/>
                         <Image src={color === 'black' ? projectIconText : projectIconTextWhite} alt={'ikprojecttext'}/>
                     </Link>

@@ -40,18 +40,19 @@ const HomeAbout = () => {
                     {ABOUT_US.map((el, index)=>(
                         <motion.div
                             key={index}
-                            className={`backdrop-blur-[22px] backdrop-grayscale backdrop-saturate-200 w-full flex items-center gap-12 max-phone:gap-0  ${index % 2 ? 'flex-row-reverse justify-end' : 'flex-row justify-end'} max-phone:flex-col max-phone:text-justify`}>
+                            //backdrop-blur-[22px]
+                            className={` backdrop-grayscale backdrop-saturate-200 w-full flex items-center gap-12 max-phone:gap-0  ${index % 2 ? 'flex-row-reverse justify-end' : 'flex-row justify-end'} max-phone:flex-col max-phone:text-justify`}>
                             <h1 className={`text-h1 max-phone:text-1xl text-main font-semibold ${index % 2 ? 'max-phone:self-end' : 'max-phone:self-start'}`}>{el.number}</h1>
                             <motion.span
-                                initial={{width:'44%', opacity: 0}}
-                                whileInView={{width:'100%', opacity: 1}}
+                                initial={{opacity: 0}}
+                                whileInView={{opacity: 1}}
                                 viewport={{
                                     once: true,
                                 }}
                                 transition={{
                                     duration: 2
                                 }}
-                                className={'text-sm text-grey font-normal w-[44%]'}
+                                className={'text-sm text-black font-normal w-full'}
                             >
                                 <span className={'text-mainbg font-semibold'}>{el.title} </span>
                                 {el.text}

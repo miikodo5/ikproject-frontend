@@ -26,23 +26,23 @@ const PortfolioPage = () => {
     const strategy = [
         {
             title: 'Product Evaluation',
-            text: 'Assessing which products are best suited for promotions based on their performance and market demand.'
+            text: 'We evaluate which products are best suited for promotions based on their performance and market demand.'
         },
         {
             title: 'Promotion Type Selection',
-            text: 'Suggesting the ideal promotion type - like \'Deal of the Day\' or \'Lightning Deal\' - to maximize sales based on your objectives.'
+            text: 'We suggest the ideal promotion type - like \'Deal of the Day\' or \'Lightning Deal\' - to maximize sales based on your objectives.'
         },
         {
             title: 'Strategic Scheduling',
-            text: 'Developing a promotional calendar aligned with key industry events and retail peaks to drive optimal results.'
+            text: 'We develop a promotional calendar aligned with key industry events and retail peaks to drive optimal results.'
         },
         {
             title: 'Execution Plan',
-            text: 'Detailed roadmap outlining when and how each promotion will be executed to ensure maximum impact on Amazon.'
+            text: 'We provide a detailed roadmap outlining when and how each promotion will be executed to ensure maximum impact on Amazon.'
         },
         {
             title: 'Performance Analysis',
-            text: 'Evaluating the effectiveness of each promotion, refining strategies, and providing actionable insights for continual improvement.'
+            text: 'We evaluate the effectiveness of each promotion, refine strategies, and provide actionable insights for continual improvement.'
         }
     ];
     const portfolios = [

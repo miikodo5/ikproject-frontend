@@ -8,6 +8,7 @@ import {AnimateChangeInHeight} from "@/app/_components/animation/change-in-heigh
 import Draggable from "@/app/(home)/_components/services/draggable";
 import useWindowDimensions from "@/shared/hooks/useWindowDimensions";
 import Link from "next/link";
+import Wrapper from "@/app/_components/wrapper";
 
 const Services = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -200,7 +201,7 @@ const Services = () => {
                             link: 'marketing/link-building',
                             number: '12',
                             title: 'Link Building',
-                            text: 'We will help you increase your website&apos;s link mass and set up external SEO optimization'
+                            text: 'We will help you increase your website\'s link mass and set up external SEO optimization'
                         },
                         {
                             link: 'marketing/lead-generation',
@@ -244,7 +245,7 @@ const Services = () => {
                             link: 'development/mobile',
                             number:'02',
                             title: 'Mobile Development',
-                            text:'Step into the realm of mobile app innovation, where creativity knows no bounds. We&apos;re your partner in turning imaginative concepts into tangible mobile solutions.'
+                            text:'Step into the realm of mobile app innovation, where creativity knows no bounds. We\'re your partner in turning imaginative concepts into tangible mobile solutions.'
                         },
                         {
                             link: 'development/e-commerce',
@@ -284,74 +285,77 @@ const Services = () => {
 
     return (
         <>
-            <motion.div
-                viewport={{once: true}}
-                transition={transition}
-                style={{
-                    height: width < SCREENS.LAPTOP ? 400 : 640
-                }}
-                className={`my-7 pt-2 relative overflow-hidden flex-wrap flex flex-row justify-between h-[640px]`}>
+            <Wrapper>
+                <motion.div
+                    viewport={{once: true}}
+                    transition={transition}
+                    style={{
+                        height: width < SCREENS.LAPTOP ? 400 : 640
+                    }}
+                    className={`my-7 pt-2 relative overflow-hidden flex-wrap flex flex-row justify-between h-[640px]`}>
 
-                {services.map((el, index) => {
-                    const tempInitial = {
-                        left: 0,
-                        y: 0
-                    };
-                    const tempCircleWidth = width <= SCREENS.LAPTOP ? 160 : 280;
-                    const tempSpaceBetween = (width <= SCREENS.LAPTOP? (width - 2*circleWidth)/6 : (width - 4*circleWidth)/13)
+                    {services.map((el, index) => {
+                        const tempInitial = {
+                            left: 0,
+                            y: 0
+                        };
+                        const tempCircleWidth = width <= SCREENS.LAPTOP ? 160 : 280;
+                        const tempSpaceBetween = (width <= SCREENS.LAPTOP? (width - 2*circleWidth)/6 : (width - 4*circleWidth)/13)
 
-                    tempInitial.left = index * (tempCircleWidth + tempSpaceBetween)
+                        tempInitial.left = index * (tempCircleWidth + tempSpaceBetween)
 
-                    let isLaptop = false;
-                    if (width < SCREENS.LAPTOP) isLaptop = true;
-                    if ((index === 2 || index === 3) && isLaptop) {
-                        tempInitial.y = tempCircleWidth + tempSpaceBetween;
-                        tempInitial.left = (index - 2) * (tempCircleWidth + tempSpaceBetween)
-                    }
+                        let isLaptop = false;
+                        if (width < SCREENS.LAPTOP) isLaptop = true;
+                        if ((index === 2 || index === 3) && isLaptop) {
+                            tempInitial.y = tempCircleWidth + tempSpaceBetween;
+                            tempInitial.left = (index - 2) * (tempCircleWidth + tempSpaceBetween)
+                        }
 
-                    return (
-                        <motion.div
-                            key={index}
-                            variants={{
-                                'pos': {...el.whileInView, transition: transition},
-                                'showed':{
-                                    backgroundColor: 'rgb(151 1 1 / 1)',
-                                    borderColor: 'rgb(151 1 1 / 1)',
-                                    transition: {
-                                        type: 'spring',
-                                        duration: 0
+                        return (
+                            <motion.div
+                                key={index}
+                                variants={{
+                                    'pos': {...el.whileInView, transition: transition},
+                                    'showed':{
+                                        backgroundColor: 'rgb(151 1 1 / 1)',
+                                        borderColor: 'rgb(151 1 1 / 1)',
+                                        transition: {
+                                            type: 'spring',
+                                            duration: 0
+                                        },
+                                        color:'white',
+                                        zIndex: 9999
                                     },
-                                    color:'white',
-                                    zIndex: 9999
-                                },
-                                'hide':{
-                                    backgroundColor: 'rgb(151 1 1 / 0)',
-                                    borderColor: '#455065',
-                                    transition: {
-                                        type: 'spring',
-                                        duration: 0
+                                    'hide':{
+                                        backgroundColor: 'rgb(151 1 1 / 0)',
+                                        borderColor: '#455065',
+                                        transition: {
+                                            type: 'spring',
+                                            duration: 0
+                                        }
                                     }
-                                }
-                            }}
-                            initial={tempInitial}
-                            whileInView={'pos'}
-                            whileHover={{
-                                scale: 1.05,
-                            }}
-                            animate={[(el.showed ? 'showed':'hide')]}
-                            // transition={transition}
-                            onClick={() => {
-                                handleElClick(index);
-                            }}
-                            viewport={{once: true}}
-                            className={`select-none absolute flex items-center justify-center rounded-full border-[5px] max-laptop:border-[3px] border-grey hover:scale-110  
-                                ${width <= SCREENS.LAPTOP ? 'h-[160px] min-w-[160px] max-w-[160px]' : 'h-[280px] min-w-[280px] max-w-[280px]'} ${el.number==='04' ? 'cursor-default' : 'cursor-pointer' }`}
-                        >
-                            <span className={'text-1xl font-medium max-laptop:text-lg text-center'}>{el.name}</span>
-                        </motion.div>
-                    )
-                })}
-            </motion.div>
+                                }}
+                                initial={tempInitial}
+                                whileInView={'pos'}
+                                whileHover={{
+                                    scale: 1.05,
+                                }}
+                                animate={[(el.showed ? 'showed':'hide')]}
+                                // transition={transition}
+                                onClick={() => {
+                                    handleElClick(index);
+                                }}
+                                viewport={{once: true}}
+                                className={`select-none absolute flex items-center justify-center rounded-full border-[5px] max-laptop:border-[3px] border-grey hover:scale-110  
+                                    ${width <= SCREENS.LAPTOP ? 'h-[160px] min-w-[160px] max-w-[160px]' : 'h-[280px] min-w-[280px] max-w-[280px]'} ${el.number==='04' ? 'cursor-default' : 'cursor-pointer' } 
+                                    ${index === 1 && 'pb-5' } ${index === 2 && 'pt-5' } ${index === 0 && 'pr-2' } ${index === 3 && 'pl-2' }`}
+                            >
+                                <span className={`text-xl max-w-[160px] font-medium max-laptop:text-sm max-laptop:max-w-[140px] text-center ${index === 0 && 'max-w-[140px] max-laptop:max-w-[110px]'}`}>{el.name}</span>
+                            </motion.div>
+                        )
+                    })}
+                </motion.div>
+            </Wrapper>
             <AnimateChangeInHeight className={'mb-[86px]'}>
                 <Draggable rootClass={' no-scrollbar'}>
                     <motion.div
@@ -372,7 +376,8 @@ const Services = () => {
                                                     duration: 1
                                                 }}
                                                 key={index}
-                                                className={'flex flex-col max-w-[384px] min-w-[384px] max-phone:min-w-[284px] max-phone:max-w-[284px] min-h-[302px] max-phone:min-h-[195px] py-6 px-8 border border-black rounded-[20px]'}>
+                                                // max-phone:min-h-[195px]
+                                                className={'flex flex-col justify-between max-w-[384px] min-w-[384px] min-h-[380px] max-phone:min-w-[284px] max-phone:max-w-[284px]  py-6 px-8 border border-black rounded-[20px]'}>
                                                 <div className={'flex flex-row justify-between items-center align-middle gap-6'}>
                                                     <span
                                                         className={'text-2xl font-stick font-semibold text-main max-phone:text-1xl  '}>{el.title}</span>

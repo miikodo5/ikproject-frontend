@@ -26,23 +26,23 @@ const PortfolioPage = () => {
     const strategy = [
         {
             title: 'Define Your Brand Vision',
-            text: 'Set clear brand objectives and define your target audience to create a compelling Amazon Store that connects with customers.'
+            text: 'We define your brand vision by setting clear objectives and identifying your target audience to create a compelling Amazon Store that resonates with customers.'
         },
         {
             title: 'Craft Engaging Content Modules',
-            text: 'Create engaging landing pages with interactive features like shoppable visuals, videos, and portfolios to effectively showcase products.'
+            text: 'We craft engaging content modules, creating interactive landing pages with features like shoppable visuals, videos, and portfolios to effectively showcase your products.'
         },
         {
             title: 'Utilize Customizable Features',
-            text: 'Maximize brand awareness and audience engagement on Amazon by utilizing custom text modules and high-definition visuals.'
+            text: 'We utilize customizable features to maximize brand awareness and audience engagement on Amazon by incorporating custom text modules and high-definition visuals.'
         },
         {
             title: 'Optimize for Sales Conversion',
-            text: 'Increase sales by up to 70% with strategic design elements and multimedia content that help guide customers through your product ranges.'
+            text: 'We optimize for sales conversion by implementing strategic design elements and multimedia content that guide customers through your product ranges, leading to potential sales increases of up to 70%.'
         },
         {
             title: 'Analyze and Iterate for Success',
-            text: 'Use store insights to enhance strategy, improve product imagery, utilize video assets, and optimize Sponsored Brand ads for increased sales on all devices.'
+            text: 'We analyze and iterate for success by leveraging store insights to enhance strategy, improve product imagery, utilize video assets, and optimize Sponsored Brand ads for increased sales across all devices.'
         }
     ];
     const portfolios = [

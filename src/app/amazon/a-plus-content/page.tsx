@@ -26,23 +26,23 @@ const PortfolioPage = () => {
     const strategy = [
         {
             title: 'Discovery',
-            text: 'Uncover insights and understand your brand\'s unique selling proposition to create a solid foundation for your A+ content strategy.'
+            text: 'At our company, we uncover insights and understand your brand\'s unique selling proposition to create a solid foundation for our A+ content strategy.'
         },
         {
             title: 'Content Evaluation',
-            text: 'Analyze your current content to identify gaps and opportunities for improvement, ensuring it aligns with Amazon\'s best practices.'
+            text: 'We analyze your current content to identify gaps and opportunities for improvement, ensuring it aligns with Amazon\'s best practices.'
         },
         {
             title: 'Creative Development',
-            text: 'Create engaging text, banners, and photography to visually convey the value of your products and boost conversions.'
+            text: 'We create engaging text, banners, and photography to visually convey the value of your products and boost conversions.'
         },
         {
             title: 'A/B Testing',
-            text: 'Enhance A+ content through rigorous A/B tests for maximum impact on sales and customer engagement.'
+            text: 'We enhance A+ content through rigorous A/B tests for maximum impact on sales and customer engagement.'
         },
         {
             title: 'Implementation & Launch',
-            text: 'Enhance Amazon A+ content with our expert team to boost sales and brand visibility through branding expertise and technical knowledge.'
+            text: 'We enhance Amazon A+ content with our expert team to boost sales and brand visibility through branding expertise and technical knowledge.'
         }
     ];
     const portfolios = [

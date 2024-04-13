@@ -26,23 +26,23 @@ const PortfolioPage = () => {
     const strategy = [
         {
             title: 'Market Research',
-            text: 'Uncover valuable insights to position your product for success.'
+            text: 'We uncover valuable insights to position your product for success.'
         },
         {
             title: 'SEO Strategy',
-            text: 'Optimize your listings to rank higher and attract more customers organically.'
+            text: 'We optimize your listings to rank higher and attract more customers organically.'
         },
         {
             title: 'Content Strategy',
-            text: 'Develop compelling and engaging content that highlights the key features and benefits of your product, persuading potential customers to make a purchase.'
+            text: 'We develop compelling and engaging content that highlights the key features and benefits of your product, persuading potential customers to make a purchase.'
         },
         {
             title: 'Advertising Strategy',
-            text: 'Leverage targeted advertising campaigns to drive sales and boost visibility.'
+            text: 'We leverage targeted advertising campaigns to drive sales and boost visibility.'
         },
         {
             title: 'Implementation & Monitoring',
-            text: 'Execute strategies efficiently while monitoring performance to ensure maximum results.'
+            text: 'We execute strategies efficiently while monitoring performance to ensure maximum results.'
         }
     ];
     const portfolios = [

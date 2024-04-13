@@ -26,23 +26,23 @@ const PortfolioPage = () => {
     const strategy = [
         {
             title: 'Research Phase',
-            text: 'Conduct in-depth market and competitor analysis to identify trends and gaps in the market.'
+            text: 'At our company, we conduct in-depth market and competitor analysis to identify trends and gaps in your market. We utilize a two-year forecast for future planning with confidence.'
         },
         {
             title: 'Keyword Strategy Development',
-            text: 'Generate targeted keywords to optimize search visibility and attract relevant traffic.'
+            text: 'We generate targeted keywords to optimize search visibility and attract relevant traffic for your business.'
         },
         {
             title: 'Content Enhancement',
-            text: 'Enhance product listings and engage consumers with engaging copy, compelling images, and captivating videos.'
+            text: 'Our team enhances product listings and engages consumers with compelling copy, captivating images, and engaging videos to boost your brand\'s visibility.'
         },
         {
             title: 'A+ Content Creation',
-            text: 'Develop up to 7 high-resolution content modules to enhance brand awareness, share your brand\'s story, and improve the customer experience.'
+            text: 'We develop up to 7 high-resolution content modules to enhance brand awareness, share your brand\'s story, and improve customer experience.'
         },
         {
             title: 'Optimization & Analysis',
-            text: 'Implement SEO techniques, monitor performance analytics, and refine strategies for optimal discoverability and sales conversion.'
+            text: 'We implement SEO techniques, monitor performance analytics, and refine strategies for optimal discoverability and sales conversion on your behalf.'
         }
     ];
     const portfolios = [

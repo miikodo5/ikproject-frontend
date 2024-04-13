@@ -86,36 +86,25 @@ const HomeStrategy = () => {
 
 
     return (
-        <div className={'py-20 bg-mainbg'}>
-            <section id='strategy'>
+        <div style={{
+            overflow: "hidden",
+        }} className={'py-20 bg-mainbg'}>
+            <section id='strategy'  className={'relative !overflow-visible'}>
                 <Wrapper>
                     <TitleBlock text={'STRATEGY WORK'} type={1} isWhite={true}/>
-                    <p className={'font-semibold text-xl max-phone:text-sm max-phone:text-justify text-grey-stroke'}>
+                    <p style={{
+                        overflow: "visible"
+                    }} className={'font-semibold text-xl max-phone:text-sm max-phone:text-justify text-grey-stroke'}>
                         Steps we take to help you reach desired results:
                     </p>
                 </Wrapper>
                 <motion.div style={{
                     transition: 'all 0.5s cubic-bezier(0.21, 0.86, 0, -0.09) 0s',
                     perspectiveOrigin: 'center'
-                }} className={'max-phone:block hidden relative mt-4  h-max w-max  max-phone:w-full'}
+                }} className={'max-phone:block hidden relative pt-4 h-max w-max  max-phone:w-full !overflow-visible'}
                 >
-                    <motion.div
-                        animate={{
-                            background: [
-                                useMotionTemplate`radial-gradient(circle, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 55%)`.get(),
-                                useMotionTemplate`radial-gradient(circle, rgba(255,255,255,1) 51%, rgba(255,255,255,0) 55%)`.get(),
-                                useMotionTemplate`radial-gradient(circle, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 55%)`.get(),
-                            ],
-
-                            transition: {
-                                repeat: Infinity,
-                                duration: 10
-                            }
-                        }}
-                        style={{
-                            transformStyle: "preserve-3d",
-                        }}
-                        className={'w-full h-full absolute top-0 blur-3xl rounded-full'}
+                    <div
+                        className={'w-full h-full absolute top-0 blur-3xl rounded-full bg-[radial-gradient(circle,rgba(255,255,255,1)_51%,rgba(255,255,255,0)_55%)]'}
                     />
                     <motion.div
 
@@ -139,13 +128,13 @@ const HomeStrategy = () => {
                                 animate={{
                                     background: [
                                         useMotionTemplate`radial-gradient(circle, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 55%)`.get(),
-                                        useMotionTemplate`radial-gradient(circle, rgba(255,255,255,1) 51%, rgba(255,255,255,0) 55%)`.get(),
+                                        useMotionTemplate`radial-gradient(circle, rgba(255,255,255,1) 61%, rgba(255,255,255,0) 55%)`.get(),
                                         useMotionTemplate`radial-gradient(circle, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 55%)`.get(),
                                     ],
 
                                     transition: {
                                         repeat: Infinity,
-                                        duration: 10
+                                        duration: 4
                                     }
                                 }}
                                 style={{

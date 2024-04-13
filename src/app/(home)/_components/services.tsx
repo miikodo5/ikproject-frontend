@@ -6,16 +6,16 @@ import Services from "@/app/(home)/_components/services/services";
 
 const HomeServices = () => {
     return (
-        <Wrapper>
-            <section id='services' className={'mt-20'}>
+        <section id='services' className={'mt-20'}>
+            <Wrapper>
                 <TitleBlock text={'SERVICES'} type={3}/>
                 <p className={'text-grey font-semibold text-xl max-phone:text-sm max-phone:text-justify text-center '}>
 
                     Unlock your business potential with our comprehensive suite of services designed to drive growth and maximize success
                 </p>
+            </Wrapper>
             <Services/>
-            </section>
-        </Wrapper>
+        </section>
     );
 };
 

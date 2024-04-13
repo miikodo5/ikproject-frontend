@@ -45,7 +45,7 @@ const HomeHero1 = () => {
         <Wrapper>
             <div className={'flex flex-row justify-between mt-4 max-phone:flex-col max-phone:items-center max-phone:gap-4 max-phone:min-h-[905px]'}>
                 {/*left*/}
-                <div className={'flex flex-col max-w-[560px] max-laptop:max-w-[337px] py-[93px] max-laptop:py-[0px]'}>
+                <motion.div initial={{opacity: 0.1}} animate={{opacity:1, transition: { duration: 1}}} className={'flex flex-col max-w-[560px] max-laptop:max-w-[337px] py-[93px] max-laptop:py-[0px]'}>
                     <h1 className={'font-stick font-semibold text-4xl max-laptop:text-3xl max-phone:text-2xl max-phone:text-center'}>
                         OPTIMIZE YOUR PRODUCT’S
                     </h1>
@@ -53,8 +53,8 @@ const HomeHero1 = () => {
                     <p className={'text-xl max-laptop:text-lg max-phone:text-sm font-normal max-phone:text-justify'}>
                         We help companies, brands, and products to make high returns on digital marketing investments consistently.
                     </p>
-                    {width > SCREENS.PHONE &&
-                        <div className={' flex flex-col max-laptop:mt-4 max-laptop:flex-col-reverse max-phone:items-center'}>
+                    {width > SCREENS.PHONE && width ?
+                        <motion.div initial={{opacity: 0}} animate={{opacity:1, transition: { duration: 1, delay: .5}}} className={' flex flex-col max-laptop:mt-4 max-laptop:flex-col-reverse max-phone:items-center'}>
                             <div className={'mt-8 mb-12'}>
                                 <AppButton text={'Contact Us'}/>
                             </div>
@@ -66,11 +66,11 @@ const HomeHero1 = () => {
                                     </div>
                                 ))}
                             </div>
-                        </div>
+                        </motion.div> : <></>
                     }
-                </div>
+                </motion.div>
                 {/*right*/}
-                <div className={'max-laptop:w-full flex max-laptop:justify-center'}>
+                <motion.div initial={{opacity: 0}} animate={{opacity:1, transition: { duration: 1, delay: 1}}} className={'max-laptop:w-full flex max-laptop:justify-center'}>
                     <div className={'flex flex-row gap-[50px] max-laptop:gap-4'}>
                         <div className={'flex flex-col gap-[42px] max-phone:gap-[18px] pt-11 justify-center items-center align-middle'}>
                             <HeroPhoto photoIndex={photoIndex} photoNumber={1}/>
@@ -81,8 +81,8 @@ const HomeHero1 = () => {
                             <HeroPhoto photoIndex={photoIndex} photoNumber={4}/>
                         </div>
                     </div>
-                </div>
-                {width <= SCREENS.PHONE &&
+                </motion.div>
+                {width <= SCREENS.PHONE && width ?
                     <div className={'flex flex-col max-laptop:flex-col-reverse max-phone:items-center'}>
                         <div className={'mt-8 mb-12'}>
                             <AppButton text={'Contact Us'}/>
@@ -95,7 +95,7 @@ const HomeHero1 = () => {
                                 </div>
                             ))}
                         </div>
-                    </div>
+                    </div>  : <></>
                 }
             </div>
         </Wrapper>

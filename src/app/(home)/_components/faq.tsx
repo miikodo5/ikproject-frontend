@@ -38,10 +38,10 @@ const HomeFaq = () => {
 
     return (
         <Wrapper>
-            <div className={'my-20'}>
+            <div className={'mt-20'}>
                 <section id={'faq'} className={'relative'}>
                     <TitleBlock text={'faq'} type={3}/>
-                    <div className={'relative mt-12 flex flex-row max-phone:flex-col place-items-start w-full gap-8 z-30'}>
+                    <div className={'relative max-h-[448px] max-laptop:min-h-[660px] max-phone:min-h-[830px] mt-12 flex flex-row max-phone:flex-col place-items-start w-full gap-8 z-30'}>
                         <div className={'flex flex-col gap-8 w-full basis-1/2'}>
                             {FAQs.map((el, index) => {
                                     const isOpen = index === open;
