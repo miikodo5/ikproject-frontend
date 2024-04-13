@@ -341,7 +341,8 @@ const Services = () => {
                                             duration: 0
                                         },
                                         color:'white',
-                                        zIndex: 9999
+                                        zIndex: 9999,
+                                        padding: 0
                                     },
                                     'hide':{
                                         backgroundColor: 'rgb(151 1 1 / 0)',
@@ -349,11 +350,20 @@ const Services = () => {
                                         transition: {
                                             type: 'spring',
                                             duration: 0
-                                        }
+                                        },
+                                        // ...paddingWhileInView
                                     }
                                 }}
+
                                 initial={tempInitial}
                                 whileInView={'pos'}
+                                // transition={{
+                                //     padding: {duration: .5},
+                                //     paddingLeft: {duration: .5},
+                                //     paddingTop: {duration: .5},
+                                //     paddingRight: {duration: .5},
+                                //     paddingBottom: {duration: .5},
+                                // }}
                                 whileHover={{
                                     scale: 1.05,
                                 }}
