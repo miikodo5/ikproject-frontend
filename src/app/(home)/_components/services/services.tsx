@@ -348,9 +348,9 @@ const Services = () => {
                                 viewport={{once: true}}
                                 className={`select-none absolute flex items-center justify-center rounded-full border-[5px] max-laptop:border-[3px] border-grey hover:scale-110  
                                     ${width <= SCREENS.LAPTOP ? 'h-[160px] min-w-[160px] max-w-[160px]' : 'h-[280px] min-w-[280px] max-w-[280px]'} ${el.number==='04' ? 'cursor-default' : 'cursor-pointer' } 
-                                    ${index === 1 && 'pb-5' } ${index === 2 && 'pt-5' } ${index === 0 && 'pr-2' } ${index === 3 && 'pl-2' }`}
+                                    ${index === 1 && 'pb-5' } ${index === 2 && 'pt-5' } ${index === 0 && 'pr-5' } ${index === 3 && 'pl-5' }`}
                             >
-                                <span className={`text-xl max-w-[160px] font-medium max-laptop:text-sm max-laptop:max-w-[140px] text-center ${index === 0 && 'max-w-[140px] max-laptop:max-w-[110px]'}`}>{el.name}</span>
+                                <span className={`text-xl max-w-[160px] font-medium max-laptop:text-sm max-laptop:max-w-[140px] text-center ${index === 0 && 'max-w-[140px] max-laptop:max-w-[90px]'}`}>{el.name}</span>
                             </motion.div>
                         )
                     })}

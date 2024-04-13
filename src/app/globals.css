@@ -21,3 +21,11 @@
         scrollbar-width: none;  /* Firefox */
     }
 }
+
+.intersection {
+    mask:
+            radial-gradient(174px at 50%               45%,transparent 99%,#fff 100%);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+
+}
