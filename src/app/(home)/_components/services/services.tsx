@@ -310,12 +310,29 @@ const Services = () => {
                             tempInitial.y = tempCircleWidth + tempSpaceBetween;
                             tempInitial.left = (index - 2) * (tempCircleWidth + tempSpaceBetween)
                         }
-
+                        //${index === 1 && 'pb-5' } ${index === 2 && 'pt-5' } ${index === 0 && 'pr-5' } ${index === 3 && 'pl-5' }
+                        let paddingStr = '';
+                        let paddingValue  = '32px';
+                        if(index === 1){
+                            paddingStr = 'paddingBottom';
+                        }
+                        if(index === 2 ){
+                            paddingStr = 'paddingTop';
+                        }
+                        if(index === 0 ){
+                            paddingStr = 'paddingRight';
+                        }
+                        if(index === 3 ){
+                            paddingStr = 'paddingLeft';
+                        }
+                        const paddingWhileInView = {
+                            [paddingStr]: paddingValue
+                        }
                         return (
                             <motion.div
                                 key={index}
                                 variants={{
-                                    'pos': {...el.whileInView, transition: transition},
+                                    'pos': {...el.whileInView, transition: transition,...paddingWhileInView},
                                     'showed':{
                                         backgroundColor: 'rgb(151 1 1 / 1)',
                                         borderColor: 'rgb(151 1 1 / 1)',
@@ -347,8 +364,7 @@ const Services = () => {
                                 }}
                                 viewport={{once: true}}
                                 className={`select-none absolute flex items-center justify-center rounded-full border-[5px] max-laptop:border-[3px] border-grey hover:scale-110  
-                                    ${width <= SCREENS.LAPTOP ? 'h-[160px] min-w-[160px] max-w-[160px]' : 'h-[280px] min-w-[280px] max-w-[280px]'} ${el.number==='04' ? 'cursor-default' : 'cursor-pointer' } 
-                                    ${index === 1 && 'pb-5' } ${index === 2 && 'pt-5' } ${index === 0 && 'pr-5' } ${index === 3 && 'pl-5' }`}
+                                    ${width <= SCREENS.LAPTOP ? 'h-[160px] min-w-[160px] max-w-[160px]' : 'h-[280px] min-w-[280px] max-w-[280px]'} ${el.number==='04' ? 'cursor-default' : 'cursor-pointer' } `}
                             >
                                 <span className={`text-xl max-w-[160px] font-medium max-laptop:text-sm max-laptop:max-w-[140px] text-center ${index === 0 && 'max-w-[140px] max-laptop:max-w-[90px]'}`}>{el.name}</span>
                             </motion.div>
