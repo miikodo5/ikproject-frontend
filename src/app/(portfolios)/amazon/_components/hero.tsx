@@ -10,7 +10,7 @@ const AmazonHero = ({header, paragraph, stats, img1, img2}:{header: string, para
             {/*h-[560px] max-laptop:h-[768px]*/}
             <div className={'w-full h-max max-phone:h-max'}>
                 <div
-                    className={'absolute -z-50 top-0 right-0 bg-mainbg w-[603px] h-[calc(100%+46px)] max-h-[790px] max-laptop:hidden'}/>
+                    className={'absolute -z-50 top-0 right-0 bg-mainbg w-[530px] h-[calc(100%+46px)] max-h-[790px] max-laptop:hidden'}/>
                 <div
                     className={'absolute -z-50 left-[156px] top-[422px] w-[230px] h-[41px] bg-mainbg/25 max-laptop:hidden'}/>
                 <div
@@ -38,34 +38,37 @@ const AmazonHero = ({header, paragraph, stats, img1, img2}:{header: string, para
                 </div>
 
                 <Wrapper>
-                    <div
-                        className={'max-w-[488px] mt-[90px] flex flex-col gap-6 max-laptop:max-w-full max-laptop:items-center max-laptop:mt-[49px] max-phone:mt-[40px]'}>
-                        <div className={'flex flex-col gap-2 text-center'}>
-                            <h1 className={'text-h1 font-semibold max-phone:text-1xl max-phone:text-left'}>{header}</h1>
-                            <p className={'text-xl opacity-50 max-phone:text-lg max-phone:text-left'}>
-                                {paragraph}
-                            </p>
+                    <div  className={'h-max flex flex-col justify-between gap-16'}>
+
+                        <div
+                            className={'max-w-[488px] mt-[90px] flex flex-col gap-6 max-laptop:max-w-full max-laptop:items-center max-laptop:mt-[49px] max-phone:mt-[40px]'}>
+                            <div className={'flex flex-col gap-2 text-center'}>
+                                <h1 className={'text-h1 font-semibold max-phone:text-1xl max-phone:text-left'}>{header}</h1>
+                                <p className={'text-xl opacity-50 max-phone:text-lg max-phone:text-left'}>
+                                    {paragraph}
+                                </p>
+                            </div>
+                            <div className={'hidden mt-8 flex-row gap-3 flex-wrap max-laptop:flex max-phone:min-w-[312px] max-phone:gap-4 max-phone:justify-between'}>
+                                {stats.map((el, index) => (
+                                    <div key={index}
+                                         className={'flex flex-col gap-2 w-[132px] max-laptop:max-w-[164px] max-laptop:w-[164px] max-phone:w-[148px]'}>
+                                        <span
+                                            className={'text-1xl text-black font-semibold text-center max-laptop:text-h1 max-phone:text-xl'}>{el.number}</span>
+                                        <span
+                                            className={'text-sm font-normal text-grey text-center max-laptop:text-base max-phone:text-sm'}>{el.text}</span>
+                                    </div>
+                                ))}
+                            </div>
+                            <AppButton text={'Contact Us'}/>
                         </div>
-                        <div className={'hidden mt-8 flex-row gap-3 flex-wrap max-laptop:flex max-phone:min-w-[312px] max-phone:gap-4 max-phone:justify-between'}>
+                        <div className={'ml-[12px] flex flex-row gap-8 max-laptop:hidden'}>
                             {stats.map((el, index) => (
-                                <div key={index}
-                                     className={'flex flex-col gap-2 w-[132px] max-laptop:max-w-[164px] max-laptop:w-[164px] max-phone:w-[148px]'}>
-                                    <span
-                                        className={'text-1xl text-black font-semibold text-center max-laptop:text-h1 max-phone:text-xl'}>{el.number}</span>
-                                    <span
-                                        className={'text-sm font-normal text-grey text-center max-laptop:text-base max-phone:text-sm'}>{el.text}</span>
+                                <div key={index} className={'flex flex-col gap-2 w-[132px]'}>
+                                    <span className={'text-1xl text-black font-semibold text-center'}>{el.number}</span>
+                                    <span className={'text-sm font-normal text-grey text-center'}>{el.text}</span>
                                 </div>
                             ))}
                         </div>
-                        <AppButton text={'Contact Us'}/>
-                    </div>
-                    <div className={'ml-[94px] mt-10 flex flex-row gap-8 max-laptop:hidden'}>
-                        {stats.map((el, index) => (
-                            <div key={index} className={'flex flex-col gap-2 w-[132px]'}>
-                                <span className={'text-1xl text-black font-semibold text-center'}>{el.number}</span>
-                                <span className={'text-sm font-normal text-grey text-center'}>{el.text}</span>
-                            </div>
-                        ))}
                     </div>
                 </Wrapper>
             </div>

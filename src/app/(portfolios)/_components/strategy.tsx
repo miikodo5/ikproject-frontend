@@ -104,13 +104,13 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                                 <div key={index} className={'flex flex-col gap-[2px] items-center px-4 text-center max-laptop:text-left'}>
                                     <motion.span
                                         initial={{
-                                            width: 0
+                                            opacity: 0,
                                         }}
                                         viewport={{
                                             once: true,
                                         }}
                                         animate={{
-                                            width: 'auto',
+                                            opacity: 1,
                                             transition: {
                                                 delay: index * duration
                                             }
@@ -118,13 +118,13 @@ const PortfolioStrategy = ({strategy}:{strategy: {title: string, text: string}[]
                                         className={'max-w-[208px] text-sm text-grey font-semibold text-clip overflow-hidden'}>{el.title}</motion.span>
                                     <motion.p
                                         initial={{
-                                            height: 0
+                                            opacity: 0,
                                         }}
                                         viewport={{
                                             once: true,
                                         }}
                                         animate={{
-                                            height: 'auto',
+                                            opacity: 1,
                                             transition: {
                                                 delay: index * duration
                                             }

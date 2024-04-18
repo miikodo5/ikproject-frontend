@@ -18,7 +18,7 @@ const Portfolio2Hero = ({header, paragraph}: {header: string, paragraph: string}
                                className={'absolute top-[30px] right-[118px] max-laptop:right-[180px] max-phone:right-[180px]  max-w-[458px] max-h-[209px] object-cover max-laptop:max-w-[343px] max-laptop:max-h-[157px] max-phone:max-w-[125px] max-phone:max-h-[85px]'}/>
                         <Image src={heroImg3} alt={'heroImg'}
                                priority
-                               className={'absolute top-[425px] right-[444px] max-phone:top-[305px] max-phone:right-[180px] max-w-[326px] max-h-[192px] object-cover max-laptop:max-w-[245px] max-laptop:max-h-[144px] max-phone:max-w-[148px] max-phone:max-h-[82px]'}/>
+                               className={'absolute top-[425px] right-[26%] max-phone:top-[305px] max-phone:right-[180px] max-w-[326px] max-h-[192px] object-cover max-laptop:max-w-[245px] max-laptop:max-h-[144px] max-phone:max-w-[148px] max-phone:max-h-[82px]'}/>
                         <Image src={heroImg2} alt={'heroImg'}
                                priority
                                className={'absolute top-[148px]  max-phone:top-[85px] right-0 max-laptop:right-[100px] max-phone:right-[30px]  max-w-[464px] max-h-[474px] object-cover max-laptop:max-w-[381px] max-laptop:max-h-[476px]  max-phone:max-w-[206px] max-phone:max-h-[257px]'}/>

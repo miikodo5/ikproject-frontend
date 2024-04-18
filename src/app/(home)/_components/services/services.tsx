@@ -346,7 +346,7 @@ const Services = () => {
                                     },
                                     'hide':{
                                         backgroundColor: 'rgb(151 1 1 / 0)',
-                                        borderColor: '#455065',
+                                        borderColor: 'black',
                                         transition: {
                                             type: 'spring',
                                             duration: 0
@@ -373,10 +373,10 @@ const Services = () => {
                                     handleElClick(index);
                                 }}
                                 viewport={{once: true}}
-                                className={`select-none absolute flex items-center justify-center rounded-full border-[5px] max-laptop:border-[3px] border-grey hover:scale-110  
+                                className={`select-none absolute flex items-center justify-center rounded-full border-[8px] max-laptop:border-[6px] border-black hover:scale-110  
                                     ${width <= SCREENS.LAPTOP ? 'h-[160px] min-w-[160px] max-w-[160px]' : 'h-[280px] min-w-[280px] max-w-[280px]'} ${el.number==='04' ? 'cursor-default' : 'cursor-pointer' } `}
                             >
-                                <span className={`text-xl max-w-[160px] font-medium max-laptop:text-sm max-laptop:max-w-[140px] text-center ${index === 0 && 'max-w-[140px] max-laptop:max-w-[90px]'}`}>{el.name}</span>
+                                <span className={`text-xl max-w-[160px] font-[900] max-laptop:text-sm max-laptop:max-w-[140px] text-center ${index === 0 && 'max-w-[140px] max-laptop:max-w-[90px]'}`}>{el.name}</span>
                             </motion.div>
                         )
                     })}
