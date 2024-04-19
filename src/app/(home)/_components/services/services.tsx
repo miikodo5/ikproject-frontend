@@ -292,7 +292,7 @@ const Services = () => {
                     style={{
                         height: width < SCREENS.LAPTOP ? 400 : 640
                     }}
-                    className={`my-7 pt-2 relative overflow-hidden flex-wrap flex flex-row justify-between h-[640px]`}>
+                    className={`my-7 mx-auto pt-2 relative flex-wrap flex flex-row justify-between h-[640px] overflow-visible`}>
 
                     {services.map((el, index) => {
                         const tempInitial = {
@@ -300,7 +300,7 @@ const Services = () => {
                             y: 0
                         };
                         const tempCircleWidth = width <= SCREENS.LAPTOP ? 160 : 280;
-                        const tempSpaceBetween = (width <= SCREENS.LAPTOP? (width - 2*circleWidth)/6 : (width - 4*circleWidth)/13)
+                        const tempSpaceBetween = (width <= SCREENS.LAPTOP? (width - 2*circleWidth)/6 : (width - 6*circleWidth)/13)
 
                         tempInitial.left = index * (tempCircleWidth + tempSpaceBetween)
 
@@ -355,7 +355,7 @@ const Services = () => {
                                     }
                                 }}
 
-                                initial={tempInitial}
+                                initial={width <= SCREENS.LAPTOP ? 'pos' : tempInitial}
                                 whileInView={'pos'}
                                 // transition={{
                                 //     padding: {duration: .5},
