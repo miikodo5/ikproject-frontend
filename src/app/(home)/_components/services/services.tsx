@@ -15,6 +15,7 @@ const Services = () => {
     const {width, height} = useWindowDimensions();
     const [circleWidth, setCircleWidth] = useState<number>(width <= SCREENS.LAPTOP ? 160 : 280);
 
+    const [showToClick, setShowToClick] = useState<boolean>(true);
 
     const [services, setServices] = useState<Array<{showed: boolean, name: string, number: string, initial: {left: string}, whileInView: {y: number, left: string}, services: {link: string, number: string, title: string, text: string}[]}>>([]);
 
@@ -302,6 +303,13 @@ const Services = () => {
             setServices(SERVICES);
         }
         setIsLoading(false);
+
+        // const clickTimeout = setTimeout(()=>{
+        //     setShowToClick(false);
+        //     console.log('123');
+        // }, 5000);
+
+        // return clearTimeout(clickTimeout);
     },[]);
 
     const transition = {
@@ -323,7 +331,11 @@ const Services = () => {
                         height: width < SCREENS.LAPTOP ? 400 : 640
                     }}
                     className={`my-7 mx-auto pt-2 relative flex-wrap flex flex-row justify-between h-[640px] overflow-visible`}>
-
+                    {/*{showToClick ?*/}
+                    {/*    <div className={'absolute top-0 left-0 w-full h-full bg-black/10 '}>*/}
+                    {/*        */}
+                    {/*    </div>*/}
+                    {/*    : <></>}*/}
                     {services.map((el, index) => {
                         const tempInitial = {
                             left: 0,
@@ -419,6 +431,7 @@ const Services = () => {
                             duration: 2
                         }}
                         className={'flex flex-row gap-8 touch-auto overflow-x-scroll overflow-y-hidden no-scrollbar relative '}>
+
                         {services.map((el, index) => {
 
                             if (el.showed) return (

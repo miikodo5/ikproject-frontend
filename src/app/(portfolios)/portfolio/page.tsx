@@ -10,7 +10,7 @@ const PortfolioPage = () => {
     return (
         <div>
             <PortfolioHeader color={'white'}/>
-            <PortfolioHero/>
+            {/*<PortfolioHero/>*/}
             <HomeContact/>
             <HomeFooter/>
             

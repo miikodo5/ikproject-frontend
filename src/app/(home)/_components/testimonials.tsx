@@ -94,10 +94,11 @@ const HomeTestimonials = () => {
                 //     enabled: true,
                 // }}
                 modules={[Autoplay]}
-                className={' !overflow-y-visible !overflow-x-clip mt-12'}
+                //drop-shadow-[0_15px_180px_rgb(0_0_0_/_0.15)]
+                className={' !overflow-y-visible !overflow-x-clip mt-12 '}
             >
                 {SLIDES.map((el, index)=>(
-                    <SwiperSlide key={index} className={'!w-max !relative !z-40'}>
+                    <SwiperSlide key={index} className={'!w-max !relative !z-40 '}>
                         {({isActive}) => (
                             // drop-shadow-[0_15px_180px_rgb(0_0_0_/_0.15)]
                             <div className={`relative transition-all duration-500 ${!isActive && 'scale-[.8]'} max-phone:flex max-phone:flex-col max-phone:w-[290px] max-phone:rounded-[20px] max-phone:bg-white`}>
