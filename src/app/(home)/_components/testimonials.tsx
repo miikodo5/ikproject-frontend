@@ -78,7 +78,7 @@ const HomeTestimonials = () => {
             <Swiper
                 slidesPerView={'auto'}
                 centeredSlides={true}
-                loopAddBlankSlides={true}
+                // loopAddBlankSlides={true}
                 spaceBetween={width < SCREENS.LAPTOP ? width < SCREENS.PHONE ? 10 : -45 : -90}
                 loop={true}
                 autoplay={{
@@ -93,13 +93,14 @@ const HomeTestimonials = () => {
                 // mousewheel={{
                 //     enabled: true,
                 // }}
-                modules={[Autoplay, Keyboard]}
+                modules={[Autoplay]}
                 className={' !overflow-y-visible !overflow-x-clip mt-12'}
             >
                 {SLIDES.map((el, index)=>(
                     <SwiperSlide key={index} className={'!w-max !relative !z-40'}>
                         {({isActive}) => (
-                            <div className={`relative drop-shadow-[0_15px_180px_rgb(0_0_0_/_0.15)] transition-all duration-500 ${!isActive && 'scale-[.8]'} max-phone:flex max-phone:flex-col max-phone:w-[290px] max-phone:rounded-[20px] max-phone:bg-white`}>
+                            // drop-shadow-[0_15px_180px_rgb(0_0_0_/_0.15)]
+                            <div className={`relative transition-all duration-500 ${!isActive && 'scale-[.8]'} max-phone:flex max-phone:flex-col max-phone:w-[290px] max-phone:rounded-[20px] max-phone:bg-white`}>
                                 <Image src={quotes} alt={'quotes'} className={'absolute top-[25px] left-[41.5px] opacity-[.12]'}/>
                                 <div
                                     className={` flex py-12  px-16  flex-col justify-between  w-[1295px]  h-[500px] rounded-[20px] bg-white  max-laptop:w-[696px] max-phone:h-max max-phone:py-8 max-phone:px-6  max-phone:w-[290px] `}
@@ -112,7 +113,7 @@ const HomeTestimonials = () => {
                                     </span>
                                 </div>
                                 <div className={'absolute max-phone:static right-16 max-laptop:right-8 top-12 max-w-[440px] max-h-[662px] max-laptop:max-w-[316px] max-laptop:max-h-[479px]'}>
-                                    <Image src={el.src} alt={`slide-img-${index}`} className={'rounded-[20px] max-phone:rounded-none max-phone:rounded-br-[20px] max-phone:rounded-bl-[20px]   max-phone:max-h-[340px] object-cover'}/>
+                                    <Image src={el.src} priority alt={`slide-img-${index}`} className={'rounded-[20px] max-phone:rounded-none max-phone:rounded-br-[20px] max-phone:rounded-bl-[20px]   max-phone:max-h-[340px] object-cover'}/>
                                 </div>
                             </div>
                         )}

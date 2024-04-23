@@ -4,32 +4,24 @@ import Wrapper from "@/app/_components/wrapper";
 import heroImg from '@images/hero-1.png';
 import Image from "next/image";
 
-const PortfolioHero = () => {
+const PortfolioHero = ({header, paragraph, stats}:{header: string, paragraph: string, stats: {number:string,text: string}[]}) => {
     return (
         <>
             <div className={'min-h-[690px] w-full'}>
-                <Image src={heroImg} priority alt={'heroImg'} className={'w-full h-[768px] object-cover absolute top-0 -z-50 bg-black max-phone:h-[805px]'}/>
+                <Image src={heroImg} priority alt={'heroImg'} className={'w-full h-[768px] object-cover absolute top-0 -z-50 bg-black max-phone:h-[865px]'}/>
 
                 <Wrapper>
-                    <div className={'w-full flex flex-col items-center gap-6 pt-[137px] max-laptop:pt-[71px] max-phone:pt-[47px]'}>
+                    <div className={'w-full flex flex-col items-center gap-6 pt-[20px] max-laptop:pt-[1px] max-phone:pt-[0px]'}>
                         <div>
-                            <h1 className={'text-4xl text-white font-stick font-semibold max-phone:text-3xl max-laptop:text-center'}>
-                                LOREM IPSUM LOREM
+                            <h1 className={'text-4xl text-center text-white font-stick font-semibold max-laptop:text-3xl max-phone:text-3xl max-laptop:text-center'}>
+                                {header}
                             </h1>
                             <p className={'text-base text-white/[0.55] text-center font-medium max-w-[755px] max-phone:text-xs'}>
-                                Gorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit
-                                interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per
-                                conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum
-                                lobortis.
+                                {paragraph}
                             </p>
                         </div>
                         <div className={'flex flex-row justify-center flex-wrap gap-8 max-phone:min-w-[312px] max-phone:gap-4'}>
-                            {[
-                                {number: '321', text: 'Projects Completed'},
-                                {number: '25', text: 'Awards'},
-                                {number: '31', text: `Experts`},
-                                {number: '15', text: `Years Experience`}
-                            ].map((el, index) => (
+                            {stats.map((el, index) => (
                                 <div key={index} className={'flex flex-col gap-2 w-[132px] max-phone:w-[148px]'}>
                                     <span className={'text-1xl text-white/70 font-semibold text-center'}>{el.number}</span>
                                     <span className={'text-sm font-normal text-white text-center '}>{el.text}</span>

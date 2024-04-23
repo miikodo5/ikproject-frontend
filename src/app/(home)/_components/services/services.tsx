@@ -252,6 +252,18 @@ const Services = () => {
                             number:'03',
                             title: 'E-Commerce',
                             text:'With our E-Commerce services, powered by Shopify and WordPress expertise, we craft revenue-focused solutions for B2B and consumer brands.'
+                        },
+                        {
+                            link: 'development/ui-ux-design',
+                            number:'04',
+                            title: 'UI & UX Design',
+                            text:'Drive user engagement, elevate customer satisfaction, and increase revenue with our UX design and development services.'
+                        },
+                        {
+                            link: 'development/integration',
+                            number:'05',
+                            title: 'Integration of sites and programs',
+                            text:'Automating tasks across Discord, Telegram, web-scraping, parsing, and browser processes, saving you time and resources.'
                         }
                     ]
                 },
@@ -266,7 +278,25 @@ const Services = () => {
                         y: tempCircleWidth / 2,
                         left: `calc(50%)`
                     },
-                    services: []
+                    services: [
+                        {
+                            link: 'tqm/tqm',
+                            number:'01',
+                            title: 'Total Quality Management',
+                            text:'TQM is considered a customer-focused process that focuses on consistently improving business operations management.'
+                        },
+                        {
+                            link: 'tqm/lean-principles',
+                            number:'02',
+                            title: 'Lean principles',
+                            text:'Lean principles are designed specifically for agile projects. The main principle of lean projects is cost minimization.'
+                        },
+                        {
+                            link: 'tqm/kaizen-planning',
+                            number:'03',
+                            title: 'Kaizen planning',
+                            text:'A practice that relies on continuous improvement of the processes around you.'
+                        },]
                 },
             ]
             setServices(SERVICES);
