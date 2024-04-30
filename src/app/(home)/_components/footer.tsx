@@ -326,7 +326,7 @@ const HomeFooter = () => {
                                 <span className={'text-sm font-bold'}>{el.name}</span>
                                 <div className={'flex flex-col gap-3'}>
                                     {el.services.map((el, index)=>(
-                                        <Link href={el.link} key={el.title} className={'text-xxs font-normal'}>{el.title.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();})}</Link>
+                                        <Link href={'/'+el.link} replace={true} key={el.title} className={'text-xxs font-normal'}>{el.title.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();})}</Link>
                                     ))}
                                 </div>
                             </div>

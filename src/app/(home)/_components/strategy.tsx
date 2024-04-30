@@ -132,6 +132,7 @@ const HomeStrategy = () => {
                                         useMotionTemplate`-webkit-radial-gradient(circle, rgba(255,255,255,1) 1%, rgba(255,255,255,0) 55%)`.get(),
                                     ],
 
+
                                     transition: {
                                         repeat: Infinity,
                                         duration: 4
