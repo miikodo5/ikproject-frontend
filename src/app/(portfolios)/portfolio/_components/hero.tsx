@@ -7,7 +7,7 @@ import Image from "next/image";
 const PortfolioHero = ({header, paragraph, stats}:{header: string, paragraph: string, stats: {number:string,text: string}[]}) => {
     return (
         <>
-            <div className={'min-h-[690px] w-full'}>
+            <div className={'min-h-[690px] z-[60] w-full'}>
                 <Image src={heroImg} priority alt={'heroImg'} className={'w-full h-[768px] object-cover absolute top-0 -z-50 bg-black max-phone:h-[865px]'}/>
 
                 <Wrapper>

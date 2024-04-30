@@ -117,19 +117,19 @@ const HomeStrategy = () => {
                 </motion.div>
                 <Wrapper>
                     <AnimateChangeInHeight
-                        className={'mt-24 max-phone:mt-2 w-full relative !overflow-y-visible !overflow-x-clip min-h-[700px]'}>
+                        className={'mt-24 max-phone:mt-2 w-full relative !overflow-visible min-h-[700px]'}>
                         <motion.div style={{
                             transition: 'all 0.5s cubic-bezier(0.21, 0.86, 0, -0.09) 0s',
                             perspectiveOrigin: 'center'
                         }}
-                                    className={'max-phone:hidden relative mt-4 left-1/2 ml-[-250px] max-phone:ml-[-208px] h-max w-max max-phone:w-full '}
+                                    className={'max-phone:hidden !overflow-visible relative mt-4 left-1/2 ml-[-250px] max-phone:ml-[-208px] h-max w-max max-phone:w-full '}
                         >
                             <motion.div
                                 animate={{
                                     background: [
-                                        useMotionTemplate`radial-gradient(circle, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 55%)`.get(),
-                                        useMotionTemplate`radial-gradient(circle, rgba(255,255,255,1) 61%, rgba(255,255,255,0) 55%)`.get(),
-                                        useMotionTemplate`radial-gradient(circle, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 55%)`.get(),
+                                        useMotionTemplate`-webkit-radial-gradient(circle, rgba(255,255,255,1) 1%, rgba(255,255,255,0) 55%)`.get(),
+                                        useMotionTemplate`-webkit-radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(255,255,255,0) 55%)`.get(),
+                                        useMotionTemplate`-webkit-radial-gradient(circle, rgba(255,255,255,1) 1%, rgba(255,255,255,0) 55%)`.get(),
                                     ],
 
                                     transition: {
@@ -137,11 +137,7 @@ const HomeStrategy = () => {
                                         duration: 4
                                     }
                                 }}
-                                style={{
-                                    transform: "translateZ(50px)",
-                                    transformStyle: "preserve-3d",
-                                }}
-                                className={'max-phone:ml-[-40px] w-full h-full absolute top-0 blur-3xl rounded-full'}
+                                className={'max-phone:ml-[-40px]  w-[160%] h-[160%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute top-0 blur-3xl rounded-full'}
                             />
                             <motion.div
 

@@ -10,7 +10,7 @@ import heroImg3 from '@images/hero-4-3.png';
 const Portfolio2Hero = ({header, paragraph}: {header: string, paragraph: string}) => {
     return (
         <>
-            <div className={'w-full h-[705px] max-laptop:flex flex-col-reverse max-laptop:h-max'}>
+            <div className={'w-full z-[60] h-[705px] max-laptop:flex flex-col-reverse max-laptop:h-max'}>
                 <Wrapper>
                     <div className={'w-full relative max-laptop:h-[564px] max-phone:h-[420px] max-laptop:-mt-[60px]'}>
                         <Image src={heroImg1} alt={'heroImg'}
@@ -18,7 +18,7 @@ const Portfolio2Hero = ({header, paragraph}: {header: string, paragraph: string}
                                className={'absolute top-[30px] right-[118px] max-laptop:right-[180px] max-phone:right-[180px]  max-w-[458px] max-h-[209px] object-cover max-laptop:max-w-[343px] max-laptop:max-h-[157px] max-phone:max-w-[125px] max-phone:max-h-[85px]'}/>
                         <Image src={heroImg3} alt={'heroImg'}
                                priority
-                               className={'absolute top-[425px] right-[26%] max-phone:top-[305px] max-phone:right-[180px] max-w-[326px] max-h-[192px] object-cover max-laptop:max-w-[245px] max-laptop:max-h-[144px] max-phone:max-w-[148px] max-phone:max-h-[82px]'}/>
+                               className={'absolute top-[275px] right-[26%] max-laptop:right-[40%] max-phone:top-[305px] max-phone:right-[180px] max-w-[326px] max-h-[192px] object-cover max-laptop:max-w-[245px] max-laptop:max-h-[144px] max-phone:max-w-[148px] max-phone:max-h-[82px]'}/>
                         <Image src={heroImg2} alt={'heroImg'}
                                priority
                                className={'absolute top-[148px]  max-phone:top-[85px] right-0 max-laptop:right-[100px] max-phone:right-[30px]  max-w-[464px] max-h-[474px] object-cover max-laptop:max-w-[381px] max-laptop:max-h-[476px]  max-phone:max-w-[206px] max-phone:max-h-[257px]'}/>
@@ -26,12 +26,12 @@ const Portfolio2Hero = ({header, paragraph}: {header: string, paragraph: string}
                 </Wrapper>
                     <div style={{
                         background: 'radial-gradient(circle, rgba(151,1,1,1) -40%, rgba(151,1,1,0) 68%)'
-                    }} className={'-z-30 absolute right-0 mr-[20px] top-[300px] w-[480px] h-[480px] blur-[100px] overflow-hidden'}/>
+                    }} className={'-z-30 absolute right-0 mr-[20px] top-[300px] w-[480px] h-[480px] blur-[100px] overflow-visible'}/>
                     <div style={{
                         background: 'radial-gradient(circle, rgba(151,1,1,1) -40%, rgba(151,1,1,0) 68%)'
-                    }} className={'absolute -ml-[254px] top-0 w-[480px] h-[480px] blur-[100px] overflow-hidden'}/>
+                    }} className={'absolute -ml-[254px] top-0 w-[480px] h-[480px] blur-[100px] overflow-visible'}/>
                 <Wrapper>
-                    <div className={'max-w-[488px] pt-[66px] flex flex-col gap-6 max-laptop:max-w-full max-laptop:pt-[48px]'}>
+                    <div className={'max-w-[488px] pt-[40px] flex flex-col gap-6 max-laptop:max-w-full max-laptop:pt-[48px]'}>
                         <div className={'flex flex-col gap-2'}>
                             <h1 className={'text-h1 font-stick font-semibold'}>{header}</h1>
                             <p className={'text-base opacity-50 max-laptop:text-justify'}>
@@ -42,11 +42,11 @@ const Portfolio2Hero = ({header, paragraph}: {header: string, paragraph: string}
                             <AppButton text={'Contact Us'}/>
                         </div>
                     </div>
-                    {/*<div*/}
-                    {/*    className={'relative z-40 pt-5 justify-self-center -mt-[78px] flex flex-col gap-[13px] items-center justify-center'}>*/}
-                    {/*    <div className={'h-[78px] w-[2px] bg-white animate-bounce'}/>*/}
-                    {/*    <span className={'text-sm text-white'}>Scroll for more</span>*/}
-                    {/*</div>*/}
+                    <div
+                        className={'relative z-40 justify-self-center -mt-[108px] max-laptop:hidden flex flex-col gap-[13px] items-center justify-center'}>
+                        <div className={'h-[78px] w-[2px] bg-black animate-bounce'}/>
+                        <span className={'text-sm text-black'}>Scroll for more</span>
+                    </div>
                 </Wrapper>
             </div>
         </>

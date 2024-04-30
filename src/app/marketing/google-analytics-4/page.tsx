@@ -12,7 +12,7 @@ import portfolioPhoto_4 from "@images/portfolio-4.png";
 import portfolioPhoto_5 from "@images/portfolio-5.png";
 
 const PortfolioPage = () => {
-    const header = 'Google Analytics 4';
+    const header = 'Google Analytics';
     const paragraph = 'With our comprehensive Google Analytics 4 setup service, we seamlessly migrate you from UA3, create new data feeds, track codes, and customize reports. By accurately tracking traffic sources, customer behavior, conversions, and more, we enhance your business efficiency. Our experienced team ensures proper configuration and detailed analytics tailored to your needs. Choose us for quality customization and seamless integration with top advertising sources for unparalleled insights.';
     const strategy = [
         {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ContactFromProvider from "@/shared/providers/ContactFromProvider";
 
 export const metadata: Metadata = {
   title: "IK Project",
@@ -18,7 +19,9 @@ export default function RootLayout({
       {/*<div className={'w-full flex justify-center items-center fixed'}>*/}
       {/*  <div className={'w-[2px] bg-black h-screen'}/>*/}
       {/*</div>*/}
-      {children}
+      <ContactFromProvider>
+          {children}
+      </ContactFromProvider>
       </body>
     </html>
   );

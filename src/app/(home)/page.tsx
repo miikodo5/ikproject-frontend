@@ -11,20 +11,22 @@ import HomeContact from "@/app/(home)/_components/contact";
 import HomeHero1 from "@/app/(home)/_components/hero-1";
 import HomeFooter from "@/app/(home)/_components/footer";
 
+
+
 const HomePage = () => {
     return (
-        <div className={'bg-[#F7F8FA]  overflow-hidden '}>
-            <HomeHeader/>
-            <HomeHero1/>
-            <HomeServices/>
-            <HomeStrategy/>
-            <HomeCta/>
-            <HomeAbout/>
-            <HomeFaq/>
-            <HomeTestimonials/>
-            <HomeContact/>
-            <HomeFooter/>
-        </div>
+            <div className={'bg-[#F7F8FA]  overflow-hidden '}>
+                <HomeHeader/>
+                <HomeHero1/>
+                <HomeServices/>
+                <HomeStrategy/>
+                <HomeCta/>
+                <HomeAbout/>
+                <HomeFaq/>
+                <HomeTestimonials/>
+                <HomeContact/>
+                <HomeFooter/>
+            </div>
     );
 };
 

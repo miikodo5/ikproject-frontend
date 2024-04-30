@@ -1,5 +1,5 @@
 'use client';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import Wrapper from "@/app/_components/wrapper";
 import Image from "next/image";
 
@@ -9,9 +9,11 @@ import next_3 from '@icons/next-3.svg';
 import FormContact from "@/app/(home)/_components/contact/contact-form";
 import AppSwitcher from "@/app/_components/switcher";
 import TitleBlock from "@/app/_components/title-block";
+import {ContactFromContext, From} from "@/shared/providers/ContactFromProvider";
 
 const HomeContact = () => {
     const [isPartner, setIsPartner] = useState<boolean>(true);
+    const {from, setFrom} = useContext(ContactFromContext)
     return (
         <Wrapper>
             <section id={'contact'} className={'my-20 max-phone:mt-0'}>
@@ -23,7 +25,8 @@ const HomeContact = () => {
                 </div>
                 <div className={'flex flex-col'}>
                     <div className={'self-center justify-self-center place-self-center py-[33px] select-none'}>
-                        <AppSwitcher isPartner={isPartner} setIsPartner={setIsPartner} text1={'Partner'} text2={'Employee'}/>
+
+                        <AppSwitcher isPartner={from} setIsPartner={setFrom} text1={From.Partner.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();})} text2={From.Customer.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();})}/>
                     </div>
                     <div className={'flex flex-row max-phone:flex-col gap-8'}>
                         <div className={'w-1/2 max-phone:w-full'}>

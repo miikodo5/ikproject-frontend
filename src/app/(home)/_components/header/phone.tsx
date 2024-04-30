@@ -33,7 +33,7 @@ const PhoneSection: FC<IPhoneSection> = ({colored}) => {
                         'bg-black block h-[1.5px] w-[17px]'
                     }></span>
                 </div>
-                <div className={`${isNavOpen ? 'opacity-100 z-50 ' : 'opacity-0 -z-50'} flex flex-col w-full h-screen top-0 left-0 bg-mainbg overflow-hidden fixed transition-opacity ease-in-out delay-150 duration-300 overflow-hidden`}>
+                <div className={`${isNavOpen ? 'opacity-100 z-50 ' : 'opacity-0 -z-[9999999999]'} flex flex-col w-full h-screen top-0 left-0 bg-mainbg overflow-hidden fixed transition-opacity ease-in-out delay-150 duration-300 overflow-hidden`}>
                     {/*<a href='/#hero'>*/}
                     <Wrapper>
                         <div className='mt-6 h-max flex flex-row justify-between items-center content-end' onClick={() => {

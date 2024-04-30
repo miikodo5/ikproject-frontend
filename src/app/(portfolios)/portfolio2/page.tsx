@@ -64,7 +64,7 @@ const PortfolioPage = () => {
         },
     ]
     return (
-        <div>
+        <div className={'z-[60]'}>
             <PortfolioHeader color={'black'}/>
             <Portfolio2Hero header={header} paragraph={paragraph}/>
             <PortfolioStrategy strategy={strategy}/>

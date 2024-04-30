@@ -12,7 +12,7 @@ import portfolioPhoto_4 from "@images/portfolio-4.png";
 import portfolioPhoto_5 from "@images/portfolio-5.png";
 
 const PortfolioPage = () => {
-    const header = ' Link Building';
+    const header = 'Link Building';
     const paragraph = 'IK Project\'s Link Building services offer expert outreach, crowd marketing, and comprehensive strategies to grow your online presence. With a proven track record since 2006, trust over 4,000 satisfied clients who have seen tangible results like enhanced search engine rankings and increased customer trust. Choose IK Project for transparent pricing, documented results, and the competitive edge you need to succeed in the digital world.';
     const strategy = [
         {

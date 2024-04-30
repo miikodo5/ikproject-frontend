@@ -18,8 +18,10 @@ const Services = () => {
     const [showToClick, setShowToClick] = useState<boolean>(true);
 
     const [services, setServices] = useState<Array<{showed: boolean, name: string, number: string, initial: {left: string}, whileInView: {y: number, left: string}, services: {link: string, number: string, title: string, text: string}[]}>>([]);
+    const [isAnyShowed, setIsAnyShowed] = useState<boolean>(false);
 
     const handleElClick = (index: number)=>{
+        setIsAnyShowed(true);
         const nextList = [...services];
         const tempElShowed = nextList.find(el =>  el.showed);
         if(tempElShowed) tempElShowed.showed = !tempElShowed?.showed;
@@ -30,277 +32,7 @@ const Services = () => {
 
     useEffect(()=>{
         if(typeof window !== 'undefined'){
-            const tempCircleWidth = window.innerWidth <= SCREENS.LAPTOP ? 160 : 280;
-            const tempSpaceBetween = (window.innerWidth <= SCREENS.LAPTOP? (window.innerWidth - 2*tempCircleWidth)/6 : (window.innerWidth - 4*tempCircleWidth)/13)
-
-            const SERVICES = [
-                {
-                    showed:false,
-                    name: 'Amazon Expertise',
-                    number: '01',
-                    initial:{
-                        left: `${0}`
-                    },
-                    whileInView: {
-                        y: tempCircleWidth / 2,
-                        left: `calc(50% - ${tempCircleWidth}px)`,
-                    },
-                    services:[
-                        {
-                            link: 'amazon/account-management',
-                            number: '01',
-                            title: 'Amazon account management',
-                            text: 'Strategic account management for Amazon Seller Central and Vendor'
-                        },
-                        {
-                            link: 'amazon/consumer-insights-audit',
-                            number: '02',
-                            title: 'Amazon consumer insights audit',
-                            text: 'Market intelligence & research reports for data-driven business decisions on Amazon'
-                        },
-                        {
-                            link: 'amazon/product-launch',
-                            number: '03',
-                            title: 'Amazon product launch',
-                            text: 'Launch strategies for products on Amazon – packed with SEO, PPC and UX strategy for success'
-                        },
-                        {
-                            link: 'amazon/promotions-strategy',
-                            number: '04',
-                            title: 'Amazon promotions strategy',
-                            text: 'Promotions that grab attention and win sales on Amazon'
-                        },
-                        {
-                            link: 'amazon/advertising',
-                            number: '05',
-                            title: 'Amazon advertising',
-                            text: 'Drive increased visibility and conversions with fully-managed Amazon AMS advertising'
-                        },
-                        {
-                            link: 'amazon/demand-side-platform',
-                            number: '06',
-                            title: 'Amazon demand-side platform',
-                            text: 'Extend the reach of your advertising beyond Amazon to audiences across the web'
-                        },
-                        {
-                            link: 'amazon/listing-optimisation',
-                            number: '07',
-                            title: 'Amazon Listing Optimisation',
-                            text: 'Boost your products’ rank in search results with Amazon-focused SEO & increase conversions with enhanced content'
-                        },
-                        {
-                            link: 'amazon/a-plus-content',
-                            number: '08',
-                            title: 'Amazon A+ Content',
-                            text: 'Enhanced content that drives an increase in conversion rates'
-                        },
-                        {
-                            link: 'amazon/premium-a-plus-content',
-                            number: '09',
-                            title: 'Premium A+ Content',
-                            text: 'The premium shopping experience that boosts sales by up to 15%'
-                        },
-                        {
-                            link: 'amazon/stores',
-                            number: '10',
-                            title: 'Amazon Stores',
-                            text: 'Inspire, educate & sell with UX-considered Amazon stores'
-                        },
-                        {
-                            link: 'amazon/product-image',
-                            number: '11',
-                            title: 'Amazon Product Image',
-                            text: 'Inform & convert with high-performing product content'
-                        },
-                        {
-                            link: 'amazon/copywriting',
-                            number: '12',
-                            title: 'Amazon Copywriting',
-                            text: 'Creating copy to help you sell products on Amazon is reliant on the way your products are described'
-                        },
-                    ]
-                },
-                {
-                    showed:false,
-                    name: 'Digital Marketing',
-                    number: '02',
-                    initial:{
-                        left: `${tempCircleWidth+tempSpaceBetween}`
-                    },
-                    whileInView: {
-                        y: 0,
-                        left: `calc(50% - ${tempCircleWidth/2}px)`
-                    },
-                    services:[
-                        {
-                            link: 'marketing/seo',
-                            number: '01',
-                            title: 'SEO (Search Engine Optimization)',
-                            text: 'Grow your businesses, not just to improve your overall search rankings.'
-                        },
-                        {
-                            link: 'marketing/serm',
-                            number: '02',
-                            title: 'Search engine reputation management',
-                            text: 'SERM refers to the influencing and management of the online reputation of a brand or an individual.'
-                        },
-                        {
-                            link: 'marketing/smm',
-                            number: '03',
-                            title: 'Social media marketing',
-                            text: 'Effective brand promotion using social media, targeted advertising and influencer marketing.'
-                        },
-                        {
-                            link: 'marketing/email-agency',
-                            number: '04',
-                            title: 'Email Marketing Agency',
-                            text: 'Email marketing on a turnkey basis for online stores, mobile applications, online services and commercial sites.'
-                        },
-                        {
-                            link: 'marketing/chatbot',
-                            number: '05',
-                            title: 'Chatbot Development',
-                            text: 'Customize the collection of your subscriber base. Develop triggers and sales funnels for your chatbot. Customize a chatbot for your business.'
-                        },
-                        {
-                            link: 'marketing/ad-monetization',
-                            number: '06',
-                            title: 'Ad Monetization',
-                            text: 'Optimize ad placements, analyze performance metrics, and refine strategies to maximize revenue.'
-                        },
-                        {
-                            link: 'marketing/web-analytics',
-                            number: '07',
-                            title: 'Web Analytics',
-                            text: 'Web analytics forms the backbone of the data-driven approach in digital marketing.'
-                        },
-                        {
-                            link: 'marketing/mobile-analytics',
-                            number: '08',
-                            title: 'Mobile Analytics',
-                            text: 'Customize the actions you want to track. Set up metrics and reporting.'
-                        },
-                        {
-                            link: 'marketing/analytics',
-                            number: '09',
-                            title: 'Marketing Analytics Services',
-                            text: 'Create a system that will help you identify the best channels for attracting clients and make effective budget allocation decisions.'
-                        },
-                        {
-                            link: 'marketing/google-analytics-4',
-                            number: '10',
-                            title: 'Setting up Google Analytics 4',
-                            text: 'Organize migration from the previous version.'
-                        },
-                        {
-                            link: 'marketing/ppc',
-                            number: '11',
-                            title: 'PPC',
-                            text: 'Сomplex strategies for Pay Per Click and targeted advertising.'
-                        },
-                        {
-                            link: 'marketing/link-building',
-                            number: '12',
-                            title: 'Link Building',
-                            text: 'We will help you increase your website\'s link mass and set up external SEO optimization'
-                        },
-                        {
-                            link: 'marketing/lead-generation',
-                            number: '13',
-                            title: 'B2B Lead Generation',
-                            text: 'Are you looking to create a steady stream of leads for your business that will help you enter or scale in new markets?'
-                        },
-                        {
-                            link: 'marketing/store-optimization',
-                            number: '14',
-                            title: 'App Store Optimization',
-                            text: 'Put simply, you only pay for the increased number of installs of your application.'
-                        },
-                        {
-                            link: 'marketing/conversion-rate-optimization',
-                            number: '15',
-                            title: 'Conversion Rate Optimization',
-                            text: 'Perform an audit of your analytics system. Examine user behavior on the site.'
-                        },
-                    ]
-                },
-                {
-                    showed:false,
-                    name: 'Software Development',
-                    number: '03',
-                    initial:{
-                        left: `${2*(tempCircleWidth+tempSpaceBetween)}`
-                    },
-                    whileInView: {
-                        y: tempCircleWidth,
-                        left: `calc(50% - ${tempCircleWidth/2}px)`
-                    },
-                    services: [
-                        {
-                            link: 'development/web',
-                            number:'01',
-                            title: 'Web Development',
-                            text:'We develop complex websites and web applications that can handle high traffic volumes and open up new opportunities for your clients.'
-                        },
-                        {
-                            link: 'development/mobile',
-                            number:'02',
-                            title: 'Mobile Development',
-                            text:'Step into the realm of mobile app innovation, where creativity knows no bounds. We\'re your partner in turning imaginative concepts into tangible mobile solutions.'
-                        },
-                        {
-                            link: 'development/e-commerce',
-                            number:'03',
-                            title: 'E-Commerce',
-                            text:'With our E-Commerce services, powered by Shopify and WordPress expertise, we craft revenue-focused solutions for B2B and consumer brands.'
-                        },
-                        {
-                            link: 'development/ui-ux-design',
-                            number:'04',
-                            title: 'UI & UX Design',
-                            text:'Drive user engagement, elevate customer satisfaction, and increase revenue with our UX design and development services.'
-                        },
-                        {
-                            link: 'development/integration',
-                            number:'05',
-                            title: 'Integration of sites and programs',
-                            text:'Automating tasks across Discord, Telegram, web-scraping, parsing, and browser processes, saving you time and resources.'
-                        }
-                    ]
-                },
-                {
-                    showed:false,
-                    name: 'TQM Audit',
-                    number: '04',
-                    initial:{
-                        left: `${3*(tempCircleWidth+tempSpaceBetween)}`
-                    },
-                    whileInView: {
-                        y: tempCircleWidth / 2,
-                        left: `calc(50%)`
-                    },
-                    services: [
-                        {
-                            link: 'tqm/tqm',
-                            number:'01',
-                            title: 'Total Quality Management',
-                            text:'TQM is considered a customer-focused process that focuses on consistently improving business operations management.'
-                        },
-                        {
-                            link: 'tqm/lean-principles',
-                            number:'02',
-                            title: 'Lean principles',
-                            text:'Lean principles are designed specifically for agile projects. The main principle of lean projects is cost minimization.'
-                        },
-                        {
-                            link: 'tqm/kaizen-planning',
-                            number:'03',
-                            title: 'Kaizen planning',
-                            text:'A practice that relies on continuous improvement of the processes around you.'
-                        },]
-                },
-            ]
-            setServices(SERVICES);
+            uploadServices();
         }
         setIsLoading(false);
 
@@ -311,6 +43,284 @@ const Services = () => {
 
         // return clearTimeout(clickTimeout);
     },[]);
+
+    useEffect(()=>{
+        uploadServices();
+    }, [width])
+
+    const uploadServices = ()=>{
+        const tempCircleWidth = window.innerWidth <= SCREENS.LAPTOP ? 160 : 280;
+        const tempSpaceBetween = (window.innerWidth <= SCREENS.LAPTOP? (window.innerWidth - 2*tempCircleWidth)/6 : (window.innerWidth - 4*tempCircleWidth)/13)
+
+        const SERVICES = [
+            {
+                showed:false,
+                name: 'Amazon Expertise',
+                number: '01',
+                initial:{
+                    left: `${0}`
+                },
+                whileInView: {
+                    y: tempCircleWidth / 2,
+                    left: `calc(50% - ${tempCircleWidth}px)`,
+                },
+                services:[
+                    {
+                        link: 'amazon/account-management',
+                        number: '01',
+                        title: 'Amazon account management',
+                        text: 'Strategic account management for Amazon Seller Central and Vendor'
+                    },
+                    {
+                        link: 'amazon/consumer-insights-audit',
+                        number: '02',
+                        title: 'Amazon consumer insights audit',
+                        text: 'Market intelligence & research reports for data-driven business decisions on Amazon'
+                    },
+                    {
+                        link: 'amazon/product-launch',
+                        number: '03',
+                        title: 'Amazon product launch',
+                        text: 'Launch strategies for products on Amazon – packed with SEO, PPC and UX strategy for success'
+                    },
+                    {
+                        link: 'amazon/promotions-strategy',
+                        number: '04',
+                        title: 'Amazon promotions strategy',
+                        text: 'Promotions that grab attention and win sales on Amazon'
+                    },
+                    {
+                        link: 'amazon/advertising',
+                        number: '05',
+                        title: 'Amazon advertising',
+                        text: 'Drive increased visibility and conversions with fully-managed Amazon AMS advertising'
+                    },
+                    {
+                        link: 'amazon/demand-side-platform',
+                        number: '06',
+                        title: 'Amazon demand-side platform',
+                        text: 'Extend the reach of your advertising beyond Amazon to audiences across the web'
+                    },
+                    {
+                        link: 'amazon/listing-optimisation',
+                        number: '07',
+                        title: 'Amazon Listing Optimisation',
+                        text: 'Boost your products’ rank in search results with Amazon-focused SEO & increase conversions with enhanced content'
+                    },
+                    {
+                        link: 'amazon/a-plus-content',
+                        number: '08',
+                        title: 'Amazon A+ Content',
+                        text: 'Enhanced content that drives an increase in conversion rates'
+                    },
+                    {
+                        link: 'amazon/premium-a-plus-content',
+                        number: '09',
+                        title: 'Premium A+ Content',
+                        text: 'The premium shopping experience that boosts sales by up to 15%'
+                    },
+                    {
+                        link: 'amazon/stores',
+                        number: '10',
+                        title: 'Amazon Stores',
+                        text: 'Inspire, educate & sell with UX-considered Amazon stores'
+                    },
+                    {
+                        link: 'amazon/product-image',
+                        number: '11',
+                        title: 'Amazon Product Image',
+                        text: 'Inform & convert with high-performing product content'
+                    },
+                    {
+                        link: 'amazon/copywriting',
+                        number: '12',
+                        title: 'Amazon Copywriting',
+                        text: 'Creating copy to help you sell products on Amazon is reliant on the way your products are described'
+                    },
+                ]
+            },
+            {
+                showed:false,
+                name: 'Digital Marketing',
+                number: '02',
+                initial:{
+                    left: `${tempCircleWidth+tempSpaceBetween}`
+                },
+                whileInView: {
+                    y: 0,
+                    left: `calc(50% - ${tempCircleWidth/2}px)`
+                },
+                services:[
+                    {
+                        link: 'marketing/seo',
+                        number: '01',
+                        title: 'SEO (Search Engine Optimization)',
+                        text: 'Grow your businesses, not just to improve your overall search rankings.'
+                    },
+                    {
+                        link: 'marketing/serm',
+                        number: '02',
+                        title: 'Search engine reputation management',
+                        text: 'SERM refers to the influencing and management of the online reputation of a brand or an individual.'
+                    },
+                    {
+                        link: 'marketing/smm',
+                        number: '03',
+                        title: 'Social media marketing',
+                        text: 'Effective brand promotion using social media, targeted advertising and influencer marketing.'
+                    },
+                    {
+                        link: 'marketing/email-agency',
+                        number: '04',
+                        title: 'Email Marketing Agency',
+                        text: 'Email marketing on a turnkey basis for online stores, mobile applications, online services and commercial sites.'
+                    },
+                    {
+                        link: 'marketing/chatbot',
+                        number: '05',
+                        title: 'Chatbot Development',
+                        text: 'Customize the collection of your subscriber base. Develop triggers and sales funnels for your chatbot. Customize a chatbot for your business.'
+                    },
+                    {
+                        link: 'marketing/ad-monetization',
+                        number: '06',
+                        title: 'Ad Monetization',
+                        text: 'Optimize ad placements, analyze performance metrics, and refine strategies to maximize revenue.'
+                    },
+                    {
+                        link: 'marketing/web-analytics',
+                        number: '07',
+                        title: 'Web Analytics',
+                        text: 'Web analytics forms the backbone of the data-driven approach in digital marketing.'
+                    },
+                    {
+                        link: 'marketing/mobile-analytics',
+                        number: '08',
+                        title: 'Mobile Analytics',
+                        text: 'Customize the actions you want to track. Set up metrics and reporting.'
+                    },
+                    {
+                        link: 'marketing/analytics',
+                        number: '09',
+                        title: 'Marketing Analytics Services',
+                        text: 'Create a system that will help you identify the best channels for attracting clients and make effective budget allocation decisions.'
+                    },
+                    {
+                        link: 'marketing/google-analytics-4',
+                        number: '10',
+                        title: 'Setting up Google Analytics 4',
+                        text: 'Organize migration from the previous version.'
+                    },
+                    {
+                        link: 'marketing/ppc',
+                        number: '11',
+                        title: 'PPC',
+                        text: 'Сomplex strategies for Pay Per Click and targeted advertising.'
+                    },
+                    {
+                        link: 'marketing/link-building',
+                        number: '12',
+                        title: 'Link Building',
+                        text: 'We will help you increase your website\'s link mass and set up external SEO optimization'
+                    },
+                    {
+                        link: 'marketing/lead-generation',
+                        number: '13',
+                        title: 'B2B Lead Generation',
+                        text: 'Are you looking to create a steady stream of leads for your business that will help you enter or scale in new markets?'
+                    },
+                    {
+                        link: 'marketing/store-optimization',
+                        number: '14',
+                        title: 'App Store Optimization',
+                        text: 'Put simply, you only pay for the increased number of installs of your application.'
+                    },
+                    {
+                        link: 'marketing/conversion-rate-optimization',
+                        number: '15',
+                        title: 'Conversion Rate Optimization',
+                        text: 'Perform an audit of your analytics system. Examine user behavior on the site.'
+                    },
+                ]
+            },
+            {
+                showed:false,
+                name: 'Software Development',
+                number: '03',
+                initial:{
+                    left: `${2*(tempCircleWidth+tempSpaceBetween)}`
+                },
+                whileInView: {
+                    y: tempCircleWidth,
+                    left: `calc(50% - ${tempCircleWidth/2}px)`
+                },
+                services: [
+                    {
+                        link: 'development/web',
+                        number:'01',
+                        title: 'Web Development',
+                        text:'We develop complex websites and web applications that can handle high traffic volumes and open up new opportunities for your clients.'
+                    },
+                    {
+                        link: 'development/mobile',
+                        number:'02',
+                        title: 'Mobile Development',
+                        text:'Step into the realm of mobile app innovation, where creativity knows no bounds. We\'re your partner in turning imaginative concepts into tangible mobile solutions.'
+                    },
+                    {
+                        link: 'development/e-commerce',
+                        number:'03',
+                        title: 'E-Commerce',
+                        text:'With our E-Commerce services, powered by Shopify and WordPress expertise, we craft revenue-focused solutions for B2B and consumer brands.'
+                    },
+                    {
+                        link: 'development/ui-ux-design',
+                        number:'04',
+                        title: 'UI & UX Design',
+                        text:'Drive user engagement, elevate customer satisfaction, and increase revenue with our UX design and development services.'
+                    },
+                    {
+                        link: 'development/integration',
+                        number:'05',
+                        title: 'Integration of sites and programs',
+                        text:'Automating tasks across Discord, Telegram, web-scraping, parsing, and browser processes, saving you time and resources.'
+                    }
+                ]
+            },
+            {
+                showed:false,
+                name: 'TQM Audit',
+                number: '04',
+                initial:{
+                    left: `${3*(tempCircleWidth+tempSpaceBetween)}`
+                },
+                whileInView: {
+                    y: tempCircleWidth / 2,
+                    left: `calc(50%)`
+                },
+                services: [
+                    {
+                        link: 'tqm/tqm',
+                        number:'01',
+                        title: 'Total Quality Management',
+                        text:'TQM is considered a customer-focused process that focuses on consistently improving business operations management.'
+                    },
+                    {
+                        link: 'tqm/lean-principles',
+                        number:'02',
+                        title: 'Lean principles',
+                        text:'Lean principles are designed specifically for agile projects. The main principle of lean projects is cost minimization.'
+                    },
+                    {
+                        link: 'tqm/kaizen-planning',
+                        number:'03',
+                        title: 'Kaizen planning',
+                        text:'A practice that relies on continuous improvement of the processes around you.'
+                    },]
+            },
+        ]
+        setServices(SERVICES);
+    }
 
     const transition = {
         type: 'spring',
@@ -394,6 +404,16 @@ const Services = () => {
                                             duration: 0
                                         },
                                         // ...paddingWhileInView
+                                    },
+                                    'ping':{
+                                        scale: [1, 0.9, 1],
+                                        transition:{
+                                            repeat: Infinity,
+                                            duration: 1,
+                                            repeatDelay: 3,
+                                            delay: index
+                                        },
+
                                     }
                                 }}
 
@@ -409,13 +429,13 @@ const Services = () => {
                                 whileHover={{
                                     scale: 1.05,
                                 }}
-                                animate={[(el.showed ? 'showed':'hide')]}
+                                animate={[(el.showed ? 'showed':'hide'), (isAnyShowed ? '': 'ping')]}
                                 // transition={transition}
                                 onClick={() => {
                                     handleElClick(index);
                                 }}
                                 viewport={{once: true}}
-                                className={`select-none absolute flex items-center justify-center rounded-full border-[8px] max-laptop:border-[6px] border-black hover:scale-110  
+                                className={`select-none absolute flex items-center justify-center rounded-full border-[8px] max-laptop:border-[6px] border-black hover:scale-110
                                     ${width <= SCREENS.LAPTOP ? 'h-[160px] min-w-[160px] max-w-[160px]' : 'h-[280px] min-w-[280px] max-w-[280px]'} ${el.number==='04' ? 'cursor-default' : 'cursor-pointer' } `}
                             >
                                 <span className={`text-xl max-w-[160px] font-[900] max-laptop:text-sm max-laptop:max-w-[140px] text-center ${index === 0 && 'max-w-[140px] max-laptop:max-w-[90px]'}`}>{el.name}</span>
@@ -449,7 +469,9 @@ const Services = () => {
                                                 className={'flex flex-col justify-between max-w-[384px] min-w-[384px] min-h-[380px] max-phone:min-w-[284px] max-phone:max-w-[284px]  py-6 px-8 border border-black rounded-[20px]'}>
                                                 <div className={'flex flex-row justify-between items-center align-middle gap-6'}>
                                                     <span
-                                                        className={'text-2xl font-stick font-semibold text-main max-phone:text-1xl  '}>{el.title}</span>
+                                                        className={'text-2xl font-stick font-semibold text-main max-phone:text-1xl  '}>
+                                                        {el.title.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();})}
+                                                    </span>
                                                     <span
                                                         className={'text-xl font-medium self-start pt-4  max-phone:text-lg'}>{el.number}</span>
                                                 </div>
