@@ -5,6 +5,7 @@ import Wrapper from "@/app/_components/wrapper";
 import heroImg from '@images/hero-2.png';
 
 const MarketingHero = ({header, paragraph}: {header: string, paragraph: string}) => {
+    const newHeader = header.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();});
     return (
         <>
             <div className={'w-full z-[900] min-h-[632px]'}>
@@ -14,11 +15,11 @@ const MarketingHero = ({header, paragraph}: {header: string, paragraph: string})
                         <div
                             className={'h-[330px] mt-[110px] w-full flex flex-col justify-center max-laptop:h-[243px] max-phone:flex-col max-phone:h-[191px] max-phone:mt-[128px] '}>
                             <span
-                                className={'min-w-1/3  text-right  self-start text-h80 max-laptop:text-h1 max-phone:text-1xl'}>{header.split(' ')[0].replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();})}</span>
+                                className={'min-w-1/3  text-right  self-start text-h80 max-laptop:text-h1 max-phone:text-1xl'}>{newHeader.split(' ')[0]}</span>
                             <span
-                                className={'self-center -my-[72px] text-h198 font-stick max-laptop:text-4xl max-laptop:-my-[18px] max-phone:text-4xl '}>{header.split(' ')[1].replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();})}</span>
+                                className={'self-center -my-[72px] text-h198 font-stick max-laptop:text-4xl max-laptop:-my-[18px] max-phone:text-4xl '}>{newHeader.split(' ')[1]}</span>
                             <span
-                                className={'min-w-1/3  text-left  self-end text-h80 min-h-[128px] max-laptop:min-h-[102px] max-phone:min-h-[57px]  max-laptop:text-h1 max-phone:text-1xl '}>{header.split(' ')[2] ? header.split(' ')[2].replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();}) : ' '}</span>
+                                className={'min-w-1/3  text-left  self-end text-h80 min-h-[128px] max-laptop:min-h-[102px] max-phone:min-h-[57px]  max-laptop:text-h1 max-phone:text-1xl '}>{newHeader.split(' ')[2] ? newHeader.split(' ')[2] : ' '}</span>
                         </div>
                     </div>
                     <div className={'flex flex-row w-[57%] max-phone:w-full justify-between'}>
