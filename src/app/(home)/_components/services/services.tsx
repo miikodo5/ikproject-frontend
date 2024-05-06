@@ -407,22 +407,22 @@ const Services = () => {
                                         translateZ: 0
                                         // ...paddingWhileInView
                                     },
-                                    // 'ping':{
-                                    //     scale: [1, 0.9, 1],
-                                    //     transition:{
-                                    //         type: 'tween',
-                                    //         repeat: Infinity,
-                                    //         duration: 1,
-                                    //         repeatDelay: 3,
-                                    //         delay: index
-                                    //     },
-                                    //     translateZ: 0
-                                    //
-                                    // }
+                                    'ping':{
+                                        scale: [1, 0.9, 1],
+                                        transition:{
+                                            type: 'tween',
+                                            repeat: Infinity,
+                                            duration: 1,
+                                            repeatDelay: 7,
+                                            delay: index*2
+                                        },
+                                        translateZ: 0
+
+                                    }
                                 }}
 
                                 initial={width <= SCREENS.LAPTOP ? 'pos' : tempInitial}
-                                whileInView={'pos'}
+                                whileInView={['pos', 'ping']}
                                 whileHover={{
                                     scale: 1.05,
                                 }}
