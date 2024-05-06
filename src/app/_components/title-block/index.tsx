@@ -40,7 +40,8 @@ const TitleBlock = ({type, text, isWhite}: {
                         }}
                         viewport={{once: true}}
                         transition={{
-                            duration: 1.5
+                            duration: 1.5,
+                            type: 'tween'
                         }} className={`h-[2px] flex-[0_0_0%] bg-main ${isWhite && 'bg-white'}`}/>
                 )}
                 <h3 className={`font-stick font-semibold text-3xl max-phone:text-2xl ${isWhite && 'text-white'}`}>{text.toUpperCase()}</h3>
@@ -51,7 +52,8 @@ const TitleBlock = ({type, text, isWhite}: {
                         }}
                         viewport={{once: true}}
                         transition={{
-                            duration: 1.5
+                            duration: 1.5,
+                            type: 'tween'
                         }} className={`h-[2px] flex-[0_0_0%] bg-main ${isWhite && 'bg-white'}`}/>
                 )}
             </div>

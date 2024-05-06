@@ -43,7 +43,7 @@ const AmazonHero = ({header, paragraph, stats, img1, img2}:{header: string, para
                         <div
                             className={'max-w-[488px] mt-[90px] flex flex-col gap-6 max-laptop:max-w-full max-laptop:items-center max-laptop:mt-[49px] max-phone:mt-[40px]'}>
                             <div className={'flex flex-col gap-2 text-center'}>
-                                <h1 className={'text-h1 font-semibold max-phone:text-1xl max-phone:text-left'}>{header}</h1>
+                                <h1 className={'text-h1 font-semibold max-phone:text-1xl max-phone:text-left'}>{header.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();})}</h1>
                                 <p className={'text-xl opacity-50 max-phone:text-lg max-phone:text-left'}>
                                     {paragraph}
                                 </p>

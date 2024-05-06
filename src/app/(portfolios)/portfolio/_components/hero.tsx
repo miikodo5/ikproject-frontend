@@ -14,7 +14,7 @@ const PortfolioHero = ({header, paragraph, stats}:{header: string, paragraph: st
                     <div className={'w-full flex flex-col items-center gap-6 pt-[20px] max-laptop:pt-[1px] max-phone:pt-[0px]'}>
                         <div>
                             <h1 className={'text-4xl text-center text-white font-stick font-semibold max-laptop:text-3xl max-phone:text-3xl max-laptop:text-center'}>
-                                {header}
+                                {header.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();})}
                             </h1>
                             <p className={'text-base text-white/[0.55] text-center font-medium max-w-[755px] max-phone:text-xs'}>
                                 {paragraph}

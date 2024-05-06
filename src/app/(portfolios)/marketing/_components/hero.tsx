@@ -14,25 +14,25 @@ const MarketingHero = ({header, paragraph}: {header: string, paragraph: string})
                         <div
                             className={'h-[330px] mt-[110px] w-full flex flex-col justify-center max-laptop:h-[243px] max-phone:flex-col max-phone:h-[191px] max-phone:mt-[128px] '}>
                             <span
-                                className={'min-w-1/3  text-right  self-start text-h80 max-laptop:text-h1 max-phone:text-1xl'}>{header.split(' ')[0]}</span>
+                                className={'min-w-1/3  text-right  self-start text-h80 max-laptop:text-h1 max-phone:text-1xl'}>{header.split(' ')[0].replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();})}</span>
                             <span
-                                className={'self-center -my-[72px] text-h198 font-stick max-laptop:text-4xl max-laptop:-my-[18px] max-phone:text-4xl '}>{header.split(' ')[1]}</span>
+                                className={'self-center -my-[72px] text-h198 font-stick max-laptop:text-4xl max-laptop:-my-[18px] max-phone:text-4xl '}>{header.split(' ')[1].replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();})}</span>
                             <span
-                                className={'min-w-1/3  text-left  self-end text-h80 min-h-[128px] max-laptop:min-h-[102px] max-phone:min-h-[57px]  max-laptop:text-h1 max-phone:text-1xl '}>{header.split(' ')[2] ? header.split(' ')[2] : ' '}</span>
+                                className={'min-w-1/3  text-left  self-end text-h80 min-h-[128px] max-laptop:min-h-[102px] max-phone:min-h-[57px]  max-laptop:text-h1 max-phone:text-1xl '}>{header.split(' ')[2] ? header.split(' ')[2].replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();}) : ' '}</span>
                         </div>
                     </div>
                     <div className={'flex flex-row w-[57%] max-phone:w-full justify-between'}>
                         <p className={'max-w-[488px] max-laptop:text-base max-laptop:max-w-[696px] max-phone:max-w-full max-laptop:text-justify max-laptop:mx-auto max-phone:mt-[53px]'}>
                             {paragraph}
                         </p>
-                        <div
-                            className={'max-laptop:hidden pt-5 justify-self-center -mt-[140px] flex flex-col gap-[13px] items-center justify-center max-laptop:mt-[120px] max-phone:mt-0'}>
-                            <div className={'h-[78px] w-[2px] bg-black animate-bounce'}/>
-                            <span className={'text-sm text-black'}>Scroll for more</span>
-                        </div>
+                        {/*<div*/}
+                        {/*    className={'self-end max-laptop:hidden pt-5 justify-self-center -mt-[140px] flex flex-col gap-[13px] items-center justify-center max-laptop:mt-[120px] max-phone:mt-0'}>*/}
+                        {/*    <div className={'h-[78px] w-[2px] bg-black animate-bounce'}/>*/}
+                        {/*    <span className={'text-sm text-black'}>Scroll for more</span>*/}
+                        {/*</div>*/}
                     </div>
                     <div
-                        className={'hidden max-laptop:flex pt-5 justify-self-center flex-col gap-[13px] items-center justify-center max-laptop:mt-[80px] max-phone:mt-0'}>
+                        className={'flex pt-5 justify-self-center flex-col gap-[13px] items-center justify-center max-laptop:mt-[80px] max-phone:mt-0'}>
                         <div className={'h-[78px] w-[2px] bg-black animate-bounce'}/>
                         <span className={'text-sm text-black'}>Scroll for more</span>
                     </div>

@@ -323,9 +323,9 @@ const Services = () => {
     }
 
     const transition = {
-        type: 'spring',
+        type: 'tween',
         delay:.5,
-        duration: 2.5
+        duration: 1
     };
     // @ts-ignore
     if(isLoading)
@@ -334,9 +334,9 @@ const Services = () => {
     return (
         <>
             <Wrapper>
-                <motion.div
-                    viewport={{once: true}}
-                    transition={transition}
+                <div
+                    // viewport={{once: true}}
+                    // transition={transition}
                     style={{
                         height: width < SCREENS.LAPTOP ? 400 : 640
                     }}
@@ -389,60 +389,56 @@ const Services = () => {
                                         backgroundColor: 'rgb(151 1 1 / 1)',
                                         borderColor: 'rgb(151 1 1 / 1)',
                                         transition: {
-                                            type: 'spring',
+                                            type: 'tween',
                                             duration: 0
                                         },
                                         color:'white',
                                         zIndex: 9999,
-                                        padding: 0
+                                        padding: 0,
+                                        translateZ: 0
                                     },
                                     'hide':{
                                         backgroundColor: 'rgb(151 1 1 / 0)',
                                         borderColor: 'black',
                                         transition: {
-                                            type: 'spring',
+                                            type: 'tween',
                                             duration: 0
                                         },
+                                        translateZ: 0
                                         // ...paddingWhileInView
                                     },
-                                    'ping':{
-                                        scale: [1, 0.9, 1],
-                                        transition:{
-                                            repeat: Infinity,
-                                            duration: 1,
-                                            repeatDelay: 3,
-                                            delay: index
-                                        },
-
-                                    }
+                                    // 'ping':{
+                                    //     scale: [1, 0.9, 1],
+                                    //     transition:{
+                                    //         type: 'tween',
+                                    //         repeat: Infinity,
+                                    //         duration: 1,
+                                    //         repeatDelay: 3,
+                                    //         delay: index
+                                    //     },
+                                    //     translateZ: 0
+                                    //
+                                    // }
                                 }}
 
                                 initial={width <= SCREENS.LAPTOP ? 'pos' : tempInitial}
                                 whileInView={'pos'}
-                                // transition={{
-                                //     padding: {duration: .5},
-                                //     paddingLeft: {duration: .5},
-                                //     paddingTop: {duration: .5},
-                                //     paddingRight: {duration: .5},
-                                //     paddingBottom: {duration: .5},
-                                // }}
                                 whileHover={{
                                     scale: 1.05,
                                 }}
-                                animate={[(el.showed ? 'showed':'hide'), (isAnyShowed ? '': 'ping')]}
-                                // transition={transition}
+                                animate={[(el.showed ? 'showed':'hide')]}
                                 onClick={() => {
                                     handleElClick(index);
                                 }}
                                 viewport={{once: true}}
-                                className={`select-none absolute flex items-center justify-center rounded-full border-[8px] max-laptop:border-[6px] border-black hover:scale-110
+                                className={`select-none absolute flex items-center justify-center rounded-full border-[8px] max-laptop:border-[6px] border-black transform-gpu 
                                     ${width <= SCREENS.LAPTOP ? 'h-[160px] min-w-[160px] max-w-[160px]' : 'h-[280px] min-w-[280px] max-w-[280px]'} ${el.number==='04' ? 'cursor-default' : 'cursor-pointer' } `}
                             >
                                 <span className={`text-xl max-w-[160px] font-[900] max-laptop:text-sm max-laptop:max-w-[140px] text-center ${index === 0 && 'max-w-[140px] max-laptop:max-w-[90px]'}`}>{el.name}</span>
                             </motion.div>
                         )
                     })}
-                </motion.div>
+                </div>
             </Wrapper>
             <AnimateChangeInHeight className={'mb-[86px]'}>
                 <Draggable rootClass={' no-scrollbar'}>

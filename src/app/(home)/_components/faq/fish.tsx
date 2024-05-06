@@ -46,7 +46,7 @@ const FAQFish = () => {
                     <motion.div
                         initial={{offsetDistance: width < SCREENS.PHONE ? "30%" : "35%"}}
                         whileInView={width <= SCREENS.PHONE ? {} : {offsetDistance: "30%"}}
-                        transition={{duration: 4}}
+                        transition={{duration: 4, type: 'tween'}}
                         className={'absolute top-0 z-[1] overflow-hidden overscroll-x-none overflow-x-hidden no-scrollbar max-phone:left-[-560px] max-phone:top-[146px] max-phone:scale-[0.7]'}
 
                         viewport={{once: true}}
@@ -59,7 +59,7 @@ const FAQFish = () => {
                     <motion.div
                         initial={{offsetDistance: width <= SCREENS.PHONE ? '74%' : "80%"}}
                         whileInView={width <= SCREENS.PHONE ? {} : {offsetDistance: "74%"}}
-                        transition={{duration: 2}}
+                        transition={{duration: 2, type: 'tween'}}
                         className={'absolute top-0 z-[1] overflow-hidden overscroll-x-none overflow-x-hidden max-phone:left-[-786px] max-phone:top-[352px] max-phone:scale-[0.7]'}
                         viewport={{once: true}}
                         style={{
@@ -71,7 +71,7 @@ const FAQFish = () => {
                     <motion.div
                         initial={{offsetDistance: width <= SCREENS.PHONE ? '52%' : "70%"}}
                         whileInView={width <= SCREENS.PHONE ? {} : {offsetDistance: "52%"}}
-                        transition={{duration: 2}}
+                        transition={{duration: 2, type: 'tween'}}
                         className={'absolute top-0 z-[1] overflow-hidden overscroll-x-none overflow-x-hidden max-phone:top-[260px]'}
                         viewport={{once: true}}
                         style={{

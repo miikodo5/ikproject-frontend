@@ -98,7 +98,7 @@ const HomeStrategy = () => {
                         Steps we take to help you reach desired results:
                     </p>
                 </Wrapper>
-                <motion.div style={{
+                <div style={{
                     transition: 'all 0.5s cubic-bezier(0.21, 0.86, 0, -0.09) 0s',
                     perspectiveOrigin: 'center'
                 }} className={'max-phone:block hidden relative pt-4 h-max w-max  max-phone:w-full !overflow-visible'}
@@ -106,15 +106,15 @@ const HomeStrategy = () => {
                     <div
                         className={'w-full h-full absolute top-0 blur-3xl rounded-full bg-[radial-gradient(circle,rgba(255,255,255,1)_51%,rgba(255,255,255,0)_55%)]'}
                     />
-                    <motion.div
+                    <div
 
                         style={{
                             transformStyle: "preserve-3d",
                         }}
                         className={'mx-auto w-max h-max z-50 max-phone:w-[80%]'}>
                         <Image src={treeImg} alt={'tree'} className={'drop-shadow-lg'}/>
-                    </motion.div>
-                </motion.div>
+                    </div>
+                </div>
                 <Wrapper>
                     <AnimateChangeInHeight
                         className={'mt-24 max-phone:mt-2 w-full relative !overflow-visible min-h-[700px]'}>
@@ -122,7 +122,7 @@ const HomeStrategy = () => {
                             transition: 'all 0.5s cubic-bezier(0.21, 0.86, 0, -0.09) 0s',
                             perspectiveOrigin: 'center'
                         }}
-                                    className={'max-phone:hidden !overflow-visible relative mt-4 left-1/2 ml-[-250px] max-phone:ml-[-208px] h-max w-max max-phone:w-full '}
+                                    className={'max-phone:hidden !overflow-visible relative mt-4 left-1/2 ml-[-250px] max-phone:ml-[-208px] h-max w-max max-phone:w-full transform-gpu'}
                         >
                             <motion.div
                                 animate={{
@@ -138,7 +138,7 @@ const HomeStrategy = () => {
                                         duration: 4
                                     }
                                 }}
-                                className={'max-phone:ml-[-40px]  w-[160%] h-[160%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute top-0 blur-3xl rounded-full'}
+                                className={'max-phone:ml-[-40px]  w-[160%] h-[160%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute top-0 blur-3xl rounded-full transform-gpu'}
                             />
                             <motion.div
 
@@ -146,7 +146,7 @@ const HomeStrategy = () => {
                                     transform: "translateZ(100px)",
                                     transformStyle: "preserve-3d",
                                 }}
-                                className={'w-max h-max z-50 max-phone:w-[80%]'}>
+                                className={'w-max h-max z-50 max-phone:w-[80%] transform-gpu'}>
                                 <Image src={treeImg} alt={'tree'} className={'drop-shadow-lg'}/>
                             </motion.div>
                         </motion.div>
@@ -173,7 +173,7 @@ const HomeStrategy = () => {
                                     // }}
                                     // viewport={{ once: true }}
                                     transition={{
-                                        type: 'spring',
+                                        type: 'tween',
                                         delay: el.delay,
                                         duration: 1,
                                         scale: {
@@ -187,17 +187,17 @@ const HomeStrategy = () => {
                                     // left-[325px] top-[250px]
                                     //left-[calc(50%_-_172.5px)]
                                     //top-1/4
-                                    className={'cursor-pointer absolute max-[920px]:static flex flex-col w-[345px] max-laptop:w-[223px] max-[920px]:w-[345px] items-center group opacity-0 rounded-2xl max-w-[1000px]:scale-[0.50]'}
+                                    className={'cursor-pointer absolute max-[920px]:static flex flex-col w-[345px] max-laptop:w-[223px] max-[920px]:w-[345px] items-center group opacity-0 rounded-2xl max-w-[1000px]:scale-[0.50] transform-gpu'}
                                 >
                                     <Image src={el.img} alt={'strategy'}/>
                                     <span
                                         className={'text-lg font-semibold text-white text-center max-laptop:text-base mt-4'}>{el.title}</span>
-                                    <motion.p
+                                    <p
                                         // line-clamp-2 line-clamp-none
                                         //line-clamp-2 group-hover:line-clamp-[100]
                                         className={' w-full  max-[920px]:line-clamp-[100] text-sm max-laptop:text-xs font-normal text-white/70 text-center overflow-hidden'}>
                                         {el.text}
-                                    </motion.p>
+                                    </p>
                                 </motion.div>
                             ))}
                         </div>

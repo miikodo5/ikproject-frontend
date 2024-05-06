@@ -33,7 +33,7 @@ const Portfolio2Hero = ({header, paragraph}: {header: string, paragraph: string}
                 <Wrapper>
                     <div className={'max-w-[488px] pt-[40px] flex flex-col gap-6 max-laptop:max-w-full max-laptop:pt-[48px]'}>
                         <div className={'flex flex-col gap-2'}>
-                            <h1 className={'text-h1 font-stick font-semibold'}>{header}</h1>
+                            <h1 className={'text-h1 font-stick font-semibold'}>{header.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();})}</h1>
                             <p className={'text-base opacity-50 max-laptop:text-justify'}>
                                 {paragraph}
                             </p>
