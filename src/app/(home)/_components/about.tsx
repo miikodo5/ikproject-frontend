@@ -33,36 +33,42 @@ const ABOUT_US = [
 ]
 const HomeAbout = () => {
     return (
-        <Wrapper>
+
             <section id='about' className={'my-20'}>
-                <TitleBlock text={'Why ik PROJECT?'} type={2}/>
+                <Wrapper>
+                    <TitleBlock text={'Why ik PROJECT?'} type={2}/>
+                </Wrapper>
                 <div className={'mt-12 flex flex-col gap-8 relative z-40'}>
                     {ABOUT_US.map((el, index)=>(
                         <motion.div
                             key={index}
                             //backdrop-blur-[22px]
-                            className={` backdrop-grayscale backdrop-saturate-200 w-full flex items-center gap-12 max-phone:gap-0  ${index % 2 ? 'flex-row-reverse justify-end' : 'flex-row justify-end'} max-phone:flex-col max-phone:text-justify`}>
-                            <h1 className={`text-h1 max-phone:text-1xl text-main font-semibold ${index % 2 ? 'max-phone:self-end' : 'max-phone:self-start'}`}>{el.number}</h1>
-                            <motion.span
-                                initial={{opacity: 0}}
-                                whileInView={{opacity: 1}}
-                                viewport={{
-                                    once: true,
-                                }}
-                                transition={{
-                                    duration: 2
-                                }}
-                                className={'text-sm text-black font-normal w-full'}
-                            >
-                                <span className={'text-mainbg font-semibold'}>{el.title} </span>
-                                {el.text}
-                            </motion.span>
+                            className={` backdrop-grayscale backdrop-saturate-200 w-full `}>
+                            <Wrapper>
+                                <div className={`flex items-center gap-12 max-phone:gap-0  ${index % 2 ? 'flex-row-reverse justify-end' : 'flex-row justify-end'} max-phone:flex-col max-phone:text-justify`}>
+                                    <h1 className={`text-h1 max-phone:text-1xl text-main font-semibold ${index % 2 ? 'max-phone:self-end' : 'max-phone:self-start'}`}>{el.number}</h1>
+                                    <motion.span
+                                        initial={{opacity: 0}}
+                                        whileInView={{opacity: 1}}
+                                        viewport={{
+                                            once: true,
+                                        }}
+                                        transition={{
+                                            duration: 2
+                                        }}
+                                        className={'text-sm text-black font-normal w-full'}
+                                    >
+                                        <span className={'text-mainbg font-semibold'}>{el.title} </span>
+                                        {el.text}
+                                    </motion.span>
+                                </div>
+                            </Wrapper>
                         </motion.div>
                     ))}
                 </div>
 
             </section>
-        </Wrapper>
+
     );
 };
 

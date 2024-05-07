@@ -15,7 +15,7 @@ import HomeFooter from "@/app/(home)/_components/footer";
 
 const HomePage = () => {
     return (
-            <div className={'bg-[#F7F8FA]  overflow-hidden '}>
+            <div className={'bg-[#F7F8FA] bg-opacity-0 overflow-hidden z-[1]'}>
                 <HomeHeader/>
                 <HomeHero1/>
                 <HomeServices/>
