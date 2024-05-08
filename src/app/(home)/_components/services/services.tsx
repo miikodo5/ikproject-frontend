@@ -28,6 +28,18 @@ const Services = () => {
         const tempEl = nextList.find(el => nextList[index] === el);
         if(tempEl) tempEl.showed = !tempEl?.showed;
         setServices(nextList);
+        if(width > SCREENS.LAPTOP){
+
+            scrollTo(0,1900);
+        }
+        else if(width < SCREENS.PHONE){
+
+            scrollTo(0,1700);
+        }
+        else if(width < SCREENS.LAPTOP){
+            scrollTo(0,1300);
+        }
+
     }
 
     useEffect(()=>{
@@ -424,7 +436,7 @@ const Services = () => {
                                     }}
 
                                     initial={width <= SCREENS.LAPTOP ? 'pos' : tempInitial}
-                                    whileInView={['pos', 'ping']}
+                                    whileInView={['pos', (!isAnyShowed ? 'ping' : '')]}
                                     whileHover={{
                                         scale: 1.05,
                                     }}
