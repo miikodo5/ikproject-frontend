@@ -1379,9 +1379,9 @@ bodyHtml.addEventListener('mousemove', e => {
     updatePointerMoveData(pointer, posX, posY);
 });
 
-window.addEventListener('mouseup', () => {
-    updatePointerUpData(pointers[0]);
-});
+// window.addEventListener('mouseup', () => {
+//     updatePointerUpData(pointers[0]);
+// });
 
 canvas.addEventListener('touchstart', e => {
     e.preventDefault();
