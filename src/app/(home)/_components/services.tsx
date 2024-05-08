@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React from 'react';
 import Wrapper from "@/app/_components/wrapper";
 import TitleBlock from "@/app/_components/title-block";

@@ -1,5 +1,5 @@
 import React, {FC, useState} from 'react';
-import {AnimatePresence, motion} from "framer-motion";
+import {AnimatePresence, m} from "framer-motion";
 
 interface IFAQCard {
     index: number,
@@ -14,7 +14,7 @@ interface IFAQCard {
 const FAQCard: FC<IFAQCard> = ({index, setOpen, isOpen, open, el}) => {
     const [rotate, setRotate] = useState<number>(0);
     return (
-        <motion.div
+        <m.div
             key={index}
             onClick={() => {
                 if(open === index) setOpen(-1);
@@ -34,7 +34,7 @@ const FAQCard: FC<IFAQCard> = ({index, setOpen, isOpen, open, el}) => {
                 <div
                     className={`min-w-10 min-h-10 ${isOpen && 'bg-main'} rounded-[10px] flex justify-center items-center`}>
                     {isOpen ? (
-                        <motion.svg
+                        <m.svg
                             animate={{
                                 rotate
                             }}
@@ -42,14 +42,14 @@ const FAQCard: FC<IFAQCard> = ({index, setOpen, isOpen, open, el}) => {
                                 type: 'tween'
                             }}
                             width="13" height="13" viewBox="0 0 13 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <motion.path
+                            <m.path
                                 d={'M0 2.24995V0.75H13V2.24995H0Z'}
                                 fill={'white'}
                             />
-                        </motion.svg>
+                        </m.svg>
 
                     ): (
-                        <motion.svg
+                        <m.svg
                             animate={{
                                 rotate
                             }}
@@ -61,14 +61,14 @@ const FAQCard: FC<IFAQCard> = ({index, setOpen, isOpen, open, el}) => {
                                 d={'M5.75 7.24995H0V5.75H5.75V0H7.24995V5.75H13V7.24995H7.24995V13H5.75V7.24995Z'}
                                 fill={'black'}
                             />
-                        </motion.svg>
+                        </m.svg>
                     )}
 
                 </div>
             </div>
             <AnimatePresence>
                 {isOpen &&
-                    <motion.div
+                    <m.div
                         initial="collapsed"
                         animate="open"
                         exit="collapsed"
@@ -82,10 +82,10 @@ const FAQCard: FC<IFAQCard> = ({index, setOpen, isOpen, open, el}) => {
                         <p className={'text-wrap h-full w-full text-base max-laptop:text-sm font-normal text-grey '}>
                             {el.text}
                         </p>
-                    </motion.div>
+                    </m.div>
                 }
             </AnimatePresence>
-        </motion.div>
+        </m.div>
 
     );
 };

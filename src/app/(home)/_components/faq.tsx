@@ -1,6 +1,6 @@
 'use client';
 import React, {useState} from 'react';
-import {motion, AnimatePresence} from "framer-motion";
+import {motion, AnimatePresence, domAnimation, LazyMotion} from "framer-motion";
 import Wrapper from "@/app/_components/wrapper";
 import FAQCard from "@/app/(home)/_components/faq/card";
 import Image from "next/image";
@@ -39,32 +39,35 @@ const HomeFaq = () => {
     return (
         <Wrapper>
             <div className={'mt-20'}>
-                <section id={'faq'} className={'relative'}>
-                    <TitleBlock text={'faq'} type={3}/>
-                    <div className={'relative max-h-[448px] max-laptop:min-h-[660px] max-phone:min-h-[830px] mt-12 flex flex-row max-phone:flex-col place-items-start w-full gap-8 z-30'}>
-                        <div className={'flex flex-col gap-8 w-full basis-1/2'}>
-                            {FAQs.map((el, index) => {
-                                    const isOpen = index === open;
-                                    if (index % 2) return;
-                                    return (
-                                        <FAQCard key={index} index={index} isOpen={isOpen} setOpen={setOpen} open={open} el={el}/>
-                                    )
-                                }
-                            )}
+
+                <LazyMotion features={domAnimation}>
+                    <section id={'faq'} className={'relative'}>
+                        <TitleBlock text={'faq'} type={3}/>
+                        <div className={'relative max-h-[448px] max-laptop:min-h-[660px] max-phone:min-h-[830px] mt-12 flex flex-row max-phone:flex-col place-items-start w-full gap-8 z-30'}>
+                            <div className={'flex flex-col gap-8 w-full basis-1/2'}>
+                                {FAQs.map((el, index) => {
+                                        const isOpen = index === open;
+                                        if (index % 2) return;
+                                        return (
+                                            <FAQCard key={index} index={index} isOpen={isOpen} setOpen={setOpen} open={open} el={el}/>
+                                        )
+                                    }
+                                )}
+                            </div>
+                            <div className={'flex flex-col gap-8 w-full basis-1/2'}>
+                                {FAQs.map((el, index) => {
+                                        const isOpen = index === open;
+                                        if (!(index % 2)) return;
+                                        return (
+                                            <FAQCard key={index} index={index} isOpen={isOpen} setOpen={setOpen} open={open} el={el}/>
+                                        )
+                                    }
+                                )}
+                            </div>
                         </div>
-                        <div className={'flex flex-col gap-8 w-full basis-1/2'}>
-                            {FAQs.map((el, index) => {
-                                    const isOpen = index === open;
-                                    if (!(index % 2)) return;
-                                    return (
-                                        <FAQCard key={index} index={index} isOpen={isOpen} setOpen={setOpen} open={open} el={el}/>
-                                    )
-                                }
-                            )}
-                        </div>
-                    </div>
-                    <FAQFish/>
-                </section>
+                        <FAQFish/>
+                    </section>
+                </LazyMotion>
             </div>
         </Wrapper>
     );

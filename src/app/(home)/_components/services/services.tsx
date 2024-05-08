@@ -1,13 +1,13 @@
 'use client';
 
 import React, {useEffect, useState} from 'react';
-import {motion, useMotionValue, useSpring, useTransform} from "framer-motion";
-import {isMobile} from "react-device-detect";
+import {domAnimation, LazyMotion, motion, m, } from "framer-motion";
+
 import {SCREENS} from "@/shared/constants";
 import {AnimateChangeInHeight} from "@/app/_components/animation/change-in-height";
 import Draggable from "@/app/(home)/_components/services/draggable";
 import useWindowDimensions from "@/shared/hooks/useWindowDimensions";
-import Link from "next/link";
+
 import Wrapper from "@/app/_components/wrapper";
 
 const Services = () => {
@@ -334,111 +334,114 @@ const Services = () => {
     return (
         <>
             <Wrapper>
-                <div
-                    // viewport={{once: true}}
-                    // transition={transition}
-                    style={{
-                        height: width < SCREENS.LAPTOP ? 400 : 640
-                    }}
-                    className={`my-7 mx-auto pt-2 relative flex-wrap flex flex-row justify-between h-[640px] overflow-visible`}>
-                    {/*{showToClick ?*/}
-                    {/*    <div className={'absolute top-0 left-0 w-full h-full bg-black/10 '}>*/}
-                    {/*        */}
-                    {/*    </div>*/}
-                    {/*    : <></>}*/}
-                    {services.map((el, index) => {
-                        const tempInitial = {
-                            left: 0,
-                            y: 0
-                        };
-                        const tempCircleWidth = width <= SCREENS.LAPTOP ? 160 : 280;
-                        const tempSpaceBetween = (width <= SCREENS.LAPTOP? (width - 2*circleWidth)/6 : (width - 6*circleWidth)/13)
+                <LazyMotion features={domAnimation}>
 
-                        tempInitial.left = index * (tempCircleWidth + tempSpaceBetween)
+                    <div
+                        // viewport={{once: true}}
+                        // transition={transition}
+                        style={{
+                            height: width < SCREENS.LAPTOP ? 400 : 640
+                        }}
+                        className={`my-7 mx-auto pt-2 relative flex-wrap flex flex-row justify-between h-[640px] overflow-visible`}>
+                        {/*{showToClick ?*/}
+                        {/*    <div className={'absolute top-0 left-0 w-full h-full bg-black/10 '}>*/}
+                        {/*        */}
+                        {/*    </div>*/}
+                        {/*    : <></>}*/}
+                        {services.map((el, index) => {
+                            const tempInitial = {
+                                left: 0,
+                                y: 0
+                            };
+                            const tempCircleWidth = width <= SCREENS.LAPTOP ? 160 : 280;
+                            const tempSpaceBetween = (width <= SCREENS.LAPTOP? (width - 2*circleWidth)/6 : (width - 6*circleWidth)/13)
 
-                        let isLaptop = false;
-                        if (width < SCREENS.LAPTOP) isLaptop = true;
-                        if ((index === 2 || index === 3) && isLaptop) {
-                            tempInitial.y = tempCircleWidth + tempSpaceBetween;
-                            tempInitial.left = (index - 2) * (tempCircleWidth + tempSpaceBetween)
-                        }
-                        //${index === 1 && 'pb-5' } ${index === 2 && 'pt-5' } ${index === 0 && 'pr-5' } ${index === 3 && 'pl-5' }
-                        let paddingStr = '';
-                        let paddingValue  = '32px';
-                        if(index === 1){
-                            paddingStr = 'paddingBottom';
-                        }
-                        if(index === 2 ){
-                            paddingStr = 'paddingTop';
-                        }
-                        if(index === 0 ){
-                            paddingStr = 'paddingRight';
-                        }
-                        if(index === 3 ){
-                            paddingStr = 'paddingLeft';
-                        }
-                        const paddingWhileInView = {
-                            [paddingStr]: paddingValue
-                        }
-                        return (
-                            <motion.div
-                                key={index}
-                                variants={{
-                                    'pos': {...el.whileInView, transition: transition,...paddingWhileInView},
-                                    'showed':{
-                                        backgroundColor: 'rgb(151 1 1 / 1)',
-                                        borderColor: 'rgb(151 1 1 / 1)',
-                                        transition: {
-                                            type: 'tween',
-                                            duration: 0
+                            tempInitial.left = index * (tempCircleWidth + tempSpaceBetween)
+
+                            let isLaptop = false;
+                            if (width < SCREENS.LAPTOP) isLaptop = true;
+                            if ((index === 2 || index === 3) && isLaptop) {
+                                tempInitial.y = tempCircleWidth + tempSpaceBetween;
+                                tempInitial.left = (index - 2) * (tempCircleWidth + tempSpaceBetween)
+                            }
+                            //${index === 1 && 'pb-5' } ${index === 2 && 'pt-5' } ${index === 0 && 'pr-5' } ${index === 3 && 'pl-5' }
+                            let paddingStr = '';
+                            let paddingValue  = '32px';
+                            if(index === 1){
+                                paddingStr = 'paddingBottom';
+                            }
+                            if(index === 2 ){
+                                paddingStr = 'paddingTop';
+                            }
+                            if(index === 0 ){
+                                paddingStr = 'paddingRight';
+                            }
+                            if(index === 3 ){
+                                paddingStr = 'paddingLeft';
+                            }
+                            const paddingWhileInView = {
+                                [paddingStr]: paddingValue
+                            }
+                            return (
+                                <m.div
+                                    key={index}
+                                    variants={{
+                                        'pos': {...el.whileInView, transition: transition,...paddingWhileInView},
+                                        'showed':{
+                                            backgroundColor: 'rgb(151 1 1 / 1)',
+                                            borderColor: 'rgb(151 1 1 / 1)',
+                                            transition: {
+                                                type: 'tween',
+                                                duration: 0
+                                            },
+                                            color:'white',
+                                            zIndex: 9999,
+                                            padding: 0,
+                                            translateZ: 0
                                         },
-                                        color:'white',
-                                        zIndex: 9999,
-                                        padding: 0,
-                                        translateZ: 0
-                                    },
-                                    'hide':{
-                                        backgroundColor: 'rgb(151 1 1 / 0)',
-                                        borderColor: 'black',
-                                        transition: {
-                                            type: 'tween',
-                                            duration: 0
+                                        'hide':{
+                                            backgroundColor: 'rgb(151 1 1 / 0)',
+                                            borderColor: 'black',
+                                            transition: {
+                                                type: 'tween',
+                                                duration: 0
+                                            },
+                                            translateZ: 0
+                                            // ...paddingWhileInView
                                         },
-                                        translateZ: 0
-                                        // ...paddingWhileInView
-                                    },
-                                    'ping':{
-                                        scale: [1, 0.9, 1],
-                                        transition:{
-                                            type: 'tween',
-                                            repeat: Infinity,
-                                            duration: 1,
-                                            repeatDelay: 7,
-                                            delay: index*2
-                                        },
-                                        translateZ: 0
+                                        'ping':{
+                                            scale: [1, 0.9, 1],
+                                            transition:{
+                                                type: 'tween',
+                                                repeat: Infinity,
+                                                duration: 1,
+                                                repeatDelay: 7,
+                                                delay: index*2
+                                            },
+                                            translateZ: 0
 
-                                    }
-                                }}
+                                        }
+                                    }}
 
-                                initial={width <= SCREENS.LAPTOP ? 'pos' : tempInitial}
-                                whileInView={['pos', 'ping']}
-                                whileHover={{
-                                    scale: 1.05,
-                                }}
-                                animate={[(el.showed ? 'showed':'hide')]}
-                                onClick={() => {
-                                    handleElClick(index);
-                                }}
-                                viewport={{once: true}}
-                                className={`select-none absolute flex items-center justify-center rounded-full border-[8px] max-laptop:border-[6px] border-black transform-gpu 
-                                    ${width <= SCREENS.LAPTOP ? 'h-[160px] min-w-[160px] max-w-[160px]' : 'h-[280px] min-w-[280px] max-w-[280px]'} ${el.number==='04' ? 'cursor-default' : 'cursor-pointer' } `}
-                            >
-                                <span className={`text-xl max-w-[160px] font-[900] max-laptop:text-sm max-laptop:max-w-[140px] text-center ${index === 0 && 'max-w-[140px] max-laptop:max-w-[90px]'}`}>{el.name}</span>
-                            </motion.div>
-                        )
-                    })}
-                </div>
+                                    initial={width <= SCREENS.LAPTOP ? 'pos' : tempInitial}
+                                    whileInView={['pos', 'ping']}
+                                    whileHover={{
+                                        scale: 1.05,
+                                    }}
+                                    animate={[(el.showed ? 'showed':'hide')]}
+                                    onClick={() => {
+                                        handleElClick(index);
+                                    }}
+                                    viewport={{once: true}}
+                                    className={`select-none absolute flex items-center justify-center rounded-full border-[8px] max-laptop:border-[6px] border-black transform-gpu 
+                                        ${width <= SCREENS.LAPTOP ? 'h-[160px] min-w-[160px] max-w-[160px]' : 'h-[280px] min-w-[280px] max-w-[280px]'} ${el.number==='04' ? 'cursor-default' : 'cursor-pointer' } `}
+                                >
+                                    <span className={`text-xl max-w-[160px] font-[900] max-laptop:text-sm max-laptop:max-w-[140px] text-center ${index === 0 && 'max-w-[140px] max-laptop:max-w-[90px]'}`}>{el.name}</span>
+                                </m.div>
+                            )
+                        })}
+                    </div>
+                </LazyMotion>
             </Wrapper>
             <AnimateChangeInHeight className={'mb-[86px]'}>
                 <Draggable rootClass={' no-scrollbar'}>

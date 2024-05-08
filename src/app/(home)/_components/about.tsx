@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import Wrapper from "@/app/_components/wrapper";
-import {motion} from "framer-motion";
+import {domAnimation, LazyMotion, m} from "framer-motion";
 import TitleBlock from "@/app/_components/title-block";
 
 const ABOUT_US = [
@@ -38,34 +38,36 @@ const HomeAbout = () => {
                 <Wrapper>
                     <TitleBlock text={'Why ik PROJECT?'} type={2}/>
                 </Wrapper>
-                <div className={'mt-12 flex flex-col gap-8 relative z-40'}>
-                    {ABOUT_US.map((el, index)=>(
-                        <motion.div
-                            key={index}
-                            //backdrop-blur-[22px]
-                            className={` backdrop-grayscale backdrop-saturate-200 w-full `}>
-                            <Wrapper>
-                                <div className={`flex items-center gap-12 max-phone:gap-0  ${index % 2 ? 'flex-row-reverse justify-end' : 'flex-row justify-end'} max-phone:flex-col max-phone:text-justify`}>
-                                    <h1 className={`text-h1 max-phone:text-1xl text-main font-semibold ${index % 2 ? 'max-phone:self-end' : 'max-phone:self-start'}`}>{el.number}</h1>
-                                    <motion.span
-                                        initial={{opacity: 0}}
-                                        whileInView={{opacity: 1}}
-                                        viewport={{
-                                            once: true,
-                                        }}
-                                        transition={{
-                                            duration: 2
-                                        }}
-                                        className={'text-sm text-black font-normal w-full'}
-                                    >
-                                        <span className={'text-mainbg font-semibold'}>{el.title} </span>
-                                        {el.text}
-                                    </motion.span>
-                                </div>
-                            </Wrapper>
-                        </motion.div>
-                    ))}
-                </div>
+                <LazyMotion features={domAnimation}>
+                    <div className={'mt-12 flex flex-col gap-8 relative z-40'}>
+                        {ABOUT_US.map((el, index)=>(
+                            <m.div
+                                key={index}
+                                //backdrop-blur-[22px]
+                                className={` backdrop-grayscale backdrop-saturate-200 w-full `}>
+                                <Wrapper>
+                                    <div className={`flex items-center gap-12 max-phone:gap-0  ${index % 2 ? 'flex-row-reverse justify-end' : 'flex-row justify-end'} max-phone:flex-col max-phone:text-justify`}>
+                                        <h1 className={`text-h1 max-phone:text-1xl text-main font-semibold ${index % 2 ? 'max-phone:self-end' : 'max-phone:self-start'}`}>{el.number}</h1>
+                                        <m.span
+                                            initial={{opacity: 0}}
+                                            whileInView={{opacity: 1}}
+                                            viewport={{
+                                                once: true,
+                                            }}
+                                            transition={{
+                                                duration: 2
+                                            }}
+                                            className={'text-sm text-black font-normal w-full'}
+                                        >
+                                            <span className={'text-mainbg font-semibold'}>{el.title} </span>
+                                            {el.text}
+                                        </m.span>
+                                    </div>
+                                </Wrapper>
+                            </m.div>
+                        ))}
+                    </div>
+                </LazyMotion>
 
             </section>
 
