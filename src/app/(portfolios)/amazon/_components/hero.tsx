@@ -8,16 +8,16 @@ const AmazonHero = ({header, paragraph, stats, img1, img2}:{header: string, para
     return (
         <>
             {/*h-[560px] max-laptop:h-[768px]*/}
-            <div className={'w-full z-[60] h-max max-phone:h-max'}>
+            <div className={'w-full h-max max-phone:h-max'}>
                 <div
-                    className={'absolute -z-50 top-0 right-0 bg-mainbg w-[530px] h-[calc(100%+46px)] max-h-[790px] max-laptop:hidden'}/>
+                    className={'absolute -z-10 top-0 right-0 bg-mainbg w-[530px] h-[calc(100%+46px)] max-h-[790px] max-laptop:hidden'}/>
                 {/*<div*/}
                 {/*    className={'absolute -z-50 left-[156px] top-[422px] w-[230px] h-[41px] bg-mainbg/25 max-laptop:hidden'}/>*/}
                 {/*<div*/}
                 {/*    className={'absolute -z-50 left-[700px] top-[534px] w-[303px] h-[77px] bg-mainbg/25 max-laptop:hidden'}/>*/}
 
                 <div
-                    className={'hidden absolute -z-50 top-[156px] left-0 bg-mainbg w-full h-[257px] max-laptop:block'}/>
+                    className={'hidden absolute -z-10 top-[156px] left-0 bg-mainbg w-full h-[257px] max-laptop:block'}/>
                 {/*<div*/}
                 {/*    className={'hidden absolute -z-50 left-[461px] top-[561px] w-[178px] h-[41px] bg-mainbg/25 max-laptop:block max-phone:hidden'}/>*/}
 

@@ -26,7 +26,7 @@ const Portfolio2Hero = ({header, paragraph}: {header: string, paragraph: string}
                 </Wrapper>
                     <div style={{
                         background: 'radial-gradient(circle, rgba(151,1,1,1) -40%, rgba(151,1,1,0) 68%)'
-                    }} className={'-z-30 absolute right-0 mr-[20px] top-[300px] w-[480px] h-[480px] blur-[100px] overflow-visible'}/>
+                    }} className={'-z-20 absolute right-0 mr-[20px] top-[300px] w-[480px] h-[480px] blur-[100px] overflow-visible'}/>
                     <div style={{
                         background: 'radial-gradient(circle, rgba(151,1,1,1) -40%, rgba(151,1,1,0) 68%)'
                     }} className={'absolute -ml-[254px] top-0 w-[480px] h-[480px] blur-[100px] overflow-visible'}/>

@@ -21,9 +21,7 @@ export default function RootLayout({
       <body>
           <FluidCanvas/>
           <ContactFromProvider>
-              <div className={'z-[1]'}>
-                {children}
-              </div>
+              {children}
           </ContactFromProvider>
           <Script type="text/javascript" src="/js/fluid-init.js" strategy={"beforeInteractive"} async/>
       </body>

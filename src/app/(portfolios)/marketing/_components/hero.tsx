@@ -9,7 +9,7 @@ const MarketingHero = ({header, paragraph}: {header: string, paragraph: string})
     return (
         <>
             <div className={'w-full z-[900] min-h-[632px]'}>
-                <Image src={heroImg} priority alt={'heroImg'} className={'absolute top-0 right-0 -z-50 max-w-[720px] max-h-[820px] object-cover max-laptop:left-0 max-laptop:right-auto max-laptop:max-h-[419px] max-laptop:max-w-full max-phone:max-h-[305px]'}/>
+                <Image src={heroImg} priority alt={'heroImg'} className={'absolute top-0 right-0 -z-20 max-w-[720px] max-h-[820px] object-cover max-laptop:left-0 max-laptop:right-auto max-laptop:max-h-[419px] max-laptop:max-w-full max-phone:max-h-[305px]'}/>
                 <Wrapper>
                     <div className={'w-full h-max'}>
                         <div
