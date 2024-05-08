@@ -1,6 +1,6 @@
 'use client';
 import React, {useEffect, useState} from 'react';
-import {motion, useMotionTemplate, useMotionValue, useTransform} from "framer-motion";
+import {domAnimation, LazyMotion, motion,m, useMotionTemplate} from "framer-motion";
 import Wrapper from "@/app/_components/wrapper";
 import Image from "next/image";
 
@@ -116,92 +116,95 @@ const HomeStrategy = () => {
                     </div>
                 </div>
                 <Wrapper>
-                    <AnimateChangeInHeight
-                        className={'mt-24 max-phone:mt-2 w-full relative !overflow-visible min-h-[700px]'}>
-                        <motion.div style={{
-                            transition: 'all 0.5s cubic-bezier(0.21, 0.86, 0, -0.09) 0s',
-                            perspectiveOrigin: 'center'
-                        }}
-                                    className={'max-phone:hidden !overflow-visible relative mt-4 left-1/2 ml-[-250px] max-phone:ml-[-208px] h-max w-max max-phone:w-full transform-gpu'}
-                        >
-                            <motion.div
-                                animate={{
-                                    background: [
-                                        useMotionTemplate`-webkit-radial-gradient(circle, rgba(255,255,255,1) 1%, rgba(255,255,255,0) 55%)`.get(),
-                                        useMotionTemplate`-webkit-radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(255,255,255,0) 55%)`.get(),
-                                        useMotionTemplate`-webkit-radial-gradient(circle, rgba(255,255,255,1) 1%, rgba(255,255,255,0) 55%)`.get(),
-                                    ],
+                    <LazyMotion features={domAnimation}>
+
+                        <AnimateChangeInHeight
+                            className={'mt-24 max-phone:mt-2 w-full relative !overflow-visible min-h-[700px]'}>
+                            <m.div style={{
+                                transition: 'all 0.5s cubic-bezier(0.21, 0.86, 0, -0.09) 0s',
+                                perspectiveOrigin: 'center'
+                            }}
+                                        className={'max-phone:hidden !overflow-visible relative mt-4 left-1/2 ml-[-250px] max-phone:ml-[-208px] h-max w-max max-phone:w-full transform-gpu'}
+                            >
+                                <m.div
+                                    animate={{
+                                        background: [
+                                            useMotionTemplate`-webkit-radial-gradient(circle, rgba(255,255,255,1) 1%, rgba(255,255,255,0) 55%)`.get(),
+                                            useMotionTemplate`-webkit-radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(255,255,255,0) 55%)`.get(),
+                                            useMotionTemplate`-webkit-radial-gradient(circle, rgba(255,255,255,1) 1%, rgba(255,255,255,0) 55%)`.get(),
+                                        ],
 
 
-                                    transition: {
-                                        repeat: Infinity,
-                                        duration: 4
-                                    }
-                                }}
-                                className={'max-phone:ml-[-40px]  w-[160%] h-[160%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute top-0 blur-3xl rounded-full transform-gpu'}
-                            />
-                            <motion.div
-
-                                style={{
-                                    transform: "translateZ(100px)",
-                                    transformStyle: "preserve-3d",
-                                }}
-                                className={'w-max h-max z-50 max-phone:w-[80%] transform-gpu'}>
-                                <Image src={treeImg} alt={'tree'} className={'drop-shadow-lg'}/>
-                            </motion.div>
-                        </motion.div>
-
-                        <div className={'max-[920px]:flex max-[920px]:flex-col gap-8 items-center'}>
-                            {STRATEGIES.map((el, index) => (
-                                <motion.div
-                                    key={index}
-                                    whileInView={el.whileinview}
-                                    // whileInView={{
-                                    //     left: 'calc(8%)',
-                                    //     top: '0%'
-                                    // }}
-                                    initial={{
-                                        // height: width < SCREENS.LAPTOP ? '200px': 'max-content',
-                                        height: 'max-content',
-                                        opacity: 0,
-                                        left: 'calc(50% - 172.5px)',
-                                        top: '25%'
-                                    }}
-                                    viewport={{once: true}}
-                                    // whileHover={{
-                                    //     height: '215px',
-                                    // }}
-                                    // viewport={{ once: true }}
-                                    transition={{
-                                        type: 'tween',
-                                        delay: el.delay,
-                                        duration: 1,
-                                        scale: {
-                                            duration: 0
-                                        },
-                                        height: {
-                                            duration: 0.3
+                                        transition: {
+                                            repeat: Infinity,
+                                            duration: 4
                                         }
                                     }}
-                                    //hover:backdrop-blur-[60px]
-                                    // left-[325px] top-[250px]
-                                    //left-[calc(50%_-_172.5px)]
-                                    //top-1/4
-                                    className={'cursor-pointer absolute max-[920px]:static flex flex-col w-[345px] max-laptop:w-[223px] max-[920px]:w-[345px] items-center group opacity-0 rounded-2xl max-w-[1000px]:scale-[0.50] transform-gpu'}
-                                >
-                                    <Image src={el.img} alt={'strategy'}/>
-                                    <span
-                                        className={'text-lg font-semibold text-white text-center max-laptop:text-base mt-4'}>{el.title}</span>
-                                    <p
-                                        // line-clamp-2 line-clamp-none
-                                        //line-clamp-2 group-hover:line-clamp-[100]
-                                        className={' w-full  max-[920px]:line-clamp-[100] text-sm max-laptop:text-xs font-normal text-white/70 text-center overflow-hidden'}>
-                                        {el.text}
-                                    </p>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </AnimateChangeInHeight>
+                                    className={'max-phone:ml-[-40px]  w-[160%] h-[160%] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 absolute top-0 blur-3xl rounded-full transform-gpu'}
+                                />
+                                <div
+
+                                    style={{
+                                        transform: "translateZ(100px)",
+                                        transformStyle: "preserve-3d",
+                                    }}
+                                    className={'w-max h-max z-50 max-phone:w-[80%] transform-gpu'}>
+                                    <Image src={treeImg} alt={'tree'} className={'drop-shadow-lg'} priority/>
+                                </div>
+                            </m.div>
+
+                            <div className={'max-[920px]:flex max-[920px]:flex-col gap-8 items-center'}>
+                                {STRATEGIES.map((el, index) => (
+                                    <m.div
+                                        key={index}
+                                        whileInView={el.whileinview}
+                                        // whileInView={{
+                                        //     left: 'calc(8%)',
+                                        //     top: '0%'
+                                        // }}
+                                        initial={{
+                                            // height: width < SCREENS.LAPTOP ? '200px': 'max-content',
+                                            height: 'max-content',
+                                            opacity: 0,
+                                            left: 'calc(50% - 172.5px)',
+                                            top: '25%'
+                                        }}
+                                        viewport={{once: true}}
+                                        // whileHover={{
+                                        //     height: '215px',
+                                        // }}
+                                        // viewport={{ once: true }}
+                                        transition={{
+                                            type: 'tween',
+                                            delay: el.delay,
+                                            duration: 1,
+                                            scale: {
+                                                duration: 0
+                                            },
+                                            height: {
+                                                duration: 0.3
+                                            }
+                                        }}
+                                        //hover:backdrop-blur-[60px]
+                                        // left-[325px] top-[250px]
+                                        //left-[calc(50%_-_172.5px)]
+                                        //top-1/4
+                                        className={'cursor-pointer absolute max-[920px]:static flex flex-col w-[345px] max-laptop:w-[223px] max-[920px]:w-[345px] items-center group opacity-0 rounded-2xl max-w-[1000px]:scale-[0.50] transform-gpu'}
+                                    >
+                                        <Image src={el.img} alt={'strategy'} priority/>
+                                        <span
+                                            className={'text-lg font-semibold text-white text-center max-laptop:text-base mt-4'}>{el.title}</span>
+                                        <p
+                                            // line-clamp-2 line-clamp-none
+                                            //line-clamp-2 group-hover:line-clamp-[100]
+                                            className={' w-full  max-[920px]:line-clamp-[100] text-sm max-laptop:text-xs font-normal text-white/70 text-center overflow-hidden'}>
+                                            {el.text}
+                                        </p>
+                                    </m.div>
+                                ))}
+                            </div>
+                        </AnimateChangeInHeight>
+                    </LazyMotion>
                 </Wrapper>
             </section>
 
