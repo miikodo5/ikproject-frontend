@@ -44,7 +44,8 @@ const HomeAbout = () => {
                             <m.div
                                 key={index}
                                 //backdrop-blur-[22px]
-                                className={` backdrop-grayscale backdrop-saturate-200 w-full `}>
+                                //backdrop-grayscale backdrop-saturate-200
+                                className={`  w-full `}>
                                 <Wrapper>
                                     <div className={`flex items-center gap-12 max-phone:gap-0  ${index % 2 ? 'flex-row-reverse justify-end' : 'flex-row justify-end'} max-phone:flex-col max-phone:text-justify`}>
                                         <h1 className={`text-h1 max-phone:text-1xl text-main font-semibold ${index % 2 ? 'max-phone:self-end' : 'max-phone:self-start'}`}>{el.number}</h1>

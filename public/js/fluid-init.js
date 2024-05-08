@@ -46,7 +46,8 @@ let config = {
     COLORFUL: true,
     COLOR_UPDATE_SPEED: 10,
     PAUSED: false,
-    BACK_COLOR: { r: 247, g: 248, b: 250 },
+    // BACK_COLOR: { r: 247, g: 248, b: 250 },
+    BACK_COLOR: { r: 8, g: 7, b: 5 },
     TRANSPARENT: false,
     BLOOM: false,
     BLOOM_ITERATIONS: 8,
@@ -54,7 +55,7 @@ let config = {
     BLOOM_INTENSITY: 0.8,
     BLOOM_THRESHOLD: 0.6,
     BLOOM_SOFT_KNEE: 0.7,
-    SUNRAYS: true,
+    SUNRAYS: false,
     SUNRAYS_RESOLUTION: 196,
     SUNRAYS_WEIGHT: 1,
 }
@@ -69,7 +70,7 @@ function pointerPrototype () {
     this.deltaY = 0;
     this.down = false;
     this.moved = false;
-    this.color = [30, 0, 300];
+    this.color = [0, 0, 0];
 }
 
 let pointers = [];
@@ -1464,10 +1465,21 @@ function correctDeltaY (delta) {
 }
 
 function generateColor () {
-    let c = HSVtoRGB(0, 1, 0.2);
-    c.r *= 0.15;
-    c.g *= 0.15;
-    c.b *= 0.15;
+    const HSVs = [
+        [0.5,0.8, 0.8],
+        // [348, 1, 1],
+        // [2.19,1,1],
+        // [2.21,0.19,0.17],
+        // [0,0,0],
+        // [2.16,0.04,0.1],
+        [0,0,0.4]
+    ]
+    const randomColor = HSVs[Math.floor(Math.random()*2)];
+    let c = HSVtoRGB(randomColor[0], randomColor[1], randomColor[2]);
+    console.log(c);
+    c.r *=0.15;
+    c.g *=0.15;
+    c.b *=0.15;
     return c;
 }
 

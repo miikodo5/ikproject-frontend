@@ -11,7 +11,9 @@ export default function Fluid() {
                 top: 0,
                 left: 0,
                 zIndex: '-30',
-            }}></canvas>
+                filter: 'invert(100%)'
+            }}
+            ></canvas>
         </>
       )
 }
