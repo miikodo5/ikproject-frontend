@@ -1,7 +1,7 @@
 'use client';
 
-import React, {useEffect, useState} from 'react';
-import {domAnimation, LazyMotion, motion, m, } from "framer-motion";
+import React, {useEffect, useRef, useState} from 'react';
+import {domAnimation, LazyMotion, motion, m, useInView,} from "framer-motion";
 
 import {SCREENS} from "@/shared/constants";
 import {AnimateChangeInHeight} from "@/app/_components/animation/change-in-height";
@@ -20,6 +20,11 @@ const Services = () => {
     const [services, setServices] = useState<Array<{showed: boolean, name: string, number: string, initial: {left: string}, whileInView: {y: number, left: string}, services: {link: string, number: string, title: string, text: string}[]}>>([]);
     const [isAnyShowed, setIsAnyShowed] = useState<boolean>(false);
 
+    const [isWhileInViewDone, setIsWhileInViewDone] = useState<boolean>(false)
+
+    const ref = useRef(null);
+    const isInView = useInView(ref, {once:true});
+
     const handleElClick = (index: number)=>{
         setIsAnyShowed(true);
         const nextList = [...services];
@@ -30,7 +35,7 @@ const Services = () => {
         setServices(nextList);
         if(width > SCREENS.LAPTOP){
 
-            scrollTo(0,1900);
+            scrollTo(0,1700);
         }
         else if(width < SCREENS.PHONE){
 
@@ -48,6 +53,7 @@ const Services = () => {
         }
         setIsLoading(false);
 
+
         // const clickTimeout = setTimeout(()=>{
         //     setShowToClick(false);
         //     console.log('123');
@@ -59,6 +65,15 @@ const Services = () => {
     useEffect(()=>{
         uploadServices();
     }, [width])
+
+    useEffect(()=>{
+        const delayForHover = setTimeout(()=>{
+            setIsWhileInViewDone(true);
+            console.log("in view")
+        }, 2000)
+
+        return ()=>clearTimeout(delayForHover);
+    }, [isInView])
 
     const uploadServices = ()=>{
         const tempCircleWidth = window.innerWidth <= SCREENS.LAPTOP ? 160 : 280;
@@ -351,6 +366,7 @@ const Services = () => {
                     <div
                         // viewport={{once: true}}
                         // transition={transition}
+                        ref={ref}
                         style={{
                             height: width < SCREENS.LAPTOP ? 400 : 640
                         }}
@@ -398,20 +414,20 @@ const Services = () => {
                                 <m.div
                                     key={index}
                                     variants={{
-                                        'pos': {...el.whileInView, transition: transition,...paddingWhileInView},
-                                        'showed':{
+                                        'pos': {...el.whileInView, transition: transition, },
+                                        'showed': {
                                             backgroundColor: 'rgb(151 1 1 / 1)',
                                             borderColor: 'rgb(151 1 1 / 1)',
                                             transition: {
                                                 type: 'tween',
                                                 duration: 0
                                             },
-                                            color:'white',
+                                            color: 'white',
                                             zIndex: 9999,
                                             padding: 0,
                                             translateZ: 0
                                         },
-                                        'hide':{
+                                        'hide': {
                                             backgroundColor: 'rgb(151 1 1 / 0)',
                                             borderColor: 'black',
                                             transition: {
@@ -421,14 +437,14 @@ const Services = () => {
                                             translateZ: 0
                                             // ...paddingWhileInView
                                         },
-                                        'ping':{
+                                        'ping': {
                                             scale: [1, 0.9, 1],
-                                            transition:{
+                                            transition: {
                                                 type: 'tween',
                                                 repeat: Infinity,
                                                 duration: 1,
                                                 repeatDelay: 7,
-                                                delay: index*2
+                                                delay: index * 2
                                             },
                                             translateZ: 0
 
@@ -437,18 +453,50 @@ const Services = () => {
 
                                     initial={width <= SCREENS.LAPTOP ? 'pos' : tempInitial}
                                     whileInView={['pos', (!isAnyShowed ? 'ping' : '')]}
-                                    whileHover={{
-                                        scale: 1.05,
-                                    }}
-                                    animate={[(el.showed ? 'showed':'hide')]}
+                                    animate={[(el.showed ? 'showed' : 'hide')]}
                                     onClick={() => {
                                         handleElClick(index);
                                     }}
                                     viewport={{once: true}}
-                                    className={`select-none absolute flex items-center justify-center rounded-full border-[8px] max-laptop:border-[6px] border-black transform-gpu 
-                                        ${width <= SCREENS.LAPTOP ? 'h-[160px] min-w-[160px] max-w-[160px]' : 'h-[280px] min-w-[280px] max-w-[280px]'} ${el.number==='04' ? 'cursor-default' : 'cursor-pointer' } `}
-                                >
-                                    <span className={`text-xl max-w-[160px] font-[900] max-laptop:text-sm max-laptop:max-w-[140px] text-center ${index === 0 && 'max-w-[140px] max-laptop:max-w-[90px]'}`}>{el.name}</span>
+                                    className={`select-none absolute flex items-center  rounded-full justify-center ${width <= SCREENS.LAPTOP ? 'h-[160px] min-w-[160px] max-w-[160px]' : 'h-[280px] min-w-[280px] max-w-[280px]'} `}>
+
+                                    <m.div
+                                        variants={
+                                        {
+                                            'pos': {transition: transition, ...paddingWhileInView},
+                                            'showed': {
+                                                backgroundColor: 'rgb(151 1 1 / 1)',
+                                                borderColor: 'rgb(151 1 1 / 1)',
+                                                transition: {
+                                                    type: 'tween',
+                                                    duration: 0
+                                                },
+                                                color: 'white',
+                                                zIndex: 9999,
+                                                padding: 0,
+                                                translateZ: 0
+                                            },
+                                            'hide': {
+                                                backgroundColor: 'rgb(151 1 1 / 0)',
+                                                borderColor: 'black',
+                                                transition: {
+                                                    type: 'tween',
+                                                    duration: 0
+                                                },
+                                                translateZ: 0
+                                                // ...paddingWhileInView
+                                            },}}
+                                        initial={'pos'}
+                                        whileHover={{scale: 1.05}}
+
+                                        animate={[(el.showed ? 'showed' : 'hide')]}
+                                        className={`w-full h-full flex items-center justify-center rounded-full border-[8px] max-laptop:border-[6px] border-black transform-gpu 
+                                            ${width <= SCREENS.LAPTOP ? 'h-[160px] min-w-[160px] max-w-[160px]' : 'h-[280px] min-w-[280px] max-w-[280px]'} ${el.number === '04' ? 'cursor-default' : 'cursor-pointer'} `}
+                                    >
+
+                                        <span
+                                            className={`text-xl max-w-[160px] font-[900] max-laptop:text-sm max-laptop:max-w-[140px] text-center ${index === 0 && 'max-w-[140px] max-laptop:max-w-[90px]'}`}>{el.name}</span>
+                                    </m.div>
                                 </m.div>
                             )
                         })}

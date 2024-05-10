@@ -1476,7 +1476,7 @@ function generateColor () {
     ]
     const randomColor = HSVs[Math.floor(Math.random()*2)];
     let c = HSVtoRGB(randomColor[0], randomColor[1], randomColor[2]);
-    console.log(c);
+    // console.log(c);
     c.r *=0.15;
     c.g *=0.15;
     c.b *=0.15;
