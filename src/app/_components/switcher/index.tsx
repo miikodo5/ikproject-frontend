@@ -10,7 +10,7 @@ interface IAppSwitcher {
 }
 const AppSwitcher: FC<IAppSwitcher> = ({isPartner, setIsPartner, text1, text2}) => {
     return (
-        <div className={'relative w-max h-max cursor-pointer rounded-[10px] border border-[#DFDFDF]'}
+        <div className={'relative w-max h-max cursor-pointer rounded-[10px] border border-[#DFDFDF] bg-white'}
              onClick={() => setIsPartner(isPartner === From.Partner ? From.Customer : From.Partner)}>
             <div className={'relative z-10 flex flex-row text-sm font-bold'}>
                 <div className={'w-[120px] py-[10px] text-center rounded-[10px]'}>

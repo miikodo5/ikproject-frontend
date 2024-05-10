@@ -22,7 +22,7 @@ const MarketingHero = ({header, paragraph}: {header: string, paragraph: string})
                                 className={'min-w-1/3  text-left  self-end text-h80 min-h-[128px] max-laptop:min-h-[102px] max-phone:min-h-[57px]  max-laptop:text-h1 max-phone:text-1xl '}>{newHeader.split(' ')[2] ? newHeader.split(' ')[2] : ' '}</span>
                         </div>
                     </div>
-                    <div className={'flex flex-row w-[57%] max-phone:w-full justify-between'}>
+                    <div className={'flex flex-row w-[57%] max-phone:w-full justify-between -mt-[50px]'}>
                         <p className={'max-w-[488px] max-laptop:text-base max-laptop:max-w-[696px] max-phone:max-w-full max-laptop:text-justify max-laptop:mx-auto max-phone:mt-[53px]'}>
                             {paragraph}
                         </p>
@@ -33,7 +33,7 @@ const MarketingHero = ({header, paragraph}: {header: string, paragraph: string})
                         {/*</div>*/}
                     </div>
                     <div
-                        className={'flex pt-5 justify-self-center flex-col gap-[13px] items-center justify-center max-laptop:mt-[80px] max-phone:mt-0'}>
+                        className={'absolute bottom-0 left-1/2 -translate-x-1/2 flex pt-5 justify-self-center flex-col gap-[13px] items-center justify-center max-laptop:mt-[80px] max-phone:mt-0'}>
                         <div className={'h-[78px] w-[2px] bg-black animate-bounce'}/>
                         <span className={'text-sm text-black'}>Scroll for more</span>
                     </div>

@@ -43,7 +43,9 @@ const AmazonHero = ({header, paragraph, stats, img1, img2}:{header: string, para
                         <div
                             className={'max-w-[488px] mt-[90px] flex flex-col gap-6 max-laptop:max-w-full max-laptop:items-center max-laptop:mt-[49px] max-phone:mt-[40px]'}>
                             <div className={'flex flex-col gap-2 text-center'}>
-                                <h1 className={'text-h1 font-semibold max-phone:text-1xl max-phone:text-left'}>{header.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();})}</h1>
+                                <h1 className={'text-h1 font-semibold max-phone:text-1xl max-phone:text-left'}>{header.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
+                                    return word.toUpperCase();
+                                })}</h1>
                                 <p className={'text-xl opacity-50 max-phone:text-lg max-phone:text-left'}>
                                     {paragraph}
                                 </p>
@@ -61,7 +63,7 @@ const AmazonHero = ({header, paragraph, stats, img1, img2}:{header: string, para
                                 ))}
                             </div>
                             {/*<div className={'flex flex-row justify-between w-full'}>*/}
-                                <AppButton text={'Contact Us'}/>
+                            <AppButton text={'Contact Us'}/>
 
                             {/*    <div className={'w-max -mt-[67px] -mr-[200px] max-laptop:hidden flex flex-col gap-[13px] items-center justify-center'}>*/}
                             {/*        <div className={'h-[78px] w-[2px] bg-black animate-bounce'}/>*/}
@@ -77,6 +79,12 @@ const AmazonHero = ({header, paragraph, stats, img1, img2}:{header: string, para
                                 </div>
                             ))}
                         </div>
+                    </div>
+
+                    <div
+                        className={'absolute bottom-0 right-[250px] flex pt-5 justify-self-center flex-col gap-[13px] items-center justify-center max-laptop:mt-[80px] max-phone:mt-0'}>
+                        <div className={'h-[78px] w-[2px] bg-white animate-bounce'}/>
+                        <span className={'text-sm text-white'}>Scroll for more</span>
                     </div>
                 </Wrapper>
             </div>

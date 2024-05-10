@@ -29,7 +29,7 @@ const PortfolioHero = ({header, paragraph, stats}:{header: string, paragraph: st
                             ))}
                         </div>
                     </div>
-                    <div className={'w-full pt-5 flex flex-col gap-[13px] items-center justify-center max-laptop:pt-0 max-phone:pt-[38px]'}>
+                    <div className={'w-full pt-5 flex flex-col gap-[13px] -mt-[35px] items-center justify-center max-laptop:pt-0 max-phone:pt-[38px]'}>
                         <div className={'h-[78px] w-[2px] bg-white animate-bounce'}/>
                         <span className={'text-sm text-white'}>Scroll for more</span>
                     </div>

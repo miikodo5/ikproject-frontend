@@ -43,7 +43,7 @@ const Portfolio2Hero = ({header, paragraph}: {header: string, paragraph: string}
                         </div>
                     </div>
                     <div
-                        className={'relative z-40 justify-self-center -mt-[108px] max-laptop:hidden flex flex-col gap-[13px] items-center justify-center'}>
+                        className={'absolute z-40 justify-self-center bottom-0 left-1/2 -translate-x-1/2 max-laptop:hidden flex flex-col gap-[13px] items-center justify-center'}>
                         <div className={'h-[78px] w-[2px] bg-black animate-bounce'}/>
                         <span className={'text-sm text-black'}>Scroll for more</span>
                     </div>
