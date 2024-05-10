@@ -14,37 +14,28 @@ const Services = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const {width, height} = useWindowDimensions();
     const [circleWidth, setCircleWidth] = useState<number>(width <= SCREENS.LAPTOP ? 160 : 280);
-
-    const [showToClick, setShowToClick] = useState<boolean>(true);
-
     const [services, setServices] = useState<Array<{showed: boolean, name: string, number: string, initial: {left: string}, whileInView: {y: number, left: string}, services: {link: string, number: string, title: string, text: string}[]}>>([]);
     const [isAnyShowed, setIsAnyShowed] = useState<boolean>(false);
 
-    const [isWhileInViewDone, setIsWhileInViewDone] = useState<boolean>(false)
-
-    const ref = useRef(null);
-    const isInView = useInView(ref, {once:true});
 
     const handleElClick = (index: number)=>{
         setIsAnyShowed(true);
         const nextList = [...services];
+
         const tempElShowed = nextList.find(el =>  el.showed);
         if(tempElShowed) tempElShowed.showed = !tempElShowed?.showed;
+
         const tempEl = nextList.find(el => nextList[index] === el);
         if(tempEl) tempEl.showed = !tempEl?.showed;
+
         setServices(nextList);
-        if(width > SCREENS.LAPTOP){
 
+        if(width > SCREENS.LAPTOP)
             scrollTo(0,1700);
-        }
-        else if(width < SCREENS.PHONE){
-
+        else if(width < SCREENS.PHONE)
             scrollTo(0,1700);
-        }
-        else if(width < SCREENS.LAPTOP){
+        else if(width < SCREENS.LAPTOP)
             scrollTo(0,1300);
-        }
-
     }
 
     useEffect(()=>{
@@ -52,28 +43,12 @@ const Services = () => {
             uploadServices();
         }
         setIsLoading(false);
-
-
-        // const clickTimeout = setTimeout(()=>{
-        //     setShowToClick(false);
-        //     console.log('123');
-        // }, 5000);
-
-        // return clearTimeout(clickTimeout);
     },[]);
 
     useEffect(()=>{
         uploadServices();
     }, [width])
 
-    useEffect(()=>{
-        const delayForHover = setTimeout(()=>{
-            setIsWhileInViewDone(true);
-            console.log("in view")
-        }, 2000)
-
-        return ()=>clearTimeout(delayForHover);
-    }, [isInView])
 
     const uploadServices = ()=>{
         const tempCircleWidth = window.innerWidth <= SCREENS.LAPTOP ? 160 : 280;
@@ -354,6 +329,41 @@ const Services = () => {
         delay:.5,
         duration: 1
     };
+    const variants = {
+        'showed': {
+            backgroundColor: 'rgb(151 1 1 / 1)',
+            borderColor: 'rgb(151 1 1 / 1)',
+            transition: {
+                type: 'tween',
+                duration: 0
+            },
+            color: 'white',
+            zIndex: 9999,
+            padding: 0,
+            translateZ: 0
+        },
+        'hide': {
+            backgroundColor: 'rgb(151 1 1 / 0)',
+            borderColor: 'black',
+            transition: {
+                type: 'tween',
+                duration: 0
+            },
+            translateZ: 0
+            // ...paddingWhileInView
+        },
+        'ping':(index: number)=>({
+            scale: [1, 0.9, 1],
+            transition: {
+                type: 'tween',
+                repeat: Infinity,
+                duration: 1,
+                repeatDelay: 7,
+                delay: index * 2
+            },
+            translateZ: 0
+        })
+    }
     // @ts-ignore
     if(isLoading)
         return(<div className={'w-full  h-[600px]'}/>)
@@ -366,16 +376,11 @@ const Services = () => {
                     <div
                         // viewport={{once: true}}
                         // transition={transition}
-                        ref={ref}
                         style={{
                             height: width < SCREENS.LAPTOP ? 400 : 640
                         }}
                         className={`my-7 mx-auto pt-2 relative flex-wrap flex flex-row justify-between h-[640px] overflow-visible`}>
-                        {/*{showToClick ?*/}
-                        {/*    <div className={'absolute top-0 left-0 w-full h-full bg-black/10 '}>*/}
-                        {/*        */}
-                        {/*    </div>*/}
-                        {/*    : <></>}*/}
+
                         {services.map((el, index) => {
                             const tempInitial = {
                                 left: 0,
@@ -412,43 +417,11 @@ const Services = () => {
                             }
                             return (
                                 <m.div
+                                    custom={index}
                                     key={index}
                                     variants={{
                                         'pos': {...el.whileInView, transition: transition, },
-                                        'showed': {
-                                            backgroundColor: 'rgb(151 1 1 / 1)',
-                                            borderColor: 'rgb(151 1 1 / 1)',
-                                            transition: {
-                                                type: 'tween',
-                                                duration: 0
-                                            },
-                                            color: 'white',
-                                            zIndex: 9999,
-                                            padding: 0,
-                                            translateZ: 0
-                                        },
-                                        'hide': {
-                                            backgroundColor: 'rgb(151 1 1 / 0)',
-                                            borderColor: 'black',
-                                            transition: {
-                                                type: 'tween',
-                                                duration: 0
-                                            },
-                                            translateZ: 0
-                                            // ...paddingWhileInView
-                                        },
-                                        'ping': {
-                                            scale: [1, 0.9, 1],
-                                            transition: {
-                                                type: 'tween',
-                                                repeat: Infinity,
-                                                duration: 1,
-                                                repeatDelay: 7,
-                                                delay: index * 2
-                                            },
-                                            translateZ: 0
-
-                                        }
+                                        ...variants
                                     }}
 
                                     initial={width <= SCREENS.LAPTOP ? 'pos' : tempInitial}
@@ -464,28 +437,8 @@ const Services = () => {
                                         variants={
                                         {
                                             'pos': {transition: transition, ...paddingWhileInView},
-                                            'showed': {
-                                                backgroundColor: 'rgb(151 1 1 / 1)',
-                                                borderColor: 'rgb(151 1 1 / 1)',
-                                                transition: {
-                                                    type: 'tween',
-                                                    duration: 0
-                                                },
-                                                color: 'white',
-                                                zIndex: 9999,
-                                                padding: 0,
-                                                translateZ: 0
-                                            },
-                                            'hide': {
-                                                backgroundColor: 'rgb(151 1 1 / 0)',
-                                                borderColor: 'black',
-                                                transition: {
-                                                    type: 'tween',
-                                                    duration: 0
-                                                },
-                                                translateZ: 0
-                                                // ...paddingWhileInView
-                                            },}}
+                                            ...variants,
+                                        }}
                                         initial={'pos'}
                                         whileHover={{scale: 1.05}}
 
