@@ -430,8 +430,6 @@ const Services = () => {
                                     onClick={() => {
                                         handleElClick(index);
                                     }}
-                                    onHoverStart={()=>setIsAnyShowed(true)}
-                                    onHoverEnd={()=>setIsAnyShowed(false)}
                                     viewport={{once: true}}
                                     className={`select-none absolute flex items-center  rounded-full justify-center ${width <= SCREENS.LAPTOP ? 'h-[160px] min-w-[160px] max-w-[160px]' : 'h-[280px] min-w-[280px] max-w-[280px]'} `}>
 
@@ -443,6 +441,7 @@ const Services = () => {
                                         }}
                                         initial={'pos'}
                                         whileHover={{scale: 1.05}}
+                                        onHoverStart={()=>setIsAnyShowed(true)}
 
                                         animate={[(el.showed ? 'showed' : 'hide')]}
                                         className={`w-full h-full flex items-center justify-center rounded-full border-[8px] max-laptop:border-[6px] border-black transform-gpu 
