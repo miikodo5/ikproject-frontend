@@ -430,6 +430,8 @@ const Services = () => {
                                     onClick={() => {
                                         handleElClick(index);
                                     }}
+                                    onHoverStart={()=>setIsAnyShowed(true)}
+                                    onHoverEnd={()=>setIsAnyShowed(false)}
                                     viewport={{once: true}}
                                     className={`select-none absolute flex items-center  rounded-full justify-center ${width <= SCREENS.LAPTOP ? 'h-[160px] min-w-[160px] max-w-[160px]' : 'h-[280px] min-w-[280px] max-w-[280px]'} `}>
 
