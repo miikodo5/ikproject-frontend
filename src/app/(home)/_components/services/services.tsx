@@ -441,7 +441,7 @@ const Services = () => {
                                         }}
                                         initial={'pos'}
                                         whileHover={{scale: 1.05}}
-                                        onHoverStart={()=>setIsAnyShowed(true)}
+                                        // onHoverStart={()=>setIsAnyShowed(true)}
 
                                         animate={[(el.showed ? 'showed' : 'hide')]}
                                         className={`w-full h-full flex items-center justify-center rounded-full border-[8px] max-laptop:border-[6px] border-black transform-gpu 
