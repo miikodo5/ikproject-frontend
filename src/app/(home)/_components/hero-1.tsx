@@ -8,6 +8,7 @@ import Image from "next/image";
 import HeroPhoto from "@/app/(home)/_components/hero/photo";
 import useWindowDimensions from "@/shared/hooks/useWindowDimensions";
 import {SCREENS} from "@/shared/constants";
+import Counter from "@/app/_components/counter";
 
 const HomeHero1 = () => {
     const [photoIndex, setPhotoIndex] = useState<number>(0);
@@ -16,9 +17,9 @@ const HomeHero1 = () => {
     const {width, height} = useWindowDimensions();
 
     const STATS = [
-        {number: '33', text:'Active business partners '},
-        {number: '+37%', text:'Overall performance boost'},
-        {number: '5', text:`Years in the business`}
+        {number: 33, text:'Active business partners '},
+        {number: 37,before:'+',after:'%', text:'Overall performance boost'},
+        {number: 5, text:`Years in the business`}
     ];
 
     useEffect(() => {
@@ -58,10 +59,15 @@ const HomeHero1 = () => {
                             <div className={'mt-8 mb-12'}>
                                 <AppButton text={'Contact Us'}/>
                             </div>
-                            <div className={'flex flex-row gap-[136.5px] max-laptop:gap-[59.5px] max-phone:gap-[47px]'}>
+                            {/*//gap-[136.5px] max-laptop:gap-[59.5px] max-phone:gap-[47px]*/}
+                            <div className={'flex flex-row justify-between'}>
                                 {STATS.map((el,index)=>(
-                                    <div key={index} className={'flex flex-col gap-2 max-w-[175px] max-laptop:max-w-[112px]'}>
-                                        <span className={'text-h1 max-laptop:text-xl font-semibold text-center'}>{el.number}</span>
+                                    <div key={index} className={'flex flex-col gap-2 max-w-[165px] items-center  max-laptop:max-w-[112px] '}>
+                                        <span className={'text-h1 max-laptop:text-xl font-semibold text-center flex flex-row'}>
+                                            {el.before}
+                                            <Counter from={0} to={el.number} className={''}/>
+                                            {el.after}
+                                        </span>
                                         <span className={'text-base max-laptop:text-sm font-normal text-grey text-center'}>{el.text}</span>
                                     </div>
                                 ))}
