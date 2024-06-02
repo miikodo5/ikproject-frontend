@@ -18,10 +18,10 @@ const PortfolioPage = () => {
     const header = 'Product launch';
     const paragraph = 'Boost your Amazon success! Let us elevate your product launch with expert strategy and support for higher sales and visibility. /or Don\'t let your products get lost in the noise. Let us help you launch your products successfully on Amazon and watch your sales soar!';
     const stats = [
-        {number: '85%', text: 'increase in product placement for our clients'},
-        {number: '40%', text: 'boost in traffic to product listings'},
-        {number: '$1.2M', text: 'increase in sales revenue achieved through our strategies'},
-        {number: '95%', text: 'rise in conversion rates for products launched using our service'}
+        {number: 85,after:'%', text: 'increase in product placement for our clients'},
+        {number: 40,after:'%', text: 'boost in traffic to product listings'},
+        {number: 1.2,after:'M',before:'$', text: 'increase in sales revenue achieved through our strategies'},
+        {number: 95,after:'%', text: 'rise in conversion rates for products launched using our service'}
     ];
     const strategy = [
         {

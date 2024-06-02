@@ -18,10 +18,10 @@ const PortfolioPage = () => {
     const header = 'Amazon advertising';
     const paragraph = 'Struggle with Amazon ads? Boost sales fast with our expert Amazon Advertising services. Maximize ROI now!';
     const stats = [
-        {number: '87%', text: 'increase in Click-Through Rates'},
-        {number: '40%', text: 'boost in Conversion Rates'},
-        {number: '95%', text: 'reduction in ACoS (Advertising Cost of Sales)'},
-        {number: '$1.5M', text: 'total Sales Generated for Clients'}
+        {number: 87,after:'%', text: 'increase in Click-Through Rates'},
+        {number: 40,after:'%', text: 'boost in Conversion Rates'},
+        {number: 95,after:'%', text: 'reduction in ACoS (Advertising Cost of Sales)'},
+        {number: 1.5,after:'M',before:'$', text: 'total Sales Generated for Clients'}
     ];
     const strategy = [
         {

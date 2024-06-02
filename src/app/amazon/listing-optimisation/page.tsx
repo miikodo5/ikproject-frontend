@@ -18,10 +18,10 @@ const PortfolioPage = () => {
     const header = 'Listing optimisation';
     const paragraph = 'Struggling to boost Amazon sales? Let our experts optimize your listings for maximum visibility, trust, and sales growth.';
     const stats = [
-        {number: '86%', text: 'of consumers willing to pay more for a product from a trusted brand'},
-        {number: '95%', text: 'Success rate of our targeted keyword research'},
-        {number: '7', text: 'Modules available for creating high-resolution engaging A+ content'},
-        {number: '100%', text: 'Guaranteed increase in discoverability and sales'}
+        {number: 86,after:'%', text: 'of consumers willing to pay more for a product from a trusted brand'},
+        {number: 95,after:'%', text: 'Success rate of our targeted keyword research'},
+        {number: 7, text: 'Modules available for creating high-resolution engaging A+ content'},
+        {number: 100,after:'%', text: 'Guaranteed increase in discoverability and sales'}
     ];
     const strategy = [
         {

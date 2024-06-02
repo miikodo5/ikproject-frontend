@@ -18,10 +18,10 @@ const PortfolioPage = () => {
     const header = 'Promotions strategy';
     const paragraph = 'Elevate your Amazon game with our strategic promotions support. We identify top products, recommend the best promotions, and schedule for success. Boost sales, traffic, and visibility now!';
     const stats = [
-        {number: '60%', text: 'Boost with our tailored promotion strategies '},
-        {number: '50%', text: 'rise in conversion rates '},
-        {number: '70%', text: 'increase in product placement leads'},
-        {number: '40%', text: 'Increase your buy box with our proven tactics'}
+        {number: 60,after:'%', text: 'Boost with our tailored promotion strategies '},
+        {number: 50,after:'%', text: 'rise in conversion rates '},
+        {number: 70,after:'%', text: 'increase in product placement leads'},
+        {number: 40,after:'%', text: 'Increase your buy box with our proven tactics'}
     ];
     const strategy = [
         {

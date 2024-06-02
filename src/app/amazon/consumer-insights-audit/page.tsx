@@ -18,10 +18,10 @@ const PortfolioPage = () => {
     const header = 'Consumer insights audit';
     const paragraph = 'Struggling to manage your Amazon account effectively and maximize sales? Let IK Project take the burden off your shoulders.';
     const stats = [
-        {number: '25%', text: 'increase in profitability after implementing our insights audit'},
-        {number: '19', text: 'times more likely to succeed'},
-        {number: '90%', text: 'of companies reported improved decision-making accuracy with our reports'},
-        {number: '30%', text: 'growth in market share within 6 months'}
+        {number: 25,after:'%', text: 'increase in profitability after implementing our insights audit'},
+        {number: 19, text: 'times more likely to succeed'},
+        {number: 90,after:'%', text: 'of companies reported improved decision-making accuracy with our reports'},
+        {number: 30,after:'%', text: 'growth in market share within 6 months'}
     ];
     const strategy = [
         {

@@ -3,8 +3,9 @@ import Image, {StaticImageData} from "next/image";
 import Wrapper from "@/app/_components/wrapper";
 
 import AppButton from "@/app/_components/app-button";
+import Counter from "@/app/_components/counter";
 
-const AmazonHero = ({header, paragraph, stats, img1, img2}:{header: string, paragraph: string, stats: {number:string,text: string}[], img1: StaticImageData, img2: StaticImageData}) => {
+const AmazonHero = ({header, paragraph, stats, img1, img2}:{header: string, paragraph: string, stats: {number?:number,text: string, before?: string, after?: string}[], img1: StaticImageData, img2: StaticImageData}) => {
     return (
         <>
             {/*h-[560px] max-laptop:h-[768px]*/}
@@ -56,9 +57,13 @@ const AmazonHero = ({header, paragraph, stats, img1, img2}:{header: string, para
                                     <div key={index}
                                          className={'flex flex-col gap-2 w-[132px] max-laptop:max-w-[164px] max-laptop:w-[164px] max-phone:w-[148px]'}>
                                         <span
-                                            className={'text-1xl text-black font-semibold text-center max-laptop:text-h1 max-phone:text-xl'}>{el.number}</span>
+                                            className={'text-h1 max-laptop:text-xl font-semibold text-center flex flex-row  justify-center'}>
+                                            {el.before}
+                                            {el.number ? <Counter from={0} to={el.number!} className={''}/> : <></>}
+                                            {el.after}
+                                        </span>
                                         <span
-                                            className={'text-sm font-normal text-grey text-center max-laptop:text-base max-phone:text-sm'}>{el.text}</span>
+                                        className={'text-sm font-normal text-grey text-center max-laptop:text-base max-phone:text-sm'}>{el.text}</span>
                                     </div>
                                 ))}
                             </div>
@@ -74,7 +79,11 @@ const AmazonHero = ({header, paragraph, stats, img1, img2}:{header: string, para
                         <div className={'ml-[12px] flex flex-row gap-8 max-laptop:hidden'}>
                             {stats.map((el, index) => (
                                 <div key={index} className={'flex flex-col gap-2 w-[132px]'}>
-                                    <span className={'text-1xl text-black font-semibold text-center'}>{el.number}</span>
+                                    <span className={'text-1xl text-black font-semibold text-center flex flex-row justify-center'}>
+                                        {el.before}
+                                        {el.number ? <Counter from={0} to={el.number!} className={''}/> : <></>}
+                                        {el.after}
+                                    </span>
                                     <span className={'text-sm font-normal text-grey text-center'}>{el.text}</span>
                                 </div>
                             ))}
@@ -82,7 +91,7 @@ const AmazonHero = ({header, paragraph, stats, img1, img2}:{header: string, para
                     </div>
 
                     <div
-                        className={'absolute bottom-0 right-[250px] flex pt-5 justify-self-center flex-col gap-[13px] items-center justify-center max-laptop:mt-[80px] max-phone:mt-0'}>
+                        className={'max-laptop:hidden absolute bottom-0 right-[250px] flex pt-5 justify-self-center flex-col gap-[13px] items-center justify-center max-laptop:mt-[80px] max-phone:mt-0'}>
                         <div className={'h-[78px] w-[2px] bg-white animate-bounce'}/>
                         <span className={'text-sm text-white'}>Scroll for more</span>
                     </div>

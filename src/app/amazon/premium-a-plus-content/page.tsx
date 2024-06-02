@@ -18,10 +18,10 @@ const PortfolioPage = () => {
     const header = 'Premium A+ Content';
     const paragraph = 'Don\'t let your products blend in. Upgrade to Premium A+ for captivating visuals, interactive modules, and a 15% sales boost!';
     const stats = [
-        {number: '12%', text: 'increase in conversion rates'},
-        {number: '70%', text: 'user engagement increased'},
-        {number: '50%', text: 'more clicks on embedded high-definition videos'},
-        {number: '25%', text: 'higher click-through rate across all product ranges'}
+        {number: 12,after:'%', text: 'increase in conversion rates'},
+        {number: 70,after:'%', text: 'user engagement increased'},
+        {number: 50,after:'%', text: 'more clicks on embedded high-definition videos'},
+        {number: 25,after:'%', text: 'higher click-through rate across all product ranges'}
     ];
     const strategy = [
         {

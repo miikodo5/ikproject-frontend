@@ -18,10 +18,10 @@ const PortfolioPage = () => {
     const header = 'Amazon A+ Content';
     const paragraph = 'Elevate your Amazon game with our A+ services - boost sales, engage customers, and stand out from the competition!';
     const stats = [
-        {number: '20%', text: 'Increase in Sales'},
-        {number: '30%', text: 'Conversion Rate Boost'},
-        {number: '25%', text: 'Positive Reviews Uplift'},
-        {number: '40%', text: 'Reduction in Returns'}
+        {number: 20,after:'%', text: 'Increase in Sales'},
+        {number: 30,after:'%', text: 'Conversion Rate Boost'},
+        {number: 25,after:'%', text: 'Positive Reviews Uplift'},
+        {number: 40,after:'%', text: 'Reduction in Returns'}
     ];
     const strategy = [
         {

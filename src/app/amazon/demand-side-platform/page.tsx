@@ -18,10 +18,10 @@ const PortfolioPage = () => {
     const header = 'Demand-side Platform';
     const paragraph = 'Struggling to stand out in a crowded market? Reach millions of consumers, drive sales, and boost brand safety with Amazon DSP\'s exclusive ad solutions.';
     const stats = [
-        {number: '50%', text: 'increase in brand awareness achieved'},
-        {number: '30%', text: 'boost in customer consideration'},
-        {number: '25%', text: 'increase in purchase conversions'},
-        {number: '15%', text: 'higher return on ad spend when utilizing unique'}
+        {number: 50,after:'%', text: 'increase in brand awareness achieved'},
+        {number: 30,after:'%', text: 'boost in customer consideration'},
+        {number: 25,after:'%', text: 'increase in purchase conversions'},
+        {number: 15,after:'%', text: 'higher return on ad spend when utilizing unique'}
     ];
     const strategy = [
         {

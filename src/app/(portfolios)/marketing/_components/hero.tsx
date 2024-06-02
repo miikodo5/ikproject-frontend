@@ -8,7 +8,7 @@ const MarketingHero = ({header, paragraph}: {header: string, paragraph: string})
     const newHeader = header.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {return word.toUpperCase();});
     return (
         <>
-            <div className={'w-full z-[900] min-h-[632px]'}>
+            <div className={'w-full z-[900] min-h-[632px] max-phone:min-h-[750px]'}>
                 <Image src={heroImg} priority alt={'heroImg'} className={'absolute top-0 right-0 -z-20 max-w-[720px] max-h-[820px] object-cover max-laptop:left-0 max-laptop:right-auto max-laptop:max-h-[419px] max-laptop:max-w-full max-phone:max-h-[305px]'}/>
                 <Wrapper>
                     <div className={'w-full h-max'}>
@@ -33,7 +33,7 @@ const MarketingHero = ({header, paragraph}: {header: string, paragraph: string})
                         {/*</div>*/}
                     </div>
                     <div
-                        className={'absolute bottom-0 left-1/2 -translate-x-1/2 flex pt-5 justify-self-center flex-col gap-[13px] items-center justify-center max-laptop:mt-[80px] max-phone:mt-0'}>
+                        className={'absolute top-[624px] left-1/2 -translate-x-1/2 flex pt-5 justify-self-center flex-col gap-[13px] items-center justify-center max-laptop:top-[667px] max-phone:top-[862px] max-phone:mt-0'}>
                         <div className={'h-[78px] w-[2px] bg-black animate-bounce'}/>
                         <span className={'text-sm text-black'}>Scroll for more</span>
                     </div>

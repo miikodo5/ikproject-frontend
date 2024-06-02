@@ -23,27 +23,27 @@ const SLIDES = [
     {
         src:slide_img_1,
         text:'They\'re quick to jump into action, addressing our requests promptly and implementing changes seamlessly, all while keeping our sales momentum going strong. ',
-        author:'CEO'
+        author:'CEO of Osiris 9'
     },
     {
         src:slide_img_2,
         text:'Our website has been buzzing with more visitors, interaction, and leads thanks to the marketing push. The team\'s always on point with deadlines and quick to cater to client requests. On top of that, we\'ve noted their agility for crafting customized marketing plans is top-notch. ',
-        author:'Business Analyst '
+        author:'Business Analytic of Palladin Technologies '
     },
     {
         src:slide_img_3,
         text:'IK Project’s efforts have really paid off for us, we’ve been enjoying a nice uptick in website traffic, click-through rates, and conversions. Their team is always on the ball with project management, getting things done fast when needed. Their unique strategies and focus on data are what keep our partnership thriving.',
-        author:'Personal Assistant'
+        author:'Personal Assistant of OZAKI MARKETING CONSULTING CO.'
     },
     {
         src:slide_img_4,
         text:'These guys stepped up, boosting organic traffic and lifting search rankings, enhancing my client\'s online presence. Their quick and effective methods ensured seamless collaboration, delivering on-point solutions right on schedule.',
-        author:'Owner'
+        author:'Owner of Osborn Consulting Company'
     },
     {
         src:slide_img_5,
         text:'IK Project has proven their expertise in Amazon advertising. As our trusted go-to team for all things Amazon advertising, they consistently deliver exceptional results that exceed expectations.',
-        author:'Project Manager'
+        author:'Project Manager from Agama Consulting Group'
     },
 ]
 const HomeTestimonials = () => {

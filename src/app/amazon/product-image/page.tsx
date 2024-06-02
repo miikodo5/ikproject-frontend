@@ -18,10 +18,10 @@ const PortfolioPage = () => {
     const header = 'Product Image Service';
     const paragraph = 'IK Project Amazon Image Service crafts high-resolution image decks designed to tell your brand\'s story, making your products shine on Amazon. Elevate your listings, boost conversions, and build trust today!';
     const stats = [
-        {number: '85%', text: 'increase in click-through rate'},
-        {number: '71%', text: 'rise in customer engagement levels'},
-        {number: '62%', text: 'improvement in conversion rates'},
-        {number: '90%', text: 'boost in mobile conversions achieved'}
+        {number: 85,after:'%', text: 'increase in click-through rate'},
+        {number: 71,after:'%', text: 'rise in customer engagement levels'},
+        {number: 62,after:'%', text: 'improvement in conversion rates'},
+        {number: 90,after:'%', text: 'boost in mobile conversions achieved'}
     ];
     const strategy = [
         {

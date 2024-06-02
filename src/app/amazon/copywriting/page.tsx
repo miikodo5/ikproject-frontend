@@ -18,10 +18,10 @@ const PortfolioPage = () => {
     const header = 'Amazon Copywriting Services';
     const paragraph = 'Elevate your product game with our expert Amazon copywriters. Maximize product visibility, boost traffic, and skyrocket sales with captivating, SEO-optimized listings.';
     const stats = [
-        {number: '78%', text: 'increase in product placement effectiveness'},
-        {number: '42%', text: 'rise in website traffic conversion rates'},
-        {number: '91%', text: 'growth in buy box percentage'},
-        {number: '65%', text: 'surge in search engine visibility'}
+        {number: 78,after:'%', text: 'increase in product placement effectiveness'},
+        {number: 42,after:'%', text: 'rise in website traffic conversion rates'},
+        {number: 91,after:'%', text: 'growth in buy box percentage'},
+        {number: 65,after:'%', text: 'surge in search engine visibility'}
     ];
     const strategy = [
         {

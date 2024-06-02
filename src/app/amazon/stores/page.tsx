@@ -18,10 +18,10 @@ const PortfolioPage = () => {
     const header = 'Amazon Stores';
     const paragraph = 'Drive sales exponentially with Amazon Stores. Engage customers effortlessly with captivating visuals and insightful analytics. Level up your e-commerce game now!';
     const stats = [
-        {number: '70%', text: 'Increase in sales'},
-        {number: '$500', text: 'Average increase in Average Order Value'},
-        {number: '50%', text: 'Growth in brand awareness reported'},
-        {number: '90%', text: 'Customer satisfaction rate for brands'}
+        {number: 70,after:'%', text: 'Increase in sales'},
+        {number: 500,before:'$', text: 'Average increase in Average Order Value'},
+        {number: 50,after:'%', text: 'Growth in brand awareness reported'},
+        {number: 90,after:'%', text: 'Customer satisfaction rate for brands'}
     ];
     const strategy = [
         {

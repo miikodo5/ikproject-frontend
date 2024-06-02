@@ -18,10 +18,10 @@ const PortfolioPage = () => {
     const header = 'Amazon account management';
     const paragraph = 'Struggling to manage your Amazon account effectively? Unlock the power of strategic account management with IK Project';
     const stats = [
-        {number: '40%', text: 'Increase in sales within the first month'},
-        {number: '90%', text: 'Improvement in listing visibility'},
-        {number: '75%', text: `Reduction in advertising costs`},
-        {number: '24/7', text: `Support response time under 1 hour`}
+        {number: 40,after:'%', text: 'Increase in sales within the first month'},
+        {number: 90,after:'%', text: 'Improvement in listing visibility'},
+        {number: 75,after:'%', text: `Reduction in advertising costs`},
+        {number: 0, after:'24/7', text: `Support response time under 1 hour`}
     ];
     const strategy = [
         {
