@@ -18,10 +18,10 @@ const PortfolioPage = () => {
     const header = '';
     const paragraph = '';
     const stats = [
-        {number: '', text: ''},
-        {number: '', text: ''},
-        {number: '', text: ''},
-        {number: '', text: ''}
+        {number: 0, text: ''},
+        {number: 0, text: ''},
+        {number: 0, text: ''},
+        {number: 0, text: ''}
     ];
     const strategy = [
         {
