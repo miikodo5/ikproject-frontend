@@ -1,4 +1,6 @@
+'use client';
 import React, {useContext, useRef, useState} from 'react';
+
 import {Field, Form,  } from "react-final-form";
 import ButtonApp from "@/app/_components/app-button";
 // import ButtonApp from "../../button-app";

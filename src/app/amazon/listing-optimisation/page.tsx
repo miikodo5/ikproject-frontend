@@ -7,8 +7,8 @@ import HomeFooter from "@/app/(home)/_components/footer";
 import AmazonHero from "@/app/(portfolios)/amazon/_components/hero";
 
 
-import heroImg1 from '@images/hero-3-1.png';
-import heroImg2 from '@images/hero-3-2.png';
+import heroImg1 from '@images/amazon/hero71.png';
+import heroImg2 from '@images/amazon/hero72.png';
 import portfolioPhoto_1 from "@images/portfolio-1.png";
 import portfolioPhoto_2 from "@images/portfolio-2.png";
 import portfolioPhoto_3 from "@images/portfolio-3.png";
