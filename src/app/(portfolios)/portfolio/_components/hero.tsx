@@ -3,8 +3,9 @@ import Wrapper from "@/app/_components/wrapper";
 
 import heroImg from '@images/hero-1.png';
 import Image from "next/image";
+import Counter from "@/app/_components/counter";
 
-const PortfolioHero = ({header, paragraph, stats}:{header: string, paragraph: string, stats: {number:string,text: string}[]}) => {
+const PortfolioHero = ({header, paragraph, stats}:{header: string, paragraph: string, stats: {number?:number,text: string, before?: string, after?: string}[]}) => {
     return (
         <>
             <div className={'min-h-[690px] z-[60] w-full'}>
@@ -23,13 +24,19 @@ const PortfolioHero = ({header, paragraph, stats}:{header: string, paragraph: st
                         <div className={'flex flex-row justify-center flex-wrap gap-8 max-phone:min-w-[312px] max-phone:gap-4'}>
                             {stats.map((el, index) => (
                                 <div key={index} className={'flex flex-col gap-2 w-[132px] max-phone:w-[148px]'}>
-                                    <span className={'text-1xl text-white/70 font-semibold text-center'}>{el.number}</span>
+                                    <span
+                                        className={'text-1xl text-white/70 max-laptop:text-xl font-semibold text-center flex flex-row  justify-center'}>
+                                        {el.before}
+                                        {el.number ? <Counter from={0} to={el.number!} className={''}/> : <></>}
+                                        {el.after}
+                                        </span>
                                     <span className={'text-sm font-normal text-white text-center '}>{el.text}</span>
                                 </div>
                             ))}
                         </div>
                     </div>
-                    <div className={'w-full pt-5 flex flex-col gap-[13px] -mt-[35px] items-center justify-center max-laptop:pt-0 max-phone:pt-[38px]'}>
+                    <div
+                        className={'w-full pt-5 flex flex-col gap-[13px] -mt-[35px] items-center justify-center max-laptop:pt-0 max-phone:pt-[38px]'}>
                         <div className={'h-[78px] w-[2px] bg-white animate-bounce'}/>
                         <span className={'text-sm text-white'}>Scroll for more</span>
                     </div>

@@ -16,10 +16,10 @@ const PortfolioPage = () => {
     const paragraph = 'Navigating the diverse interpretations and principles of the Kaizen philosophy can be confusing, making it challenging to implement a cohesive and effective business improvement strategy. Unstructured Kaizen planning can waste time and resources, hindering sustainable growth and operational excellence. Our Kaizen planning service tailors Kaizen principles to your business goals. We provide expert guidance, data-driven decision making, and a focus on quality, efficiency, and customer-centricity to unlock the power of continuous improvement.';
 
     const stats = [
-        {number: '92%', text: 'of companies reporting improved productivity'},
-        {number: '85%', text: 'of organizations experiencing faster time-to-market'},
-        {number: '60', text: 'improvements per employee per year'},
-        {number: '78%', text: 'of businesses see a decrease in defects and errors'}
+        {number: 92,after:'%', text: 'of companies reporting improved productivity'},
+        {number: 85,after:'%', text: 'of organizations experiencing faster time-to-market'},
+        {number: 60, text: 'improvements per employee per year'},
+        {number: 78,after:'%', text: 'of businesses see a decrease in defects and errors'}
     ];
     const strategy = [
         {

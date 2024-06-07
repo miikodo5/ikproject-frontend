@@ -16,10 +16,10 @@ const PortfolioPage = () => {
     const paragraph = 'Elevate your business with Total Quality Management (TQM) - the transformative philosophy that optimizes every aspect of your operations. Unlock continuous improvement, minimize waste, and delight your customers by empowering your team and streamlining your processes. Experience the power of a holistic quality-driven approach that propels your organization to new heights of success.';
 
     const stats = [
-        {number: '20%', text: 'increase in overall productivity'},
-        {number: '30%', text: 'reduction in customer complaints'},
-        {number: '15%', text: 'increase in employee engagement and satisfaction'},
-        {number: '25%', text: 'boost in profitability'}
+        {number: 20,after:'%', text: 'increase in overall productivity'},
+        {number: 30,after:'%', text: 'reduction in customer complaints'},
+        {number: 15,after:'%', text: 'increase in employee engagement and satisfaction'},
+        {number: 25,after:'%', text: 'boost in profitability'}
     ];
     const strategy = [
         {

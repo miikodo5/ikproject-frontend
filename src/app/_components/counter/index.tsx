@@ -15,6 +15,7 @@ function Counter({ from, to, className } : ICounter){
 
         if(isInView){
             const node = nodeRef.current;
+
             const controls = animate(from, to, {
                 duration: 2,
                 delay: 0.5,
@@ -30,7 +31,7 @@ function Counter({ from, to, className } : ICounter){
         ref={nodeRef}
         className={className}
 
-    />;
+    >0</motion.p>;
 }
 
 export default Counter;

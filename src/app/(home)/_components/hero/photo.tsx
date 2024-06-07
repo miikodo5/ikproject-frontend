@@ -11,7 +11,7 @@ import heroPhoto21 from '@images/hero-211.png';
 import heroPhoto22 from '@images/hero-222.png';
 import heroPhoto23 from '@images/hero-233.png';
 import heroPhoto24 from '@images/hero-244.png';
-import heroPhoto31 from '@images/hero-311.svg';
+import heroPhoto31 from '@images/hero-311.png';
 import heroPhoto32 from '@images/hero-322.png';
 import heroPhoto33 from '@images/hero-333.png';
 import heroPhoto34 from '@images/hero-344.png';

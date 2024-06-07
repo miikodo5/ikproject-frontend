@@ -16,10 +16,10 @@ const PortfolioPage = () => {
     const paragraph = 'Managing complex projects carries risks of budget overruns, missed deadlines, and failed deliverables. Traditional project management methods struggle to adapt to changing requirements and minimize waste. Mismanaging projects can waste time, money, and resources. Businesses need a more agile, efficient approach to project management to stay competitive and achieve successful outcomes. Our Lean project management service applies proven principles to streamline projects, reduce waste, and drive continuous improvement. This enables faster time-to-market, lower costs, and higher customer satisfaction while adapting to change.';
 
     const stats = [
-        {number: '98%', text: 'reduction in project planning time'},
-        {number: '75%', text: 'increase in project success rate'},
-        {number: '45%', text: 'decrease in project costs'},
-        {number: '92%', text: 'customer satisfaction'}
+        {number: 98,after:'%', text: 'reduction in project planning time'},
+        {number: 75,after:'%', text: 'increase in project success rate'},
+        {number: 45,after:'%', text: 'decrease in project costs'},
+        {number: 92,after:'%', text: 'customer satisfaction'}
     ];
     const strategy = [
         {

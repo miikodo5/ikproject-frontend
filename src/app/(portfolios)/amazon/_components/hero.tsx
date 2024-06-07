@@ -91,7 +91,7 @@ const AmazonHero = ({header, paragraph, stats, img1, img2}:{header: string, para
                     </div>
 
                     <div
-                        className={'max-laptop:hidden absolute bottom-0 right-[250px] flex pt-5 justify-self-center flex-col gap-[13px] items-center justify-center max-laptop:mt-[80px] max-phone:mt-0'}>
+                        className={'max-laptop:hidden absolute top-[610px] right-[250px] flex pt-5 justify-self-center flex-col gap-[13px] items-center justify-center max-laptop:mt-[80px] max-phone:mt-0'}>
                         <div className={'h-[78px] w-[2px] bg-white animate-bounce'}/>
                         <span className={'text-sm text-white'}>Scroll for more</span>
                     </div>
