@@ -30,7 +30,7 @@ const PortfolioCards = ({portfolios}:{portfolios: { title: string, text: string,
                             }>
 
                                 <div className={'w-full h-[312px] max-phone:h-[200px]'}>
-                                    <Image src={el.img} alt={el.title} className={'h-full rounded-[10px] object-cover'}/>
+                                    <Image src={el.img} alt={el.title} className={'w-full h-full rounded-[10px] object-cover'}/>
                                 </div>
                                 <div>
                                     <span className={'text-xl font-semibold max-laptop:text-lg'}>{el.title}</span>

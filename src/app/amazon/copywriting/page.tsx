@@ -9,11 +9,11 @@ import AmazonHero from "@/app/(portfolios)/amazon/_components/hero";
 
 import heroImg1 from '@images/amazon/hero51.png';
 import heroImg2 from '@images/amazon/hero52.png';
-import portfolioPhoto_1 from "@images/portfolio-1.png";
-import portfolioPhoto_2 from "@images/portfolio-2.png";
-import portfolioPhoto_3 from "@images/portfolio-3.png";
-import portfolioPhoto_4 from "@images/portfolio-4.png";
-import portfolioPhoto_5 from "@images/portfolio-5.png";
+import portfolioPhoto_1 from "@images/amazon/copywriting/image.png";
+import portfolioPhoto_2 from "@images/amazon/copywriting/image_1.png";
+import portfolioPhoto_3 from "@images/amazon/copywriting/image_2.png";
+import portfolioPhoto_4 from "@images/amazon/copywriting/image_3.png";
+import portfolioPhoto_5 from "@images/amazon/copywriting/image_4.png";
 const PortfolioPage = () => {
     const header = 'Amazon Copywriting Services';
     const paragraph = 'Elevate your product game with our expert Amazon copywriters. Maximize product visibility, boost traffic, and skyrocket sales with captivating, SEO-optimized listings.';

@@ -9,11 +9,11 @@ import AmazonHero from "@/app/(portfolios)/amazon/_components/hero";
 
 import heroImg1 from '@images/amazon/hero61.png';
 import heroImg2 from '@images/amazon/hero62.png';
-import portfolioPhoto_1 from "@images/portfolio-1.png";
-import portfolioPhoto_2 from "@images/portfolio-2.png";
-import portfolioPhoto_3 from "@images/portfolio-3.png";
-import portfolioPhoto_4 from "@images/portfolio-4.png";
-import portfolioPhoto_5 from "@images/portfolio-5.png";
+import portfolioPhoto_1 from "@images/amazon/demand-side-platform/image.png";
+import portfolioPhoto_2 from "@images/amazon/demand-side-platform/image_1.png";
+import portfolioPhoto_3 from "@images/amazon/demand-side-platform/image_2.png";
+import portfolioPhoto_4 from "@images/amazon/demand-side-platform/image_3.png";
+import portfolioPhoto_5 from "@images/amazon/demand-side-platform/image_4.png";
 const PortfolioPage = () => {
     const header = 'Demand-side Platform';
     const paragraph = 'Struggling to stand out in a crowded market? Reach millions of consumers, drive sales, and boost brand safety with Amazon DSP\'s exclusive ad solutions.';

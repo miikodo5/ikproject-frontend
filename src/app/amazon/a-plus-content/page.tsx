@@ -9,11 +9,11 @@ import AmazonHero from "@/app/(portfolios)/amazon/_components/hero";
 
 import heroImg1 from '@images/amazon/hero11.png';
 import heroImg2 from '@images/amazon/hero12.png';
-import portfolioPhoto_1 from "@images/portfolio-1.png";
-import portfolioPhoto_2 from "@images/portfolio-2.png";
-import portfolioPhoto_3 from "@images/portfolio-3.png";
-import portfolioPhoto_4 from "@images/portfolio-4.png";
-import portfolioPhoto_5 from "@images/portfolio-5.png";
+import portfolioPhoto_1 from "@images/amazon/a-plus-content/image.png";
+import portfolioPhoto_2 from "@images/amazon/a-plus-content/image_1.png";
+import portfolioPhoto_3 from "@images/amazon/a-plus-content/image_2.png";
+import portfolioPhoto_4 from "@images/amazon/a-plus-content/image_3.png";
+import portfolioPhoto_5 from "@images/amazon/a-plus-content/image_4.png";
 const PortfolioPage = () => {
     const header = 'Amazon A+ Content';
     const paragraph = 'Elevate your Amazon game with our A+ services - boost sales, engage customers, and stand out from the competition!';

@@ -9,11 +9,11 @@ import AmazonHero from "@/app/(portfolios)/amazon/_components/hero";
 
 import heroImg1 from '@images/amazon/hero81.png';
 import heroImg2 from '@images/amazon/hero82.png';
-import portfolioPhoto_1 from "@images/portfolio-1.png";
-import portfolioPhoto_2 from "@images/portfolio-2.png";
-import portfolioPhoto_3 from "@images/portfolio-3.png";
-import portfolioPhoto_4 from "@images/portfolio-4.png";
-import portfolioPhoto_5 from "@images/portfolio-5.png";
+import portfolioPhoto_1 from "@images/amazon/premium-a-plus-content/image.png";
+import portfolioPhoto_2 from "@images/amazon/premium-a-plus-content/image_1.png";
+import portfolioPhoto_3 from "@images/amazon/premium-a-plus-content/image_2.png";
+import portfolioPhoto_4 from "@images/amazon/premium-a-plus-content/image_3.png";
+import portfolioPhoto_5 from "@images/amazon/premium-a-plus-content/image_4.png";
 const PortfolioPage = () => {
     const header = 'Premium A+ Content';
     const paragraph = 'Don\'t let your products blend in. Upgrade to Premium A+ for captivating visuals, interactive modules, and a 15% sales boost!';

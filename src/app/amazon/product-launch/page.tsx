@@ -9,11 +9,11 @@ import AmazonHero from "@/app/(portfolios)/amazon/_components/hero";
 
 import heroImg1 from '@images/amazon/hero101.png';
 import heroImg2 from '@images/amazon/hero102.png';
-import portfolioPhoto_1 from "@images/portfolio-1.png";
-import portfolioPhoto_2 from "@images/portfolio-2.png";
-import portfolioPhoto_3 from "@images/portfolio-3.png";
-import portfolioPhoto_4 from "@images/portfolio-4.png";
-import portfolioPhoto_5 from "@images/portfolio-5.png";
+import portfolioPhoto_1 from "@images/amazon/product-launch/image.png";
+import portfolioPhoto_2 from "@images/amazon/product-launch/image_1.png";
+import portfolioPhoto_3 from "@images/amazon/product-launch/image_2.png";
+import portfolioPhoto_4 from "@images/amazon/product-launch/image_3.png";
+import portfolioPhoto_5 from "@images/amazon/product-launch/image_4.png";
 const PortfolioPage = () => {
     const header = 'Product launch';
     const paragraph = 'Boost your Amazon success! Let us elevate your product launch with expert strategy and support for higher sales and visibility. /or Don\'t let your products get lost in the noise. Let us help you launch your products successfully on Amazon and watch your sales soar!';

@@ -9,11 +9,11 @@ import AmazonHero from "@/app/(portfolios)/amazon/_components/hero";
 
 import heroImg1 from '@images/amazon/hero41.png';
 import heroImg2 from '@images/amazon/hero42.png';
-import portfolioPhoto_1 from "@images/portfolio-1.png";
-import portfolioPhoto_2 from "@images/portfolio-2.png";
-import portfolioPhoto_3 from "@images/portfolio-3.png";
-import portfolioPhoto_4 from "@images/portfolio-4.png";
-import portfolioPhoto_5 from "@images/portfolio-5.png";
+import portfolioPhoto_1 from "@images/amazon/consumer-insights-audit/image.png";
+import portfolioPhoto_2 from "@images/amazon/consumer-insights-audit/image_1.png";
+import portfolioPhoto_3 from "@images/amazon/consumer-insights-audit/image_2.png";
+import portfolioPhoto_4 from "@images/amazon/consumer-insights-audit/image_3.png";
+import portfolioPhoto_5 from "@images/amazon/consumer-insights-audit/image_4.png";
 const PortfolioPage = () => {
     const header = 'Consumer insights audit';
     const paragraph = 'Struggling to manage your Amazon account effectively and maximize sales? Let IK Project take the burden off your shoulders.';

@@ -9,11 +9,11 @@ import AmazonHero from "@/app/(portfolios)/amazon/_components/hero";
 
 import heroImg1 from '@images/amazon/hero121.png';
 import heroImg2 from '@images/amazon/hero122.png';
-import portfolioPhoto_1 from "@images/portfolio-1.png";
-import portfolioPhoto_2 from "@images/portfolio-2.png";
-import portfolioPhoto_3 from "@images/portfolio-3.png";
-import portfolioPhoto_4 from "@images/portfolio-4.png";
-import portfolioPhoto_5 from "@images/portfolio-5.png";
+import portfolioPhoto_1 from "@images/amazon/stores/image.png";
+import portfolioPhoto_2 from "@images/amazon/stores/image_1.png";
+import portfolioPhoto_3 from "@images/amazon/stores/image_2.png";
+import portfolioPhoto_4 from "@images/amazon/stores/image_3.png";
+import portfolioPhoto_5 from "@images/amazon/stores/image_4.png";
 const PortfolioPage = () => {
     const header = 'Amazon Stores';
     const paragraph = 'Drive sales exponentially with Amazon Stores. Engage customers effortlessly with captivating visuals and insightful analytics. Level up your e-commerce game now!';
